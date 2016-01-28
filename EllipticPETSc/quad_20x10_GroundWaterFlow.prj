@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<OpenGeoSysProject>
+    <mesh>quad_20x10_GroundWaterFlow.vtk</mesh>
+    <geometry>quad_20x10_left_right.gml</geometry>
+
+    <processes>
+        <process>
+            <name>GW23</name>
+            <type>GROUNDWATER_FLOW</type>
+            <process_variable>pressure</process_variable>
+            <hydraulic_conductivity>K</hydraulic_conductivity>
+        </process>
+    </processes>
+
+    <parameters>
+        <parameter>
+            <name>K</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
+    </parameters>
+
+    <process_variables>
+        <process_variable>
+            <name>pressure</name>
+
+            <initial_condition>
+                <type>Uniform</type>
+                <value>0</value>
+            </initial_condition>
+
+            <boundary_conditions>
+                <boundary_condition>
+                    <geometrical_set>quad_20x10_left_right_geometry</geometrical_set>
+                    <geometry>left</geometry>
+                    <type>UniformDirichlet</type>
+                    <value>1</value>
+                </boundary_condition>
+
+                <boundary_condition>
+                    <geometrical_set>quad_20x10_left_right_geometry</geometrical_set>
+                    <geometry>right</geometry>
+                    <type>UniformDirichlet</type>
+                    <value>-1</value>
+                </boundary_condition>
+            </boundary_conditions>
+
+            <source_terms>
+            </source_terms>
+        </process_variable>
+    </process_variables>
+
+    <time_stepping>
+        <type>SingleStep</type>
+    </time_stepping>
+
+    <output>
+        <type>VTK</type>
+        <file>quad_20x10_GroundWaterFlow_result</file>
+    </output>
+
+</OpenGeoSysProject>

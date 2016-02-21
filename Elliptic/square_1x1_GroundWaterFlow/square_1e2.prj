@@ -12,6 +12,7 @@
             <hydraulic_conductivity>K</hydraulic_conductivity>
 
             <nonlinear_solver>basic_picard</nonlinear_solver>
+            <time_discretization><type>BackwardEuler</type></time_discretization>
         </process>
     </processes>
 
@@ -41,7 +42,6 @@
 
     <time_stepping>
         <type>SingleStep</type>
-        <!-- TODO <time_discretization>BackwardEuler</time_discretization> -->
     </time_stepping>
 
     <parameters>

@@ -11,7 +11,7 @@
             <process_variable>pressure</process_variable>
             <hydraulic_conductivity>K</hydraulic_conductivity>
 
-            <!-- TODO <nonlinear_solver>basic_picard</nonlinear_solver> -->
+            <nonlinear_solver>basic_picard</nonlinear_solver>
         </process>
     </processes>
 

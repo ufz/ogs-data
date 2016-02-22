@@ -10,7 +10,7 @@
             <type>GROUNDWATER_FLOW</type>
             <process_variable>pressure</process_variable>
             <hydraulic_conductivity>K</hydraulic_conductivity>
-            <linear_solver>
+            <!-- <linear_solver>
                 <lis>-i cg -p jacobi -tol 1e-16 -maxiter 10000</lis>
                 <eigen>
                     <solver_type>CG</solver_type>
@@ -19,7 +19,7 @@
                     <error_tolerance>1e-16</error_tolerance>
                 </eigen>
                 <petsc>-gw_ksp_type cg -gw_pc_type bjacobi -gw_ksp_rtol 1e-16 -gw_ksp_max_it 10000</petsc>
-            </linear_solver>
+            </linear_solver> -->
         </process>
     </processes>
 

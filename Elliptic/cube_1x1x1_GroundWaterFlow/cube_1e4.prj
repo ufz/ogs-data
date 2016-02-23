@@ -10,16 +10,6 @@
             <type>GROUNDWATER_FLOW</type>
             <process_variable>pressure</process_variable>
             <hydraulic_conductivity>K</hydraulic_conductivity>
-            <!-- <linear_solver>
-                <lis>-i cg -p jacobi -tol 1e-16 -maxiter 10000</lis>
-                <eigen>
-                    <solver_type>CG</solver_type>
-                    <precon_type>jacobi</precon_type>
-                    <max_iteration_step>10000</max_iteration_step>
-                    <error_tolerance>1e-16</error_tolerance>
-                </eigen>
-                <petsc>-gw_ksp_type cg -gw_pc_type bjacobi -gw_ksp_rtol 1e-16 -gw_ksp_max_it 10000</petsc>
-            </linear_solver> -->
         </process>
     </processes>
 
@@ -61,6 +51,30 @@
             </source_terms>
         </process_variable>
     </process_variables>
+
+    <nonlinear_solvers>
+        <nonlinear_solver>
+            <name>basic_picard</name>
+            <type>Picard</type>
+            <tol>1e-6</tol>
+            <max_iter>10</max_iter>
+            <linear_solver>general_linear_solver</linear_solver>
+        </nonlinear_solver>
+    </nonlinear_solvers>
+
+    <linear_solvers>
+        <linear_solver>
+            <name>general_linear_solver</name>
+            <lis>-i cg -p jacobi -tol 1e-16 -maxiter 10000</lis>
+            <eigen>
+                <solver_type>CG</solver_type>
+                <precon_type>jacobi</precon_type>
+                <max_iteration_step>10000</max_iteration_step>
+                <error_tolerance>1e-16</error_tolerance>
+            </eigen>
+            <petsc>-gw_ksp_type cg -gw_pc_type bjacobi -gw_ksp_rtol 1e-16 -gw_ksp_max_it 10000</petsc>
+        </linear_solver>
+    </linear_solvers>
 
     <time_stepping>
         <type>SingleStep</type>

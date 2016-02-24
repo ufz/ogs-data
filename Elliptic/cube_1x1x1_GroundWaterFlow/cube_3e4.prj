@@ -43,7 +43,7 @@
 
             <initial_condition>
                 <type>Uniform</type>
-                <value>0</value>
+                <values>0</values>
             </initial_condition>
 
             <boundary_conditions>

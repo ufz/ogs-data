@@ -116,7 +116,7 @@
 
             <initial_condition>
                 <type>Uniform</type>
-                <value>1e5</value>
+                <values>1e5</values>
             </initial_condition>
 
             <boundary_conditions>
@@ -144,7 +144,7 @@
 
             <initial_condition>
                 <type>Uniform</type>
-                <value>303.15</value>
+                <values>303.15</values>
             </initial_condition>
 
             <boundary_conditions>
@@ -165,7 +165,7 @@
 
             <initial_condition>
                 <type>Uniform</type>
-                <value>0.025</value>
+                <values>0.025</values>
             </initial_condition>
 
             <boundary_conditions>

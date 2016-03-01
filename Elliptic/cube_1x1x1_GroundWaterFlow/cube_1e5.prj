@@ -10,6 +10,9 @@
             <type>GROUNDWATER_FLOW</type>
             <process_variable>pressure</process_variable>
             <hydraulic_conductivity>K</hydraulic_conductivity>
+
+            <nonlinear_solver>basic_picard</nonlinear_solver>
+            <time_discretization><type>BackwardEuler</type></time_discretization>
         </process>
     </processes>
 

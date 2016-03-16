@@ -7,8 +7,8 @@
     <PPoints>
       <PDataArray type="Float64" Name="Points" NumberOfComponents="3"/>
     </PPoints>
-    <Piece Source="cube_1e3_pcs_0_ts_1_expected_0.vtu"/>
-    <Piece Source="cube_1e3_pcs_0_ts_1_expected_1.vtu"/>
-    <Piece Source="cube_1e3_pcs_0_ts_1_expected_2.vtu"/>
+    <Piece Source="cube_1e3_pcs_0_ts_1_0.vtu"/>
+    <Piece Source="cube_1e3_pcs_0_ts_1_1.vtu"/>
+    <Piece Source="cube_1e3_pcs_0_ts_1_2.vtu"/>
   </PUnstructuredGrid>
 </VTKFile>

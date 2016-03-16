@@ -95,7 +95,7 @@
 
     <output>
         <type>VTK</type>
-        <file>cube_1e2_neumann</file>
+        <prefix>cube_1e2_neumann</prefix>
     </output>
 
 </OpenGeoSysProject>

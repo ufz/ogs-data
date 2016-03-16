@@ -95,7 +95,7 @@
 
     <output>
         <type>VTK</type>
-        <file>square_1e0_neumann</file>
+        <prefix>square_1e0_neumann</prefix>
     </output>
 
 </OpenGeoSysProject>

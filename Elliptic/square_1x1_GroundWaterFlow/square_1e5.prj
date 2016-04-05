@@ -88,7 +88,7 @@
 
     <output>
         <type>VTK</type>
-        <file>square_1e5</file>
+        <prefix>square_1e5</prefix>
     </output>
 
 </OpenGeoSysProject>

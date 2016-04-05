@@ -88,7 +88,7 @@
 
     <output>
         <type>VTK</type>
-        <file>cube_1e0</file>
+        <prefix>cube_1e0</prefix>
     </output>
 
 </OpenGeoSysProject>

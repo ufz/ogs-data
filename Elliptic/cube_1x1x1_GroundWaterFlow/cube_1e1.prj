@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <OpenGeoSysProject>
     <mesh>cube_1x1x1_hex_1e1.vtu</mesh>
     <geometry>cube_1x1x1.gml</geometry>
@@ -8,11 +7,14 @@
         <process>
             <name>GW23</name>
             <type>GROUNDWATER_FLOW</type>
-            <process_variable>pressure</process_variable>
+
             <hydraulic_conductivity>K</hydraulic_conductivity>
 
             <nonlinear_solver>basic_picard</nonlinear_solver>
             <time_discretization><type>BackwardEuler</type></time_discretization>
+            <process_variables>
+                <process_variable>pressure</process_variable>
+            </process_variables>
         </process>
     </processes>
 

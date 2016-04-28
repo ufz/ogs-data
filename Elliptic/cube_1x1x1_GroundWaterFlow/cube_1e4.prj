@@ -21,6 +21,9 @@
                 </variables>
             </output>
 
+            <secondary_variables>
+                <darcy_velocity_x>v_x</darcy_velocity_x>
+            </secondary_variables>
         </process>
     </processes>
 

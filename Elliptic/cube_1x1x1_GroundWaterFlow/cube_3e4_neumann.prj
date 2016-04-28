@@ -18,6 +18,7 @@
             <output>
                 <variables>
                     <variable>pressure</variable>
+                    <variable>v_x</variable>
                 </variables>
             </output>
 

@@ -15,6 +15,12 @@
             <process_variables>
                 <process_variable>pressure</process_variable>
             </process_variables>
+            <output>
+                <variables>
+                    <variable>pressure</variable>
+                </variables>
+            </output>
+
         </process>
     </processes>
 

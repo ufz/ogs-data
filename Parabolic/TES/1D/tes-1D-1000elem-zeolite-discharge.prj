@@ -30,9 +30,6 @@
             </secondary_variables>
 
             <reactive_system><type>Z13XBF</type></reactive_system>
-            <!--<reactive_system><type>Inert</type></reactive_system>-->
-
-            <!--<global_matrix_order> BY_LOCATION </global_matrix_order>-->
 
             <fluid_specific_heat_source>            0.0     </fluid_specific_heat_source>
             <fluid_specific_isobaric_heat_capacity> 1012.0  </fluid_specific_isobaric_heat_capacity>
@@ -69,8 +66,6 @@
             </output>
 
             <output_element_matrices>false</output_element_matrices>
-            <!--<output_iteration_results>false</output_iteration_results>
-            <output_global_matrix>true</output_global_matrix>-->
         </process>
     </processes>
 
@@ -104,15 +99,12 @@
     <time_stepping>
         <type>FixedTimeStepping</type>
         <t_initial>   0.0 </t_initial>
-        <t_end>     900.0 </t_end> <!-- 1181.111 </t_end> -->
+        <t_end>     300.0 </t_end>
         <timesteps>
-            <pair><repeat>   10 </repeat><delta_t>  0.001 </delta_t></pair> <!--   0.01 -->
-            <pair><repeat>    9 </repeat><delta_t>  0.01  </delta_t></pair> <!--   0.11 -->
-            <pair><repeat>    9 </repeat><delta_t>  0.1   </delta_t></pair> <!--   1.11 -->
-            <pair><repeat>   10 </repeat><delta_t>  1.0   </delta_t></pair> <!--  11.11 -->
-            <pair><repeat>   10 </repeat><delta_t>  1.0   </delta_t></pair> <!--  31.11 -->
-            <pair><repeat>   10 </repeat><delta_t>  1.0   </delta_t></pair> <!--  81.11 -->
-            <pair><repeat>   10 </repeat><delta_t>  1.0   </delta_t></pair> <!-- 181.11 -->
+            <pair><repeat> 10 </repeat><delta_t> 0.001 </delta_t></pair>
+            <pair><repeat>  9 </repeat><delta_t> 0.01  </delta_t></pair>
+            <pair><repeat>  9 </repeat><delta_t> 0.1   </delta_t></pair>
+            <pair><repeat>  1 </repeat><delta_t> 1.0   </delta_t></pair>
         </timesteps>
     </time_stepping>
 
@@ -159,29 +151,12 @@
             </initial_condition>
 
             <boundary_conditions>
-            <!--
-                <boundary_condition>
-                    <geometrical_set>line_geometry</geometrical_set>
-                    <geometry>left</geometry>
-                    <type>UniformNeumann</type>
-                    <value>1e-1</value>
-                </boundary_condition>
-            -->
-
                 <boundary_condition>
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>UniformDirichlet</type>
                     <value>303.15</value>
                 </boundary_condition>
-                <!--
-                <boundary_condition>
-                    <geometrical_set>line_geometry</geometrical_set>
-                    <geometry>right</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>303.15</value>
-                </boundary_condition>
-                -->
             </boundary_conditions>
 
             <source_terms>
@@ -197,15 +172,6 @@
             </initial_condition>
 
             <boundary_conditions>
-            <!--
-                <boundary_condition>
-                    <geometrical_set>line_geometry</geometrical_set>
-                    <geometry>left</geometry>
-                    <type>UniformNeumann</type>
-                    <value>1e-4</value>
-                </boundary_condition>
-            -->
-
                 <boundary_condition>
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
@@ -223,9 +189,7 @@
         <type>VTK</type>
         <prefix>tes_zeolite_discharge</prefix>
         <timesteps>
-            <pair><repeat> 37 </repeat><each_steps>  1 </each_steps></pair>
-            <pair><repeat>  1 </repeat><each_steps> 50 </each_steps></pair>
-            <pair><repeat> 10 </repeat><each_steps> 60 </each_steps></pair>
+            <pair><repeat> 1 </repeat><each_steps>  50 </each_steps></pair>
         </timesteps>
     </output>
 

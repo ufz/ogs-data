@@ -87,7 +87,7 @@
                 <solver_type>        BiCGSTAB </solver_type>
                 <precon_type>        ilu      </precon_type>
                 <max_iteration_step> 10000    </max_iteration_step>
-                <error_tolerance>    1e-14    </error_tolerance>
+                <error_tolerance>    1e-24    </error_tolerance>
             </eigen>
             <petsc>
                 <prefix>tes</prefix>
@@ -99,12 +99,11 @@
     <time_stepping>
         <type>FixedTimeStepping</type>
         <t_initial>  0.0 </t_initial>
-        <t_end>     23.0 </t_end>
+        <t_end>      1.0 </t_end>
         <timesteps>
             <pair><repeat> 10 </repeat><delta_t> 0.001 </delta_t></pair>
             <pair><repeat>  9 </repeat><delta_t> 0.01  </delta_t></pair>
             <pair><repeat>  9 </repeat><delta_t> 0.1   </delta_t></pair>
-            <pair><repeat>  1 </repeat><delta_t> 1.0   </delta_t></pair>
         </timesteps>
     </time_stepping>
 
@@ -190,7 +189,6 @@
         <timesteps>
             <pair><repeat> 1 </repeat><each_steps>  10 </each_steps></pair>
             <pair><repeat> 1 </repeat><each_steps>  18 </each_steps></pair>
-            <pair><repeat> 1 </repeat><each_steps>  22 </each_steps></pair>
         </timesteps>
     </output>
 

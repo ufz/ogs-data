@@ -18,15 +18,11 @@
             </process_variables>
 
             <secondary_variables>
-                <solid_density>           solid_density           </solid_density>
-                <reaction_rate>           reaction_rate           </reaction_rate>
-                <velocity_x>              velocity_x              </velocity_x>
-                <loading>                 loading                 </loading>
-                <equilibrium_loading>     equilibrium_loading     </equilibrium_loading>
-                <vapour_partial_pressure> vapour_partial_pressure </vapour_partial_pressure>
-                <relative_humidity>       relative_humidity       </relative_humidity>
-
-                <reaction_damping_factor> reaction_damping_factor </reaction_damping_factor>
+                <secondary_variable type="static" internal="solid_density" external="solid_density" />
+                <secondary_variable type="static" internal="reaction_rate" external="reaction_rate" />
+                <secondary_variable type="static" internal="velocity_x" external="velocity_x" />
+                <secondary_variable type="static" internal="vapour_partial_pressure" external="vapour_partial_pressure" />
+                <secondary_variable type="static" internal="relative_humidity" external="relative_humidity" />
             </secondary_variables>
 
             <reactive_system><type>Z13XBF</type></reactive_system>
@@ -55,12 +51,12 @@
                     <variable> solid_density           </variable>
                     <variable> reaction_rate           </variable>
                     <variable> velocity_x              </variable>
-                    <variable> loading                 </variable>
-                    <variable> equilibrium_loading     </variable>
+                    <!--<variable> loading                 </variable>
+                    <variable> equilibrium_loading     </variable>-->
                     <variable> vapour_partial_pressure </variable>
                     <variable> relative_humidity       </variable>
 
-                    <variable> reaction_damping_factor </variable>
+                    <!--<variable> reaction_damping_factor </variable>-->
                 </variables>
                 <output_extrapolation_residuals>true</output_extrapolation_residuals>
             </output>

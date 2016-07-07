@@ -17,20 +17,16 @@
                 <vapour_mass_fraction> v_mass_frac </vapour_mass_fraction>
             </process_variables>
 
-            <!--
-            <secondary_variables>
-                <loading>                 loading                 </loading>
-                <equilibrium_loading>     equilibrium_loading     </equilibrium_loading>
-                <reaction_damping_factor> reaction_damping_factor </reaction_damping_factor>
-            </secondary_variables>
-            -->
-
             <secondary_variables>
                 <secondary_variable type="static" internal="solid_density" external="solid_density" />
+                <secondary_variable type="static" internal="fct_TES_solid_density" external="fct_solid_density" />
                 <secondary_variable type="static" internal="reaction_rate" external="reaction_rate" />
                 <secondary_variable type="static" internal="velocity_x" external="velocity_x" />
-                <secondary_variable type="static" internal="vapour_partial_pressure" external="vapour_partial_pressure" />
+                <secondary_variable type="static" internal="fct_vapour_partial_pressure" external="vapour_partial_pressure" />
                 <secondary_variable type="static" internal="relative_humidity" external="relative_humidity" />
+                <secondary_variable type="static" internal="loading" external="loading" />
+                <secondary_variable type="static" internal="equilibrium_loading" external="equilibrium_loading" />
+                <secondary_variable type="static" internal="reaction_damping_factor" external="reaction_damping_factor" />
             </secondary_variables>
 
             <reactive_system><type>Z13XBF</type></reactive_system>
@@ -57,14 +53,15 @@
                     <variable> temperature             </variable>
                     <variable> v_mass_frac             </variable>
                     <variable> solid_density           </variable>
+                    <variable> fct_solid_density       </variable>
                     <variable> reaction_rate           </variable>
                     <variable> velocity_x              </variable>
-                    <!--<variable> loading                 </variable>
-                    <variable> equilibrium_loading     </variable>-->
+                    <variable> loading                 </variable>
+                    <variable> equilibrium_loading     </variable>
                     <variable> vapour_partial_pressure </variable>
                     <variable> relative_humidity       </variable>
 
-                    <!--<variable> reaction_damping_factor </variable>-->
+                    <variable> reaction_damping_factor </variable>
                 </variables>
                 <output_extrapolation_residuals>true</output_extrapolation_residuals>
             </output>

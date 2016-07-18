@@ -91,7 +91,7 @@
             </eigen>
             <petsc>
                 <prefix>tes</prefix>
-                <parameters>-tes_ksp_type cg -tes_pc_type bjacobi -tes_ksp_rtol 1e-24 -tes_ksp_max_it 10000</parameters>
+                <parameters>-tes_ksp_type bcgs -tes_pc_type mg -tes_ksp_rtol 1e-40 -tes_ksp_max_it 10000</parameters>
             </petsc>
         </linear_solver>
     </linear_solvers>

@@ -16,27 +16,27 @@
     </points>
 
     <surfaces>
-        <surface id="0" name="left">
+        <surface id="0" name="left"><!-- x=0 -->
             <element p1="0" p2="1" p3="2"/>
             <element p1="0" p2="3" p3="2"/>
         </surface>
-        <surface id="1" name="right">
+        <surface id="1" name="right"><!-- x=1 -->
             <element p1="4" p2="6" p3="5"/>
             <element p1="4" p2="6" p3="7"/>
         </surface>
-        <surface id="2" name="top">
+        <surface id="2" name="top"><!-- z=1 -->
             <element p1="1" p2="2" p3="5"/>
             <element p1="5" p2="2" p3="6"/>
         </surface>
-        <surface id="3" name="bottom">
+        <surface id="3" name="bottom"><!-- z=0 -->
             <element p1="0" p2="3" p3="4"/>
             <element p1="4" p2="3" p3="7"/>
         </surface>
-        <surface id="4" name="front">
+        <surface id="4" name="front"><!-- y=0 -->
             <element p1="0" p2="1" p3="4"/>
             <element p1="4" p2="1" p3="5"/>
         </surface>
-        <surface id="5" name="back">
+        <surface id="5" name="back"><!-- y=1 -->
             <element p1="2" p2="3" p3="6"/>
             <element p1="6" p2="3" p3="7"/>
         </surface>

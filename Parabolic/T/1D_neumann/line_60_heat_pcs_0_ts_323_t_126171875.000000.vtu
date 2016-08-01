@@ -3,11 +3,11 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="61" NumberOfCells="60">
       <PointData>
-        <DataArray type="Float64" Name="heat_flux_x" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAADoAQAADgAAAA==eJxjYBgFIwEAAAHoAAE=
+        <DataArray type="Float64" Name="heat_flux_x" format="binary" RangeMin="0.00033734692606" RangeMax="1.9555010964">
+          AQAAAACAAADoAQAA8wEAAA==eJwB6AEX/s/MzAO+GzY/MzPzDd1HRj9mZoYWg6BWPzQzk8wBaGE/aGYG+/oHaD9mZmY/YGFvPwAAGKNS1HM/zMysMyeLeD/MzOQW4PN9P5mZMV8DGII/AAD0zzCyhT+ZmdEMrNyJP2ZmGryprY4/MjPL/8Yekj/OzJQnjFOVP5qZJfLFA5k/MjNv62k/nT+amfp86AuhP2hmc9Dhz6M/AAARRcH1pj9nZpphZYiqPwAAr4pqk64/NDM/+JORsT8AgEe6VCK0PzKzICHTArc/MzO+7Tk6uj9k5vqx+s+9PwDAS8Dh5cA/zYzZTLkawz9mpg0HhIrFPwDAlK5KOcg/ZmamjRUryz/+f0dd4mPOPzNTiabM89A/MhOWowDd0j8AYJHHWe/UPzJTP3CHLNc/Zga+GxWW2T9ohta5Yy3cPzIzbwSj894/zdyZfeX04D9ndvjPSojiP2h2/4g8NOQ/NROmE9H45T80Y5bQ99XnP86M9Qx3y+k/NIMbY+rY6z9ltn+Rwf3tPzODPumfHPA/M8PN3j1F8T9mtmjcL3jyP5o52X7VtPM/zGzsmXn69D9oroRPU0j2P2a2W26Hnfc/AGjbFCr5+D/OlBKTQFr6PzRrfIXDv/s/zjQgIaEo/T9mdoKov5P+PzJjhIS7Sf8/WAjt5Q==
         </DataArray>
-        <DataArray type="Float64" Name="temperature" format="binary" RangeMin="0.0017219994283" RangeMax="1">
-          AQAAAACAAADoAQAA8wEAAA==eJwB6AEX/gAAAAAAAPA/V66y9h+U7j+NbN/XYCntPx7ZGd3gwOs/8zbd6Lhb6j8444f1+froP5FTh6Oqn+c/QFwL8MRK5j9QJ7kcNP3kPz8jzM/St+M/VITkcml74j/B6HfVrEjhP48KehY9IOA/FJTUrkkF3j+G0hBzseDbP8b4H0lu09k/Z5AOqhDe1z/LcuZd/QDWP7kQS6FuPNQ/Oz3DwHWQ0j8wm4kd/fzQP8Oy5xyVA88/ffkkHQQ9zD9VxC9VUaXJP0ZItztPO8c/wzzXH5/9xD+Rhw7It+rCP5YHKhnsAME/hUtLVuN8vj/1I6FozkK7P5ArPWu1T7g/SL/Sq56ftT9D9sa5hS6zP9EbHINl+LA/BSk6DIPyrT8wYeEWXFqqPy/+wMOuIKc/73C7NBA+pD+COSiPXKuhP0eBWSJ/w54/YhJep3a1mj8eacuqWiCXPy+54uCj+JM/QPBMv4wzkT9gkivtJY6NP5jIalrtU4k/6YsVoG+nhT9ZZmyXI3mCP3JKbgHYdX8/C1Xd+BTAej8yQ19VIrp2P56CyvemT3M/c1iaZa1ucD+XP7QxCg9sP3moiNpJGWg/+Yx6xx7lZD9lsZm6cl9iP2uFUK7neGA/76C6aWRLXj/i7iPw9rpcP4Dfnc6WNlw/693tfQ==
+        <DataArray type="Float64" Name="temperature" format="binary" RangeMin="273.15509859" RangeMax="282.10771301">
+          AQAAAACAAADoAQAA2wEAAA==eJwVzltIkwEYh3FEkDDNMOdWjsmwUZjT1M1qyfyT2HaTiIOgsAO7UG8s3sWYB75mYlagmWxNQtOCIRaJwqx9swMlnmIfQ5g4GglK58w0y0zC6u3qd/k8zZ/vmRuSCbtbV8T/Fm4aEwV2XC0rc7IZa3tdTexMyL/cwj7J+dXSyn5KedDkYvufhmXd7ONAo9DHti9PxfhYi/zVzxes7r3mWZg9FR6Z/MhObXpdMTsIBlOtT8Vq9V+CYIM32zzVrOXopTcediJo6ZJYe2D6eXwKdzSvbeVs6ZDpq5ddf9fVHisj/JaHZs6zV9OjpxdZ+7eC745UQuwFpSCXE5T3b2yT2GZd3kKnguBcenhc2EkQIokbF3cRhkdz6nvTCGvjNt+CkuBwNHjNKkL0wyBF0glZPq21Q02ojjPO1WUQigwlVW4NQePR9rzdwz+LpfpzmQT1j9kVnZZQK4p3CvcTRtz70q7lE+bnxgpUB/iz6tDYXwOh0jp7JbeIkPRnNM9fTHipUFW4zYSS/oR66RhhSzAUtVoIkfzV2ydPEDq2BgYenSFIZyWxrpKwNFGW1VdDODJvyzbaCYcPNt4qFghtyb3r/ssEcVDv7L7OX/FJ21c7CQqTOTdwl/APYyLVUQ==
         </DataArray>
       </PointData>
       <CellData>
@@ -17,7 +17,7 @@
       </CellData>
       <Points>
         <DataArray type="Float64" Name="Points" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="60">
-          AQAAAACAAAC4BQAAmgAAAA==eJyVyrltAgEARNEJHRIQOCBACFkIIcR9GnYBAzaHa6JkSqCBfQETvvnJO3sWOMpq/oDX4HX4J7wBb8Jb8Db8C96Bd+E9eB8+gA/hI/gYPoFP4TP4HL6AL+Er+Br+Dd/At/ACXlb7A54denj26OE5oIfnBz08R/TwnNDDc0YPzy96eP7Qw3NBD88VPTw39PDc0cPzX74AcsokBA==
+          AQAAAACAAAC4BQAAmQAAAA==eJx9yktuQQEAheEzNDQwMDCQRhoREepZyr0e9SrW1CVbggXwOcPv/Mm73Qsc5WuuwKvwGrwOb8Cb8A94C/4Jb8M78C68B+/DB/Av+BA+go/hE/gUPoN/w+fwBfwHvoSv4AW8fO3/8KzRw7NBD88WPTw79PD8oodnjx6eA3p4jujhOaGH54wenj/08FzQw3NFD8/tyR+zGCQE
         </DataArray>
       </Points>
       <Cells>

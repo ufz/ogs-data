@@ -55,18 +55,17 @@
 
             <initial_condition>
                 <type>Uniform</type>
-                <values>0</values>
+                <values>273.15</values>
             </initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>line_60_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>1</value>
+                    <type>UniformNeumann</type>
+                    <value>2</value>
                 </boundary_condition>
-
-            </boundary_conditions>
+           </boundary_conditions>
 
             <source_terms>
             </source_terms>

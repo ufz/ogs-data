@@ -3,11 +3,11 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="61" NumberOfCells="60">
       <PointData>
-        <DataArray type="Float64" Name="heat_flux_x" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAADoAQAADgAAAA==eJxjYBgFIwEAAAHoAAE=
+        <DataArray type="Float64" Name="heat_flux_x" format="binary" RangeMin="-9.0949470177e-14" RangeMax="1.7648236702">
+          AQAAAACAAADoAQAAEAEAAA==eJxjYICAWTNBwHIvlGsFpXfNgYjbLoDKz0BRJ7BrGqq4LcMgAVD/2KangYHt2TMg0GAL4c6zPQfi+uyCuFfhmi1YeeQnW2MQ+M1rB1amp2H3HwjqrZ3tTEDiKnFg2tu+3A5k/sYFE+2YgNrf2K8CiX821DpsBzLVL+22nZGx8WpL1c8g8efs0lz2QPuPbA1RtGdgaJBdEm1mD5QPZPvqbW9i/Djw3tMEoPya6yIbi+0z0tRWv+Fts09LYwg/uXI6UF1KAJ/dCvvzPp+qYxdtt58teavq9a2jQH31tTtkLtuzJPz6q9Nx3z79m/LTgLoX9ulmN84oPv9on35MskN4yQ/7szlr9m23+WMPAJJqlFE=
         </DataArray>
-        <DataArray type="Float64" Name="temperature" format="binary" RangeMin="1.4529095195e-28" RangeMax="1">
-          AQAAAACAAADoAQAA8wEAAA==eJwB6AEX/gAAAAAAAPA/7tlRkRHV6D+17ks+HT3iPzBCQn82Ttk/vaRHUOOR0D9cyFgq7X3EP7PNXXVj97c/ZhMqC6mQqj8sWoCy2/qbP4GiAuqaFYw/escVUObxej/MLud1B8loP5gAgEw07FU/yWocOreyQj9i5RNAiNYuP0511P2/pRg/YUN0ShwjAz+EqPRzBu7sPmmpu0cEVNU+qA9hnEy6vj5kRz6AsKmlPsCSQ13k740+vG40XElNdD6RLy+fyA5bPmyoT5HovEE+y5ThRvbmJj6bTXGToyUNPqIXTKY/TPI9jHLBCNWu1j3tH12LdMi7PQMuYbWu0qA9X+z8Zd0nhD04EHTUnednPYnjnVtbFEw9rWnsSHdXMD1Fxt2cP9sSPcZFc9M3lPU8sfVeFymA2DxPvdp59Ju7PD+IDwmY4548YcQHfBwpgTxUASZMGfFiPBnF6uKUxkQ8N9UHJhKmJjzVaTzY0YsIPJU7sF7hc+o73OS3iypazDviN50PhDquO7un/BZhCJA7jKd9q2PscDspyccjSsdROyypyKwrlzI7m/3lWj1aEzsVwc+S2A70OvE/e7SAs9Q6s17L2+hGtTonaipXCMiVOvoQXrEpN3Y6WOp73LSmVjrApwWzEEc4OhDsuIGzBSc6yhTiWA==
+        <DataArray type="Float64" Name="temperature" format="binary" RangeMin="273.15" RangeMax="274.92483813">
+          AQAAAACAAADoAQAA4wAAAA==eJxLSwMCoUKHNCidjkbDxDOgdCqaeCoO8YGmYe7PhtKVUHoVlPZNh7o7E0IbFUDo760Q+sApCM27MB1MbzHKAtPKXwvB9LX/HWD6qf4ZiH2BPekg+m3cskwQ7bc1PR9E/3h0sg5El1TdWgaiq2wCedKB9ELHRawZQPrNu4VhWUB6A0fBinwgzZd1KLsaSD/47J06BUjfWNWtcRzk7qfTF2sKFzpMfTa/7D6QVrrFIyInWuhQwHpmt554oYPGErHL2VKFDk/ubV5hLl/ocJj94+M3qoUOkycLKp/RK3QAAATrt50=
         </DataArray>
       </PointData>
       <CellData>
@@ -17,7 +17,7 @@
       </CellData>
       <Points>
         <DataArray type="Float64" Name="Points" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="60">
-          AQAAAACAAAC4BQAAmgAAAA==eJyVyrltAgEARNEJHRIQOCBACFkIIcR9GnYBAzaHa6JkSqCBfQETvvnJO3sWOMpq/oDX4HX4J7wBb8Jb8Db8C96Bd+E9eB8+gA/hI/gYPoFP4TP4HL6AL+Er+Br+Dd/At/ACXlb7A54denj26OE5oIfnBz08R/TwnNDDc0YPzy96eP7Qw3NBD88VPTw39PDc0cPzX74AcsokBA==
+          AQAAAACAAAC4BQAAmQAAAA==eJx9yktuQQEAheEzNDQwMDCQRhoREepZyr0e9SrW1CVbggXwOcPv/Mm73Qsc5WuuwKvwGrwOb8Cb8A94C/4Jb8M78C68B+/DB/Av+BA+go/hE/gUPoN/w+fwBfwHvoSv4AW8fO3/8KzRw7NBD88WPTw79PD8oodnjx6eA3p4jujhOaGH54wenj/08FzQw3NFD8/tyR+zGCQE
         </DataArray>
       </Points>
       <Cells>

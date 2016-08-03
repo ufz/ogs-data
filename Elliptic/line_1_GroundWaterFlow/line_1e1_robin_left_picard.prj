@@ -59,7 +59,7 @@
                     <geometry>left</geometry>
                     <type>UniformRobin</type>
                     <alpha>2</alpha>
-                    <x0>1.5</x0>
+                    <f_0>1.5</f_0>
                 </boundary_condition>
             </boundary_conditions>
 

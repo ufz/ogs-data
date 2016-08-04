@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>line_60_heat.msh</mesh>
+    <mesh>line_60_heat.vtu</mesh>
     <geometry>line_60_heat.gml</geometry>
 
     <processes>

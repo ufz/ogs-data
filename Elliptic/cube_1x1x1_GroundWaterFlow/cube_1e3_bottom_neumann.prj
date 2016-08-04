@@ -22,7 +22,7 @@
             </output>
 
             <secondary_variables>
-                <darcy_velocity_x>v_x</darcy_velocity_x>
+                <secondary_variable type="static" internal="darcy_velocity_x" external="v_x" />
             </secondary_variables>
         </process>
     </processes>

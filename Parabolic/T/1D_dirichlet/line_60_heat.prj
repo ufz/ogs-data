@@ -55,7 +55,7 @@
 
             <initial_condition>
                 <type>Uniform</type>
-                <values>0</values>
+                <values>273.15</values>
             </initial_condition>
 
             <boundary_conditions>
@@ -63,9 +63,8 @@
                     <geometrical_set>line_60_geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>UniformDirichlet</type>
-                    <value>1</value>
+                    <value>274.15</value>
                 </boundary_condition>
-
             </boundary_conditions>
 
             <source_terms>
@@ -101,18 +100,18 @@
     </linear_solvers>
 
     <time_stepping>
-     <type>FixedTimeStepping</type>
-       <t_initial> 0.0 </t_initial>
-       <t_end> 39062500 </t_end>
-       <timesteps>
-         <pair><repeat>100</repeat><delta_t>390625</delta_t></pair>
-       </timesteps>
+        <type>FixedTimeStepping</type>
+        <t_initial> 0.0 </t_initial>
+        <t_end> 39062500 </t_end>
+        <timesteps>
+            <pair><repeat>100</repeat><delta_t>390625</delta_t></pair>
+        </timesteps>
    </time_stepping>
 
 
-    <output>
+   <output>
         <type>VTK</type>
         <prefix>line_60_heat</prefix>
-    </output>
+   </output>
 
 </OpenGeoSysProject>

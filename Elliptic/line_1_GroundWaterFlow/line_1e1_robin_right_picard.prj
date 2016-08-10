@@ -58,8 +58,8 @@
                     <geometrical_set>line_1_geometry</geometrical_set>
                     <geometry>right</geometry>
                     <type>UniformRobin</type>
-                    <alpha>2</alpha>
-                    <f_0>1.5</f_0>
+                    <alpha>-2</alpha>
+                    <u_0>1.5</u_0>
                 </boundary_condition>
             </boundary_conditions>
 

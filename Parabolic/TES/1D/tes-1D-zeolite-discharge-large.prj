@@ -18,15 +18,15 @@
             </process_variables>
 
             <secondary_variables>
-                <solid_density>           solid_density           </solid_density>
-                <reaction_rate>           reaction_rate           </reaction_rate>
-                <velocity_x>              velocity_x              </velocity_x>
-                <loading>                 loading                 </loading>
-                <equilibrium_loading>     equilibrium_loading     </equilibrium_loading>
-                <vapour_partial_pressure> vapour_partial_pressure </vapour_partial_pressure>
-                <relative_humidity>       relative_humidity       </relative_humidity>
-
-                <reaction_damping_factor> reaction_damping_factor </reaction_damping_factor>
+                <secondary_variable type="static" internal_name="solid_density" output_name="solid_density" />
+                <secondary_variable type="static" internal_name="fct_TES_solid_density" output_name="fct_solid_density" />
+                <secondary_variable type="static" internal_name="reaction_rate" output_name="reaction_rate" />
+                <secondary_variable type="static" internal_name="velocity_x" output_name="velocity_x" />
+                <secondary_variable type="static" internal_name="fct_vapour_partial_pressure" output_name="vapour_partial_pressure" />
+                <secondary_variable type="static" internal_name="relative_humidity" output_name="relative_humidity" />
+                <secondary_variable type="static" internal_name="loading" output_name="loading" />
+                <secondary_variable type="static" internal_name="equilibrium_loading" output_name="equilibrium_loading" />
+                <secondary_variable type="static" internal_name="reaction_damping_factor" output_name="reaction_damping_factor" />
             </secondary_variables>
 
             <reactive_system><type>Z13XBF</type></reactive_system>
@@ -53,6 +53,7 @@
                     <variable> temperature             </variable>
                     <variable> v_mass_frac             </variable>
                     <variable> solid_density           </variable>
+                    <variable> fct_solid_density       </variable>
                     <variable> reaction_rate           </variable>
                     <variable> velocity_x              </variable>
                     <variable> loading                 </variable>

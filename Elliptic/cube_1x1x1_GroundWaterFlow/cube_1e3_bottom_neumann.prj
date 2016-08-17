@@ -63,8 +63,8 @@
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
-                    <type>UniformNeumann</type>
-                    <value>1</value>
+                    <type>Neumann</type>
+                    <parameter>p_neumann</parameter>
                 </boundary_condition>
 
                 <boundary_condition>

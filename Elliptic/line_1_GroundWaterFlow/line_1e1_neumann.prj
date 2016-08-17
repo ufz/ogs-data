@@ -71,8 +71,8 @@
                 <boundary_condition>
                     <geometrical_set>line_1_geometry</geometrical_set>
                     <geometry>right</geometry>
-                    <type>UniformNeumann</type>
-                    <value>1</value>
+                    <type>Neumann</type>
+                    <parameter>p_neumann</parameter>
                 </boundary_condition>
             </boundary_conditions>
 

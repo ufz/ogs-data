@@ -27,6 +27,36 @@
         </process>
     </processes>
 
+    <time_loop>
+        <processes>
+            <process ref="GW23">
+                <nonlinear_solver>basic_picard</nonlinear_solver>
+                <convergence_criterion>
+                    <type>DeltaX</type>
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-6</abstol>
+                </convergence_criterion>
+                <time_discretization><type>BackwardEuler</type></time_discretization>
+
+                <output>
+                    <variables>
+                        <variable> pressure </variable>
+                        <variable> v_x      </variable>
+                    </variables>
+                </output>
+            </process>
+        </processes>
+
+        <time_stepping>
+            <type>SingleStep</type>
+        </time_stepping>
+
+        <output>
+            <type>VTK</type>
+            <prefix>cube_1e0</prefix>
+        </output>
+    </time_loop>
+
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_picard</name>

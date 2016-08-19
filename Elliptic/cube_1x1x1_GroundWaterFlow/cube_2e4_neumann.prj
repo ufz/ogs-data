@@ -46,7 +46,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>cube_1e0</prefix>
+            <prefix>cube_2e4_neumann</prefix>
         </output>
     </time_loop>
 

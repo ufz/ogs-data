@@ -86,7 +86,7 @@
             <lis>-i cg -p jacobi -tol 1e-16 -maxiter 10000</lis>
             <eigen>
                 <solver_type>CG</solver_type>
-                <precon_type>jacobi</precon_type>
+                <precon_type>DIAGONAL</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
                 <error_tolerance>1e-16</error_tolerance>
             </eigen>

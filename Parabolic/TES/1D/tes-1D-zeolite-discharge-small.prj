@@ -128,19 +128,19 @@
 
     <parameters>
         <parameter>
-            <name>p0</name>
+            <name>p_in</name>
             <type>Constant</type>
             <value>1e5</value>
         </parameter>
 
         <parameter>
-            <name>T0</name>
+            <name>T_in</name>
             <type>Constant</type>
             <value>303.15</value>
         </parameter>
 
         <parameter>
-            <name>xmV0</name>
+            <name>xmV_in</name>
             <type>Constant</type>
             <value>0.025</value>
         </parameter>
@@ -157,7 +157,7 @@
             <name>pressure</name>
             <components>1</components>
 
-            <initial_condition>p0</initial_condition>
+            <initial_condition>p_in</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
@@ -170,8 +170,8 @@
                 <boundary_condition>
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>right</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>1e5</value>
+                    <type>Dirichlet</type>
+                    <parameter>p_in</parameter>
                 </boundary_condition>
             </boundary_conditions>
 
@@ -182,14 +182,14 @@
             <name>temperature</name>
             <components>1</components>
 
-            <initial_condition>T0</initial_condition>
+            <initial_condition>T_in</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>303.15</value>
+                    <type>Dirichlet</type>
+                    <parameter>T_in</parameter>
                 </boundary_condition>
             </boundary_conditions>
 
@@ -200,14 +200,14 @@
             <name>v_mass_frac</name>
             <components>1</components>
 
-            <initial_condition>xmV0</initial_condition>
+            <initial_condition>xmV_in</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>0.025</value>
+                    <type>Dirichlet</type>
+                    <parameter>xmV_in</parameter>
                 </boundary_condition>
             </boundary_conditions>
 

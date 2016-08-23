@@ -74,6 +74,11 @@
             <type>Constant</type>
             <value>1.5</value>
         </parameter>
+        <parameter>
+            <name>p_Dirichlet</name>
+            <type>Constant</type>
+            <value>2</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -87,8 +92,8 @@
                 <boundary_condition>
                     <geometrical_set>line_1_geometry</geometrical_set>
                     <geometry>right</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>2</value>
+                    <type>Dirichlet</type>
+                    <parameter>p_Dirichlet</parameter>
                 </boundary_condition>
 
                 <boundary_condition>

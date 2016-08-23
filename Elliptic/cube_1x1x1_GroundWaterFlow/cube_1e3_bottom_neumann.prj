@@ -11,6 +11,11 @@
             <hydraulic_conductivity>K</hydraulic_conductivity>
 
             <nonlinear_solver>basic_picard</nonlinear_solver>
+            <convergence_criterion>
+                <type>DeltaX</type>
+                <norm_type>NORM2</norm_type>
+                <abstol>1.e-6</abstol>
+            </convergence_criterion>
             <time_discretization><type>BackwardEuler</type></time_discretization>
             <process_variables>
                 <process_variable>pressure</process_variable>
@@ -70,7 +75,6 @@
         <nonlinear_solver>
             <name>basic_picard</name>
             <type>Picard</type>
-            <tol>1e-6</tol>
             <max_iter>10</max_iter>
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>

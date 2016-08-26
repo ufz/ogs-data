@@ -39,6 +39,12 @@
             <type>Constant</type>
             <value>1</value>
         </parameter>
+
+        <parameter>
+            <name>p0</name>
+            <type>Constant</type>
+            <value>0</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -46,10 +52,7 @@
             <name>pressure</name>
             <components>1</components>
 
-            <initial_condition>
-                <type>Uniform</type>
-                <values>0</values>
-            </initial_condition>
+            <initial_condition>p0</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>

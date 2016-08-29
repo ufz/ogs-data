@@ -6,7 +6,7 @@
     <processes>
         <process>
             <name>GW23</name>
-            <type>HEAT_CONDUCTION</type>
+            <type>HEAT_TRANSPORT</type>
 
             <thermal_conductivity>K</thermal_conductivity>  
             <heat_capacity>Cp</heat_capacity>
@@ -30,11 +30,10 @@
             </output>
 
             <secondary_variables>
-                <secondary_variable type="static" internal_name="heat_flux_x" output_name="heat_flux_x" />
+               <secondary_variable type="static" internal_name="heat_flux_x" output_name="heat_flux_x" />
             </secondary_variables>
         </process>
     </processes>
-
 
     <parameters>
         <parameter>
@@ -68,11 +67,10 @@
                 <boundary_condition>
                     <geometrical_set>line_60_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>274.15</value>
+                    <type>UniformNeumann</type>
+                    <value>2</value>
                 </boundary_condition>
-
-            </boundary_conditions>
+           </boundary_conditions>
 
             <source_terms>
             </source_terms>
@@ -106,22 +104,20 @@
     </linear_solvers>
 
     <time_stepping>
-     <type>FixedTimeStepping</type>
-       <t_initial> 0.0 </t_initial>
-       <t_end> 39062500 </t_end>
-       <timesteps>
-         <pair><repeat>100</repeat><delta_t>390625</delta_t></pair>
-       </timesteps>
+        <type>FixedTimeStepping</type>
+        <t_initial> 0.0 </t_initial>
+        <t_end> 39062500 </t_end>
+        <timesteps>
+           <pair><repeat>100</repeat><delta_t>390625</delta_t></pair>
+        </timesteps>
    </time_stepping>
 
 
     <output>
         <type>VTK</type>
         <prefix>line_60_heat</prefix>
-        <timesteps>
-            <pair><repeat> 1 </repeat><each_steps> 13 </each_steps></pair>
-            <pair><repeat> 1 </repeat><each_steps> 68 </each_steps></pair>
-        </timesteps>
+           <pair><repeat> 1 </repeat><each_steps> 13 </each_steps></pair>
+           <pair><repeat> 1 </repeat><each_steps> 68 </each_steps></pair>
     </output>
 
 </OpenGeoSysProject>

@@ -6,13 +6,18 @@
     <processes>
         <process>
             <name>GW23</name>
-            <type>HEAT_TRANSPORT</type>
+            <type>HEAT_CONDUCTION</type>
 
             <thermal_conductivity>K</thermal_conductivity>  
             <heat_capacity>Cp</heat_capacity>
             <density>rho</density>
 
             <nonlinear_solver>basic_picard</nonlinear_solver>
+            <convergence_criterion>
+                <type>DeltaX</type>
+                <norm_type>NORM2</norm_type>
+                <abstol>1.e-6</abstol>
+            </convergence_criterion>
             <time_discretization><type>BackwardEuler</type></time_discretization>
             <process_variables>
                 <process_variable>temperature</process_variable>
@@ -25,7 +30,7 @@
             </output>
 
             <secondary_variables>
-                <heat_flux_x>heat_flux_x</heat_flux_x>
+               <secondary_variable type="static" internal_name="heat_flux_x" output_name="heat_flux_x" />
             </secondary_variables>
         </process>
     </processes>
@@ -76,7 +81,6 @@
         <nonlinear_solver>
             <name>basic_picard</name>
             <type>Picard</type>
-            <tol>1e-6</tol>
             <max_iter>10</max_iter>
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
@@ -88,7 +92,7 @@
             <lis>-i cg -p jacobi -tol 1e-16 -maxiter 10000</lis>
             <eigen>
                 <solver_type>CG</solver_type>
-                <precon_type>jacobi</precon_type>
+                <precon_type>DIAGONAL</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
                 <error_tolerance>1e-16</error_tolerance>
             </eigen>
@@ -112,6 +116,10 @@
     <output>
         <type>VTK</type>
         <prefix>line_60_heat</prefix>
+        <timesteps>
+            <pair><repeat> 1 </repeat><each_steps> 13 </each_steps></pair>
+            <pair><repeat> 1 </repeat><each_steps> 68 </each_steps></pair>
+        </timesteps>
     </output>
 
 </OpenGeoSysProject>

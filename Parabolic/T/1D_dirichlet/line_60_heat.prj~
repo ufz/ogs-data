@@ -6,7 +6,7 @@
     <processes>
         <process>
             <name>GW23</name>
-            <type>HEAT_CONDUCTION</type>
+            <type>HEAT_TRANSPORT</type>
 
             <thermal_conductivity>K</thermal_conductivity>  
             <heat_capacity>Cp</heat_capacity>
@@ -118,10 +118,6 @@
     <output>
         <type>VTK</type>
         <prefix>line_60_heat</prefix>
-        <timesteps>
-            <pair><repeat> 1 </repeat><each_steps> 13 </each_steps></pair>
-            <pair><repeat> 1 </repeat><each_steps> 68 </each_steps></pair>
-        </timesteps>
     </output>
 
 </OpenGeoSysProject>

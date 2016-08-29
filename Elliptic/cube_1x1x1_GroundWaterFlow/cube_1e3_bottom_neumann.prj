@@ -44,6 +44,12 @@
             <type>Constant</type>
             <value>0</value>
         </parameter>
+
+        <parameter>
+            <name>p_neumann</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -57,8 +63,8 @@
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
-                    <type>UniformNeumann</type>
-                    <value>1</value>
+                    <type>Neumann</type>
+                    <parameter>p_neumann</parameter>
                 </boundary_condition>
 
                 <boundary_condition>

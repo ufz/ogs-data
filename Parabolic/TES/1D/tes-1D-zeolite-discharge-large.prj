@@ -130,6 +130,12 @@
             <type>Constant</type>
             <value>0.025</value>
         </parameter>
+
+        <parameter>
+            <name>mass_flux</name>
+            <type>Constant</type>
+            <value>0.04</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -143,8 +149,8 @@
                 <boundary_condition>
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformNeumann</type>
-                    <value>0.04</value>
+                    <type>Neumann</type>
+                    <parameter>mass_flux</parameter>
                 </boundary_condition>
 
                 <boundary_condition>

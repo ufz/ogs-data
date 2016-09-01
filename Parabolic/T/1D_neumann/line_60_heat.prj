@@ -12,28 +12,54 @@
             <heat_capacity>Cp</heat_capacity>
             <density>rho</density>
 
-            <nonlinear_solver>basic_picard</nonlinear_solver>
-            <convergence_criterion>
-                <type>DeltaX</type>
-                <norm_type>NORM2</norm_type>
-                <abstol>1.e-6</abstol>
-            </convergence_criterion>
-            <time_discretization><type>BackwardEuler</type></time_discretization>
             <process_variables>
                 <process_variable>temperature</process_variable>
             </process_variables>
-            <output>
-                <variables>
-                    <variable>temperature</variable>
-                    <variable>heat_flux_x</variable>
-                </variables>
-            </output>
 
             <secondary_variables>
                <secondary_variable type="static" internal_name="heat_flux_x" output_name="heat_flux_x" />
             </secondary_variables>
         </process>
     </processes>
+
+    <time_loop>
+        <processes>
+            <process ref="GW23">
+                <nonlinear_solver>basic_picard</nonlinear_solver>
+                <convergence_criterion>
+                    <type>DeltaX</type>
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-6</abstol>
+                </convergence_criterion>
+                <time_discretization><type>BackwardEuler</type></time_discretization>
+
+                <output>
+                    <variables>
+                        <variable> temperature </variable>
+                        <variable> heat_flux_x </variable>
+                    </variables>
+                </output>
+            </process>
+        </processes>
+
+        <time_stepping>
+            <type>FixedTimeStepping</type>
+            <t_initial> 0.0 </t_initial>
+            <t_end> 39062500 </t_end>
+            <timesteps>
+                <pair><repeat>500</repeat><delta_t>78125</delta_t></pair>
+            </timesteps>
+        </time_stepping>
+
+        <output>
+            <type>VTK</type>
+            <prefix>line_60_heat</prefix>
+            <timesteps>
+                <pair><repeat> 1 </repeat><each_steps> 65 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps> 340 </each_steps></pair>
+            </timesteps>
+        </output>
+   </time_loop>
 
     <parameters>
         <parameter>
@@ -109,24 +135,5 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
-    <time_stepping>
-        <type>FixedTimeStepping</type>
-        <t_initial> 0.0 </t_initial>
-        <t_end> 39062500 </t_end>
-        <timesteps>
-           <pair><repeat>500</repeat><delta_t>78125</delta_t></pair>
-        </timesteps>
-   </time_stepping>
-
-
-    <output>
-        <type>VTK</type>
-        <prefix>line_60_heat</prefix>
-        <timesteps>
-            <pair><repeat> 1 </repeat><each_steps> 65 </each_steps></pair>
-            <pair><repeat> 1 </repeat><each_steps> 340 </each_steps></pair>
-        </timesteps>
-    </output>
 
 </OpenGeoSysProject>

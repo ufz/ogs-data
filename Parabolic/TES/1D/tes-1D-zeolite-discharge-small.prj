@@ -8,14 +8,6 @@
             <name>TES_pcs</name>
             <type>TES</type>
 
-            <nonlinear_solver>basic_picard</nonlinear_solver>
-            <convergence_criterion>
-                <type>DeltaX</type>
-                <norm_type>NORM2</norm_type>
-                <abstol>1.e-3</abstol>
-            </convergence_criterion>
-            <time_discretization><type>BackwardEuler</type></time_discretization>
-
             <process_variables>
                 <fluid_pressure>       pressure    </fluid_pressure>
                 <temperature>          temperature </temperature>
@@ -52,25 +44,6 @@
             <characteristic_temperature>          200  </characteristic_temperature>
             <characteristic_vapour_mass_fraction> 0.01 </characteristic_vapour_mass_fraction>
 
-            <output>
-                <variables>
-                    <variable> pressure                </variable>
-                    <variable> temperature             </variable>
-                    <variable> v_mass_frac             </variable>
-                    <variable> solid_density           </variable>
-                    <variable> fct_solid_density       </variable>
-                    <variable> reaction_rate           </variable>
-                    <variable> velocity_x              </variable>
-                    <variable> loading                 </variable>
-                    <variable> equilibrium_loading     </variable>
-                    <variable> vapour_partial_pressure </variable>
-                    <variable> relative_humidity       </variable>
-
-                    <variable> reaction_damping_factor </variable>
-                </variables>
-                <output_extrapolation_residuals>true</output_extrapolation_residuals>
-            </output>
-
             <output_element_matrices>false</output_element_matrices>
         </process>
     </processes>
@@ -101,15 +74,57 @@
         </linear_solver>
     </linear_solvers>
 
-    <time_stepping>
-        <type>FixedTimeStepping</type>
-        <t_initial> 0.0 </t_initial>
-        <t_end>     0.1 </t_end>
-        <timesteps>
-            <pair><repeat> 10 </repeat><delta_t> 0.001 </delta_t></pair>
-            <pair><repeat>  9 </repeat><delta_t> 0.01  </delta_t></pair>
-        </timesteps>
-    </time_stepping>
+    <time_loop>
+        <processes>
+            <process ref="TES_pcs">
+                <nonlinear_solver>basic_picard</nonlinear_solver>
+                <convergence_criterion>
+                    <type>DeltaX</type>
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-3</abstol>
+                </convergence_criterion>
+                <time_discretization><type>BackwardEuler</type></time_discretization>
+
+                <output>
+                    <variables>
+                        <variable> pressure                </variable>
+                        <variable> temperature             </variable>
+                        <variable> v_mass_frac             </variable>
+                        <variable> solid_density           </variable>
+                        <variable> fct_solid_density       </variable>
+                        <variable> reaction_rate           </variable>
+                        <variable> velocity_x              </variable>
+                        <variable> loading                 </variable>
+                        <variable> equilibrium_loading     </variable>
+                        <variable> vapour_partial_pressure </variable>
+                        <variable> relative_humidity       </variable>
+
+                        <variable> reaction_damping_factor </variable>
+                    </variables>
+                    <output_extrapolation_residuals>true</output_extrapolation_residuals>
+                </output>
+            </process>
+        </processes>
+
+        <time_stepping>
+            <type>FixedTimeStepping</type>
+            <t_initial> 0.0 </t_initial>
+            <t_end>     0.1 </t_end>
+            <timesteps>
+                <pair><repeat> 10 </repeat><delta_t> 0.001 </delta_t></pair>
+                <pair><repeat>  9 </repeat><delta_t> 0.01  </delta_t></pair>
+            </timesteps>
+        </time_stepping>
+
+        <output>
+            <type>VTK</type>
+            <prefix>tes_zeolite_discharge_small</prefix>
+            <timesteps>
+                <pair><repeat> 1 </repeat><each_steps> 10 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps>  9 </each_steps></pair>
+            </timesteps>
+        </output>
+    </time_loop>
 
     <parameters>
         <parameter>
@@ -200,14 +215,4 @@
             </source_terms>
         </process_variable>
     </process_variables>
-
-    <output>
-        <type>VTK</type>
-        <prefix>tes_zeolite_discharge_small</prefix>
-        <timesteps>
-            <pair><repeat> 1 </repeat><each_steps> 10 </each_steps></pair>
-            <pair><repeat> 1 </repeat><each_steps>  9 </each_steps></pair>
-        </timesteps>
-    </output>
-
 </OpenGeoSysProject>

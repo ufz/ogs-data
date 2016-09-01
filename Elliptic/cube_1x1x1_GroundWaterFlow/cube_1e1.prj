@@ -10,28 +10,45 @@
 
             <hydraulic_conductivity>K</hydraulic_conductivity>
 
-            <nonlinear_solver>basic_picard</nonlinear_solver>
-            <convergence_criterion>
-                <type>DeltaX</type>
-                <norm_type>NORM2</norm_type>
-                <abstol>1.e-6</abstol>
-            </convergence_criterion>
-            <time_discretization><type>BackwardEuler</type></time_discretization>
             <process_variables>
                 <process_variable>pressure</process_variable>
             </process_variables>
-            <output>
-                <variables>
-                    <variable>pressure</variable>
-                    <variable>v_x</variable>
-                </variables>
-            </output>
 
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
             </secondary_variables>
         </process>
     </processes>
+
+    <time_loop>
+        <processes>
+            <process ref="GW23">
+                <nonlinear_solver>basic_picard</nonlinear_solver>
+                <convergence_criterion>
+                    <type>DeltaX</type>
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-6</abstol>
+                </convergence_criterion>
+                <time_discretization><type>BackwardEuler</type></time_discretization>
+
+                <output>
+                    <variables>
+                        <variable> pressure </variable>
+                        <variable> v_x      </variable>
+                    </variables>
+                </output>
+            </process>
+        </processes>
+
+        <time_stepping>
+            <type>SingleStep</type>
+        </time_stepping>
+
+        <output>
+            <type>VTK</type>
+            <prefix>cube_1e1</prefix>
+        </output>
+    </time_loop>
 
     <parameters>
         <parameter>
@@ -100,14 +117,5 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
-    <time_stepping>
-        <type>SingleStep</type>
-    </time_stepping>
-
-    <output>
-        <type>VTK</type>
-        <prefix>cube_1e1</prefix>
-    </output>
 
 </OpenGeoSysProject>

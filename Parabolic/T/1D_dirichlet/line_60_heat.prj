@@ -22,7 +22,7 @@
         </process>
     </processes>
 
-     <time_loop>
+    <time_loop>
         <processes>
             <process ref="GW23">
                 <nonlinear_solver>basic_picard</nonlinear_solver>
@@ -57,9 +57,9 @@
             <timesteps>
                 <pair><repeat> 1 </repeat><each_steps> 65 </each_steps></pair>
                 <pair><repeat> 1 </repeat><each_steps> 340 </each_steps></pair>
-           </timesteps>
+            </timesteps>
         </output>
-     </time_loop>    
+    </time_loop>    
 
     <parameters>
         <parameter>
@@ -98,7 +98,6 @@
                     <type>UniformDirichlet</type>
                     <value>274.15</value>
                 </boundary_condition>
-
             </boundary_conditions>
 
             <source_terms>

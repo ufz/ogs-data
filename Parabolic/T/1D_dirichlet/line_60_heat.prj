@@ -59,7 +59,7 @@
                 <pair><repeat> 1 </repeat><each_steps> 340 </each_steps></pair>
             </timesteps>
         </output>
-    </time_loop>    
+    </time_loop>
 
     <parameters>
         <parameter>
@@ -82,6 +82,12 @@
             <type>Constant</type>
             <value>273.15</value>
         </parameter>
+
+        <parameter>
+            <name>T1</name>
+            <type>Constant</type>
+            <value>274.15</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -95,8 +101,8 @@
                 <boundary_condition>
                     <geometrical_set>line_60_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>274.15</value>
+                    <type>Dirichlet</type>
+                    <parameter>T1</value>
                 </boundary_condition>
             </boundary_conditions>
 

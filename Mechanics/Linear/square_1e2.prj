@@ -86,6 +86,16 @@
             <type>Constant</type>
             <values>0 0</values>
         </parameter>
+        <parameter>
+            <name>dirichlet0</name>
+            <type>Constant</type>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>dirichlet1</name>
+            <type>Constant</type>
+            <value>0.05</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -99,25 +109,25 @@
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>0</component>
-                    <value>0</value>
+                    <parameter>dirichlet0</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>1</component>
-                    <value>0</value>
+                    <parameter>dirichlet0</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>1</component>
-                    <value>0.05</value>
+                    <parameter>dirichlet1</parameter>
                 </boundary_condition>
             </boundary_conditions>
 

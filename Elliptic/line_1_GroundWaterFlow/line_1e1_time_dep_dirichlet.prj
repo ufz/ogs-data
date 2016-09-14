@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>cube_1x1x1_hex_1e5.vtu</mesh>
-    <geometry>cube_1x1x1.gml</geometry>
+    <mesh>line_1_line_1e1.vtu</mesh>
+    <geometry>line_1.gml</geometry>
 
     <processes>
         <process>
@@ -33,20 +33,23 @@
 
                 <output>
                     <variables>
-                        <variable> pressure </variable>
-                        <variable> v_x      </variable>
+                        <variable>pressure</variable>
+                        <variable>v_x</variable>
                     </variables>
                 </output>
             </process>
         </processes>
 
         <time_stepping>
-            <type>SingleStep</type>
+            <type>FixedTimeStepping</type>
+            <t_initial>0.0</t_initial>
+            <t_end>10.0</t_end>
+            <timesteps><pair><delta_t>1.0</delta_t><repeat>1</repeat></pair></timesteps>
         </time_stepping>
 
         <output>
             <type>VTK</type>
-            <prefix>cube_1e5</prefix>
+            <prefix>line_1e1_time_dep_dirichlet</prefix>
         </output>
     </time_loop>
 
@@ -65,14 +68,28 @@
         <parameter>
             <name>p_Dirichlet_left</name>
             <type>Constant</type>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>p_Dirichlet_right_spatial</name>
+            <type>Constant</type>
             <value>1</value>
         </parameter>
         <parameter>
             <name>p_Dirichlet_right</name>
-            <type>Constant</type>
-            <value>-1</value>
+            <type>CurveScaled</type>
+            <curve>p_Dirichlet_right_temporal</curve>
+            <parameter>p_Dirichlet_right_spatial</parameter>
         </parameter>
     </parameters>
+
+    <curves>
+        <curve>
+            <name>p_Dirichlet_right_temporal</name>
+            <coords>0.0 10.0</coords>
+            <values>0.0 10.0</values>
+        </curve>
+    </curves>
 
     <process_variables>
         <process_variable>
@@ -83,14 +100,14 @@
 
             <boundary_conditions>
                 <boundary_condition>
-                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
+                    <geometrical_set>line_1_geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_left</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
-                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
+                    <geometrical_set>line_1_geometry</geometrical_set>
                     <geometry>right</geometry>
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_right</parameter>

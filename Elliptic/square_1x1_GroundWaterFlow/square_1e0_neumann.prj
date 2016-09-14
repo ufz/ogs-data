@@ -68,6 +68,11 @@
             <type>Constant</type>
             <value>1</value>
         </parameter>
+        <parameter>
+            <name>p_Dirichlet</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -81,15 +86,15 @@
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>1</value>
+                    <type>Dirichlet</type>
+                    <parameter>p_Dirichlet</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
-                    <type>UniformDirichlet</type>
-                    <value>1</value>
+                    <type>Dirichlet</type>
+                    <parameter>p_Dirichlet</parameter>
                 </boundary_condition>
 
                 <boundary_condition>

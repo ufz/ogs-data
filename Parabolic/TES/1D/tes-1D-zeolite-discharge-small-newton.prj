@@ -11,7 +11,7 @@
             <jacobian_assembler>
                 <type>CentralDifferences</type>
                 <component_magnitudes>1e5 3e2 1e-2</component_magnitudes>
-                <relative_tolerances>1e-8 1e-8 1e-8</relative_tolerances>
+                <relative_epsilons>1e-8 1e-8 1e-8</relative_epsilons>
             </jacobian_assembler>
 
             <process_variables>

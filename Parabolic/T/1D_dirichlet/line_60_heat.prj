@@ -102,7 +102,7 @@
                     <geometrical_set>line_60_geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
-                    <parameter>T1</value>
+                    <parameter>T1</parameter>
                 </boundary_condition>
             </boundary_conditions>
 

@@ -7,6 +7,7 @@
         <process>
             <name>SD</name>
             <type>SMALL_DEFORMATION</type>
+            <integration_order>2</integration_order>
             <dimension>2</dimension>
 
             <constitutive_relation>

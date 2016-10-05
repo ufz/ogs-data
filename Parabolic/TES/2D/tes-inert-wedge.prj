@@ -7,6 +7,7 @@
         <process>
             <name>TES_pcs</name>
             <type>TES</type>
+            <integration_order>2</internal_name>
 
             <process_variables>
                 <fluid_pressure>       pressure    </fluid_pressure>

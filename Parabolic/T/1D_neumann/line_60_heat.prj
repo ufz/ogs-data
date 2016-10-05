@@ -7,6 +7,7 @@
         <process>
             <name>HeatConduction</name>
             <type>HEAT_CONDUCTION</type>
+            <integration_order>2</integration_order>
 
             <thermal_conductivity>K</thermal_conductivity>  
             <heat_capacity>Cp</heat_capacity>

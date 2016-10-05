@@ -7,6 +7,7 @@
         <process>
             <name>GW23</name>
             <type>GROUNDWATER_FLOW</type>
+            <integration_order>2</integration_order>
 
             <hydraulic_conductivity>lambda</hydraulic_conductivity>
 

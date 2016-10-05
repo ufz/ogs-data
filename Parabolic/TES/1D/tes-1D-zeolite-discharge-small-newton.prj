@@ -7,6 +7,7 @@
         <process>
             <name>TES_pcs</name>
             <type>TES</type>
+            <integration_order>2</integration_order>
 
             <jacobian_assembler>
                 <type>CentralDifferences</type>

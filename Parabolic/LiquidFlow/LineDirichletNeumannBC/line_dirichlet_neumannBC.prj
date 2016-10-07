@@ -19,16 +19,14 @@
 
             <material_property>
                 <fluid>
-                    <fluid>
-                        <density>
-                            <type>Constant</type>
-                            <value> 1.e3 </value>
-                        </density>
-                        <viscosity>
-                            <type>Constant</type>
-                            <value> 1.e-3 </value>
-                        </viscosity>
-                    </fluid>
+                    <density>
+                        <type>Constant</type>
+                        <value> 1.e3 </value>
+                    </density>
+                    <viscosity>
+                        <type>Constant</type>
+                        <value> 1.e-3 </value>
+                    </viscosity>
                 </fluid>
                 <porous_medium>
                     <porous_medium>

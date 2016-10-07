@@ -20,16 +20,14 @@
 
             <material_property>
                 <fluid>
-                    <fluid>
-                        <density>
-                            <type>Constant</type>
-                            <value> 1.0 </value>
-                        </density>
-                        <viscosity>
-                            <type>Constant</type>
-                            <value> 1.0 </value>
-                        </viscosity>
-                    </fluid>
+                    <density>
+                        <type>Constant</type>
+                        <value> 1.0 </value>
+                    </density>
+                    <viscosity>
+                        <type>Constant</type>
+                        <value> 1.0 </value>
+                    </viscosity>
                 </fluid>
                 <porous_medium>
                     <porous_medium>

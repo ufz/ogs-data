@@ -7,6 +7,7 @@
         <process>
             <name>LiquidFlow</name>
             <type>LIQUID_FLOW</type>
+            <integration_order>2</integration_order>
             <gravitational_term> disabled </gravitational_term>
 
             <process_variables>

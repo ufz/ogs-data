@@ -9,7 +9,7 @@
             <type>LIQUID_FLOW</type>
             <integration_order>2</integration_order>
 
-            <gravitational_term> disabled </gravitational_term>
+            <gravitational_term axis="none" g="9.81" />
 
             <process_variables>
                 <process_variable>pressure</process_variable>
@@ -31,7 +31,7 @@
                     </viscosity>
                 </fluid>
                 <porous_medium>
-                    <porous_medium>
+                    <porous_medium id="0">
                         <permeability>
                             <values>1.e-12</values>
                         </permeability>

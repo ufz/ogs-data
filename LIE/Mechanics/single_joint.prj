@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>single_joint_beta50.msh</mesh>
+    <mesh>single_joint_beta50.vtu</mesh>
     <geometry>single_joint.gml</geometry>
 
     <processes>

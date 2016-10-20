@@ -20,7 +20,7 @@
             </secondary_variables>
             <calculatesurfaceflux>
                 <mesh>cube_1x1x1_prism_2e3_complete_surface.vtu</mesh>
-                <property_name>surfaceflux</property_name>
+                <property_name>surfaceflux_left_right</property_name>
                 <output_mesh>cube_1x1x1_prism_2e3_complete_surface_left_right_dirichlet_surfaceflux.vtu</output_mesh>
             </calculatesurfaceflux>
         </process>
@@ -52,7 +52,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>cube_2e3_surface_flux</prefix>
+            <prefix>cube_2e3_surface_flux_left_right</prefix>
         </output>
     </time_loop>
 

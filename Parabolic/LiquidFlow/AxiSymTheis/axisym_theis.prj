@@ -8,7 +8,8 @@
             <name>LiquidFlow</name>
             <type>LIQUID_FLOW</type>
             <integration_order>2</integration_order>
-            <gravitational_term axis="none" g="9.81" />
+
+            <darcy_gravity_vector>0. 0.</darcy_gravity_vector>
 
             <process_variables>
                 <process_variable>pressure</process_variable>

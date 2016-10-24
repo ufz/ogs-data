@@ -10,21 +10,31 @@
             <type>DensityDrivenFlow</type>
             <integration_order>2</integration_order>
 
-            <thermal_conductivity>K</thermal_conductivity>
-	    <!--<new_param>NP</new_param>-->
+            <porosity>poro</porosity>
+            <intrinsic_permeability>kappa</intrinsic_permeability>
+            <storage>S</storage>
+            <viscosity>mu</viscosity>
+            <reference_temperature>reference_temperature</reference_temperature>
+            <density_solid>rho_solid</density_solid>
+            <density_fluid>rho_fluid</density_fluid>
+            <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
+            <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
+            <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
+            <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
+            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
 
-         <!--   <nonlinear_solver>basic_picard</nonlinear_solver>
-            <time_discretization><type>BackwardEuler</type></time_discretization> -->
-
-	    <process_variables>
-		    <temperature_variable>temperature</temperature_variable>
-		    <pressure_variable>pressure</pressure_variable>
-	    </process_variables>
+            <process_variables>
+                <temperature_variable>temperature</temperature_variable>
+                <pressure_variable>pressure</pressure_variable>
+            </process_variables>
 
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y" />
             </secondary_variables>
+
+            <specific_body_force>gravity</specific_body_force>
+
         </process>
     </processes>
 
@@ -45,7 +55,7 @@
                       <variable>pressure</variable>
                       <variable>darcy_velocity_x</variable>
                       <variable>darcy_velocity_y</variable>
-                    </variables> 
+                    </variables>
                 </output>
             </process>
         </processes>
@@ -95,15 +105,65 @@
 
     <parameters>
         <parameter>
-            <name>K</name>
+            <name>poro</name>
             <type>Constant</type>
-            <value>3.2</value>
-       </parameter>
-        <!--<parameter>
-            <name>NP</name>
+            <value>0.001</value>
+        </parameter>
+        <parameter>
+            <name>kappa</name>
             <type>Constant</type>
-            <value>3.2</value>
-        </parameter>-->
+            <value>1e-14</value>
+        </parameter>
+        <parameter>
+            <name>S</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>mu</name>
+            <type>Constant</type>
+            <value>1.0e-3</value>
+        </parameter>
+        <parameter>
+            <name>reference_temperature</name>
+            <type>Constant</type>
+            <value>20</value>
+        </parameter>
+        <parameter>
+            <name>rho_solid</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>rho_fluid</name>
+            <type>Constant</type>
+            <value>1000</value>
+        </parameter>
+        <parameter>
+            <name>lambda_solid</name>
+            <type>Constant</type>
+            <value>3.0</value>
+        </parameter>
+        <parameter>
+            <name>lambda_fluid</name>
+            <type>Constant</type>
+            <value>0.65</value>
+        </parameter>
+        <parameter>
+            <name>c_solid</name>
+            <type>Constant</type>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>c_fluid</name>
+            <type>Constant</type>
+            <value>4200</value>
+        </parameter>
+        <parameter>
+            <name>beta</name>
+            <type>Constant</type>
+            <value>4.3e-4</value>
+        </parameter>
        <parameter>
             <name>T0</name>
             <type>MeshNode</type>
@@ -133,13 +193,19 @@
             <type>Constant</type>
             <value>20</value>
         </parameter>
+
+        <parameter>
+            <name>gravity</name>
+            <type>Constant</type>
+            <values>0 -9.81</values>
+        </parameter>
     </parameters>
 
      <process_variables>
         <process_variable>
             <name>temperature</name>
             <components>1</components>
-
+            <order>1</order>
             <initial_condition>T0</initial_condition>
 
             <boundary_conditions>
@@ -165,6 +231,7 @@
         <process_variable>
             <name>pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>P0</initial_condition>
 

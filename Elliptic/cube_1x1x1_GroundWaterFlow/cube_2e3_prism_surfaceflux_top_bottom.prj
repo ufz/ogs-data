@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>cube_1x1x1_hex_1e3.vtu</mesh>
+    <mesh>cube_1x1x1_prism_2e3.vtu</mesh>
     <geometry>cube_1x1x1.gml</geometry>
 
     <processes>
@@ -18,11 +18,10 @@
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
             </secondary_variables>
-
             <calculatesurfaceflux>
-                <mesh>cube_1x1x1_hex_1e3_complete_surface.vtu</mesh>
-                <property_name>surfaceflux</property_name>
-                <output_mesh>cube_1x1x1_hex_1e3_complete_surface_left_right_dirichlet_surfaceflux.vtu</output_mesh>
+                <mesh>cube_1x1x1_prism_2e3_complete_surface.vtu</mesh>
+                <property_name>surfaceflux_top_bottom</property_name>
+                <output_mesh>cube_1x1x1_prism_2e3_complete_surface_top_bottom_dirichlet_surfaceflux.vtu</output_mesh>
             </calculatesurfaceflux>
         </process>
     </processes>
@@ -53,7 +52,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>cube_1e3</prefix>
+            <prefix>cube_2e3_surface_flux_top_bottom</prefix>
         </output>
     </time_loop>
 
@@ -70,12 +69,12 @@
             <value>0</value>
         </parameter>
         <parameter>
-            <name>p_Dirichlet_left</name>
+            <name>p_Dirichlet_top</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
         <parameter>
-            <name>p_Dirichlet_right</name>
+            <name>p_Dirichlet_bottom</name>
             <type>Constant</type>
             <value>-1</value>
         </parameter>
@@ -91,16 +90,16 @@
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>left</geometry>
+                    <geometry>top</geometry>
                     <type>Dirichlet</type>
-                    <parameter>p_Dirichlet_left</parameter>
+                    <parameter>p_Dirichlet_top</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>right</geometry>
+                    <geometry>bottom</geometry>
                     <type>Dirichlet</type>
-                    <parameter>p_Dirichlet_right</parameter>
+                    <parameter>p_Dirichlet_bottom</parameter>
                 </boundary_condition>
             </boundary_conditions>
 

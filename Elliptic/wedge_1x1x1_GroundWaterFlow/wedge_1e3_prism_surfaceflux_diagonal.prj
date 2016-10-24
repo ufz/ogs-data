@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>cube_1x1x1_hex_1e3.vtu</mesh>
-    <geometry>cube_1x1x1.gml</geometry>
+    <mesh>wedge_1x1x1_1e3_prism.vtu</mesh>
+    <geometry>wedge_1x1x1.gml</geometry>
 
     <processes>
         <process>
@@ -20,9 +20,9 @@
             </secondary_variables>
 
             <calculatesurfaceflux>
-                <mesh>cube_1x1x1_hex_1e3_complete_surface.vtu</mesh>
+                <mesh>wedge_1x1x1_1e3_prism_complete_surface.vtu</mesh>
                 <property_name>surfaceflux</property_name>
-                <output_mesh>cube_1x1x1_hex_1e3_complete_surface_left_right_dirichlet_surfaceflux.vtu</output_mesh>
+                <output_mesh>wedge_1x1x1_1e3_prism_complete_surface_surfaceflux.vtu</output_mesh>
             </calculatesurfaceflux>
         </process>
     </processes>
@@ -53,7 +53,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>cube_1e3</prefix>
+            <prefix>wedge_1e3_surfaceflux</prefix>
         </output>
     </time_loop>
 
@@ -70,14 +70,14 @@
             <value>0</value>
         </parameter>
         <parameter>
-            <name>p_Dirichlet_left</name>
+            <name>p_Dirichlet_line</name>
             <type>Constant</type>
-            <value>1</value>
+            <value>0</value>
         </parameter>
         <parameter>
-            <name>p_Dirichlet_right</name>
+            <name>p_Dirichlet_diagonal_surface</name>
             <type>Constant</type>
-            <value>-1</value>
+            <value>1</value>
         </parameter>
     </parameters>
 
@@ -90,17 +90,17 @@
 
             <boundary_conditions>
                 <boundary_condition>
-                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>left</geometry>
+                    <geometrical_set>wedge_1x1x1_geometry</geometrical_set>
+                    <geometry>left-front-top-bottom</geometry>
                     <type>Dirichlet</type>
-                    <parameter>p_Dirichlet_left</parameter>
+                    <parameter>p_Dirichlet_line</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
-                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>right</geometry>
+                    <geometrical_set>wedge_1x1x1_geometry</geometrical_set>
+                    <geometry>diagonal-left-front--right-back</geometry>
                     <type>Dirichlet</type>
-                    <parameter>p_Dirichlet_right</parameter>
+                    <parameter>p_Dirichlet_diagonal_surface</parameter>
                 </boundary_condition>
             </boundary_conditions>
 

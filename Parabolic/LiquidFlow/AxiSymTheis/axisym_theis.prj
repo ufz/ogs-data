@@ -12,7 +12,7 @@
             <darcy_gravity>
                <!-- axis_id: 0, 1, or the dimension of space minus one -->
                <axis_id>1</axis_id>
-               <!-- g<=0. g=0: non gravity term -->
+               <!-- g>=0. g=0: non gravity term -->
                <g>0.</g>
             </darcy_gravity>
 

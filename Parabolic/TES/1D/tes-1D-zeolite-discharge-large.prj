@@ -158,6 +158,7 @@
         <process_variable>
             <name>pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>p_in</initial_condition>
 
@@ -183,6 +184,7 @@
         <process_variable>
             <name>temperature</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>T_in</initial_condition>
 
@@ -201,6 +203,7 @@
         <process_variable>
             <name>v_mass_frac</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>xmV_in</initial_condition>
 

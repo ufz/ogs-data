@@ -118,6 +118,7 @@
         <process_variable>
             <name>pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>p0</initial_condition>
 

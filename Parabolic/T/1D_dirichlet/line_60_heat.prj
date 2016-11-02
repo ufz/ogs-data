@@ -95,6 +95,7 @@
         <process_variable>
             <name>temperature</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>T0</initial_condition>
 

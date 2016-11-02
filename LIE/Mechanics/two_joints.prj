@@ -138,6 +138,7 @@
         <process_variable>
             <name>displacement</name>
             <components>2</components>
+            <order>1</order>
 
             <initial_condition>displacement0</initial_condition>
 
@@ -175,6 +176,7 @@
         <process_variable>
             <name>displacement_jump1</name>
             <components>2</components>
+            <order>1</order>
 
             <initial_condition>displacement0</initial_condition>
 
@@ -189,6 +191,7 @@
         <process_variable>
             <name>displacement_jump2</name>
             <components>2</components>
+            <order>1</order>
 
             <initial_condition>displacement0</initial_condition>
 

@@ -71,6 +71,9 @@
             <prefix>square_1e2</prefix>
             <timesteps>
                 <pair><repeat>1</repeat><each_steps>1</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>19</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>100</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>300</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>

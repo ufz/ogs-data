@@ -12,20 +12,20 @@
 
             <porosity>poro</porosity>
             <intrinsic_permeability>kappa</intrinsic_permeability>
-            <storage>S</storage>
+            <specific_storage>S</specific_storage>
             <viscosity>mu</viscosity>
-            <reference_temperature>reference_temperature</reference_temperature>
+            <reference_temperature_fluid_density_model>reference_temperature</reference_temperature_fluid_density_model>
             <density_solid>rho_solid</density_solid>
             <density_fluid>rho_fluid</density_fluid>
             <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
             <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
-            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
+            <thermal_expansion_coefficient_fluid>beta</thermal_expansion_coefficient_fluid>
 
             <process_variables>
-                <temperature_variable>temperature</temperature_variable>
-                <pressure_variable>pressure</pressure_variable>
+                <temperature>temperature</temperature>
+                <pressure>pressure</pressure>
             </process_variables>
 
             <secondary_variables>

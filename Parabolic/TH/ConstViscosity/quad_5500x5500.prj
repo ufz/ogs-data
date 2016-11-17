@@ -22,6 +22,7 @@
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
             <thermal_expansion_coefficient_fluid>beta</thermal_expansion_coefficient_fluid>
+            <specific_body_force>0 -9.81</specific_body_force>
 
             <process_variables>
                 <temperature>temperature</temperature>
@@ -32,9 +33,6 @@
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y" />
             </secondary_variables>
-
-            <specific_body_force>gravity</specific_body_force>
-
         </process>
     </processes>
 
@@ -193,12 +191,6 @@
             <type>Constant</type>
             <value>20</value>
         </parameter>
-
-        <parameter>
-            <name>gravity</name>
-            <type>Constant</type>
-            <values>0 -9.81</values>
-        </parameter>
     </parameters>
 
      <process_variables>
@@ -309,8 +301,5 @@
             </petsc>
         </linear_solver>
     </linear_solvers> 
-
-
-
 
 </OpenGeoSysProject>

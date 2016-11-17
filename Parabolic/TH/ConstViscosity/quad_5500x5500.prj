@@ -6,8 +6,8 @@
 
     <processes>
         <process>
-            <name>ThermalConvection</name>
-            <type>DensityDrivenFlow</type>
+            <name>ConstViscosityThermalConvection</name>
+            <type>HT</type>
             <integration_order>2</integration_order>
 
             <porosity>poro</porosity>
@@ -38,7 +38,7 @@
 
     <time_loop>
         <processes>
-            <process ref="ThermalConvection">
+            <process ref="ConstViscosityThermalConvection">
                 <nonlinear_solver>basic_picard</nonlinear_solver>
                 <convergence_criterion>
                     <type>DeltaX</type>
@@ -93,7 +93,7 @@
 
        <output>
            <type>VTK</type>
-           <prefix>ThermalConvection</prefix>
+           <prefix>ConstViscosityThermalConvection</prefix>
            <timesteps>
                <pair><repeat> 1 </repeat><each_steps> 149 </each_steps></pair>
            </timesteps>

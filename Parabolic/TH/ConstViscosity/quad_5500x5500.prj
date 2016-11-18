@@ -6,41 +6,39 @@
 
     <processes>
         <process>
-            <name>ThermalConvection</name>
-            <type>DensityDrivenFlow</type>
+            <name>ConstViscosityThermalConvection</name>
+            <type>HT</type>
             <integration_order>2</integration_order>
 
             <porosity>poro</porosity>
             <intrinsic_permeability>kappa</intrinsic_permeability>
-            <storage>S</storage>
+            <specific_storage>S</specific_storage>
             <viscosity>mu</viscosity>
-            <reference_temperature>reference_temperature</reference_temperature>
+            <reference_temperature_fluid_density_model>reference_temperature</reference_temperature_fluid_density_model>
             <density_solid>rho_solid</density_solid>
             <density_fluid>rho_fluid</density_fluid>
             <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
             <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
-            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
+            <thermal_expansion_coefficient_fluid>beta</thermal_expansion_coefficient_fluid>
+            <specific_body_force>0 -9.81</specific_body_force>
 
             <process_variables>
-                <temperature_variable>temperature</temperature_variable>
-                <pressure_variable>pressure</pressure_variable>
+                <temperature>temperature</temperature>
+                <pressure>pressure</pressure>
             </process_variables>
 
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y" />
             </secondary_variables>
-
-            <specific_body_force>gravity</specific_body_force>
-
         </process>
     </processes>
 
     <time_loop>
         <processes>
-            <process ref="ThermalConvection">
+            <process ref="ConstViscosityThermalConvection">
                 <nonlinear_solver>basic_picard</nonlinear_solver>
                 <convergence_criterion>
                     <type>DeltaX</type>
@@ -95,7 +93,7 @@
 
        <output>
            <type>VTK</type>
-           <prefix>ThermalConvection</prefix>
+           <prefix>ConstViscosityThermalConvection</prefix>
            <timesteps>
                <pair><repeat> 1 </repeat><each_steps> 149 </each_steps></pair>
            </timesteps>
@@ -192,12 +190,6 @@
             <name>t_Dirichlet_top</name>
             <type>Constant</type>
             <value>20</value>
-        </parameter>
-
-        <parameter>
-            <name>gravity</name>
-            <type>Constant</type>
-            <values>0 -9.81</values>
         </parameter>
     </parameters>
 
@@ -309,8 +301,5 @@
             </petsc>
         </linear_solver>
     </linear_solvers> 
-
-
-
 
 </OpenGeoSysProject>

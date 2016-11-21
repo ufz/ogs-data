@@ -169,8 +169,6 @@
 
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
         </process_variable>
 
         <process_variable>
@@ -183,8 +181,6 @@
             <boundary_conditions>
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
             
         </process_variable>
 
@@ -198,8 +194,6 @@
             <boundary_conditions>
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
             
         </process_variable>
     </process_variables>

@@ -107,8 +107,6 @@
                 </boundary_condition>
            </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
         </process_variable>
     </process_variables>
 

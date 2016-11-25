@@ -309,8 +309,6 @@
                     <parameter>zero_u</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
-            
         </process_variable>
     </process_variables>
 
@@ -326,15 +324,11 @@
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
+            <lis>-i bicgstab -p ssor -ssor_w 1.5 -tol 1e-12 -maxiter 100000</lis>
             <eigen>
                 <!--
                 <solver_type>PardisoLU</solver_type>
                 <precon_type>NONE</precon_type>
-                -->
-                <!--
-                <solver_type>BiCGSTAB</solver_type>
-                <precon_type>ILUT</precon_type>
-                <scaling>1</scaling>
                 -->
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>ILUT</precon_type>

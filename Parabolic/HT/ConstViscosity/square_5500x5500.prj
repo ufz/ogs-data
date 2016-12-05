@@ -2,7 +2,7 @@
 
 <OpenGeoSysProject>
     <mesh>square_5500x5500.vtu</mesh>
-    <geometry>quad_5500x5500.gml</geometry>
+    <geometry>square_5500x5500.gml</geometry>
 
     <processes>
         <process>

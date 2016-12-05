@@ -258,39 +258,6 @@
         </nonlinear_solver>
     </nonlinear_solvers>
 
-   <!-- <linear_solvers>
-        <linear_solver>
-            <name>general_linear_solver</name>
-            <lis>-i bicgstab -p ilu -tol 1e-6 -maxiter 10000 -print mem</lis>
-            <eigen>
-                <solver_type>        CG </solver_type>
-                <precon_type>        ilu      </precon_type>
-                <max_iteration_step> 10000    </max_iteration_step>
-                <error_tolerance>    1e-6   </error_tolerance>
-            </eigen>
-            <petsc>
-                <prefix>tes</prefix>
-                <parameters>-tes_ksp_type cg -tes_pc_type bjacobi -tes_ksp_rtol 1e-6 -tes_ksp_max_it 10000</parameters>
-            </petsc>
-        </linear_solver>
-    </linear_solvers>  -->
-
-  <!-- <linear_solvers>
-        <linear_solver>
-            <name>general_linear_solver</name>
-            <lis>-i bicgstab -p ilu -tol 1e-4 -maxiter 10000 -print mem</lis>
-            <eigen>
-                <solver_type>        CG </solver_type>
-                <precon_type>        DIAGONAL     </precon_type>
-                <max_iteration_step> 10000    </max_iteration_step>
-                <error_tolerance>    1e-4   </error_tolerance>
-            </eigen>
-            <petsc>
-                <prefix>tes</prefix>
-                <parameters>-tes_ksp_type cg -tes_pc_type bjacobi -tes_ksp_rtol 1e-16 -tes_ksp_max_it 10000</parameters>
-            </petsc>
-        </linear_solver>
-    </linear_solvers>  -->
 
 
    <linear_solvers>

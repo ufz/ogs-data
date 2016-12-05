@@ -26,8 +26,10 @@
             <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
+            <!--
             <thermal_dispersivity_longitudinal>alpha_l</thermal_dispersivity_longitudinal>
             <thermal_dispersivity_transversal>alpha_t</thermal_dispersivity_transversal>
+            -->
             <thermal_expansion_coefficient_fluid>beta</thermal_expansion_coefficient_fluid>
             <specific_body_force>0 -9.81</specific_body_force>
 
@@ -148,6 +150,7 @@
             <type>Constant</type>
             <value>0.65</value>
         </parameter>
+        <!--
         <parameter>
             <name>alpha_l</name>
             <type>Constant</type>
@@ -158,6 +161,7 @@
             <type>Constant</type>
                 <value>0.0</value>
         </parameter>
+        -->
         <parameter>
             <name>c_solid</name>
             <type>Constant</type>

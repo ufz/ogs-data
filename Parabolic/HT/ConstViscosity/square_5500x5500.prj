@@ -10,6 +10,11 @@
             <type>HT</type>
             <integration_order>2</integration_order>
 
+            <process_variables>
+                <temperature>T</temperature>
+                <pressure>p</pressure>
+            </process_variables>
+
             <porosity>poro</porosity>
             <intrinsic_permeability>kappa</intrinsic_permeability>
             <specific_storage>S</specific_storage>
@@ -25,11 +30,6 @@
             <thermal_dispersivity_transversal>alpha_t</thermal_dispersivity_transversal>
             <thermal_expansion_coefficient_fluid>beta</thermal_expansion_coefficient_fluid>
             <specific_body_force>0 -9.81</specific_body_force>
-
-            <process_variables>
-                <temperature>temperature</temperature>
-                <pressure>pressure</pressure>
-            </process_variables>
 
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
@@ -51,8 +51,8 @@
 
                 <output>
                     <variables>
-                      <variable>temperature</variable>
-                      <variable>pressure</variable>
+                      <variable>T</variable>
+                      <variable>p</variable>
                       <variable>darcy_velocity_x</variable>
                       <variable>darcy_velocity_y</variable>
                     </variables>
@@ -207,7 +207,7 @@
 
      <process_variables>
         <process_variable>
-            <name>temperature</name>
+            <name>T</name>
             <components>1</components>
             <order>1</order>
             <initial_condition>T0</initial_condition>
@@ -231,7 +231,7 @@
         </process_variable>
 
         <process_variable>
-            <name>pressure</name>
+            <name>p</name>
             <components>1</components>
             <order>1</order>
 

@@ -101,7 +101,7 @@
             <value>1e3</value>
         </parameter>
         <!--
-        fluid compressibility 4.4e-10 
+        fluid compressibility 4.4e-10
         -->
         <parameter>
             <name>mu</name>
@@ -148,7 +148,7 @@
             <value>0.3275</value>
         </parameter>
         <!--
-        K=5.9GPa, G=2.3GPa 
+        K=5.9GPa, G=2.3GPa
         -->
 
 

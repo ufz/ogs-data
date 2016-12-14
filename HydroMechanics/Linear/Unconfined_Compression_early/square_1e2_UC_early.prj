@@ -182,15 +182,15 @@
                     <type>Dirichlet</type>
                     <component>1</component>
                     <parameter>displacementTop</parameter>
-                </boundary_condition>   
-            </boundary_conditions> 
+                </boundary_condition>
+            </boundary_conditions>
 
         </process_variable>
 
         <process_variable>
             <name>pressure</name>
             <components>1</components>
-            <order>1</order>      
+            <order>1</order>
 
             <initial_condition>pressure_ic</initial_condition>
 
@@ -201,7 +201,7 @@
                     <type>Dirichlet</type>
                     <component>0</component>
                     <parameter>dirichlet0</parameter>
-                </boundary_condition> 
+                </boundary_condition>
             </boundary_conditions>
 
         </process_variable>

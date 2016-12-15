@@ -165,7 +165,7 @@
             </eigen>
             <petsc>
                 <prefix>lf</prefix>
-                <parameters>-lf_ksp_type cg -gw_pc_type bjacobi -lf_ksp_rtol 1e-16 -lf_ksp_max_it 10000</parameters>
+                <parameters>-lf_ksp_type cg -lf_pc_type bjacobi -lf_ksp_rtol 1e-16 -lf_ksp_max_it 10000</parameters>
             </petsc>
         </linear_solver>
     </linear_solvers>

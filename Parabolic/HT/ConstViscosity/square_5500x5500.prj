@@ -29,7 +29,13 @@
                </viscosity>
            </fluid>
 
-            <porosity>poro</porosity>
+            <porous_medium>
+                    <porosity>
+                        <type>Constant</type>
+                        <value>0.001</value>
+                    </porosity>
+            </porous_medium>
+
             <intrinsic_permeability>kappa</intrinsic_permeability>
             <specific_storage>S</specific_storage>
             <density_solid>rho_solid</density_solid>
@@ -114,11 +120,6 @@
     </time_loop>
 
     <parameters>
-        <parameter>
-            <name>poro</name>
-            <type>Constant</type>
-            <value>0.001</value>
-        </parameter>
         <parameter>
             <name>kappa</name>
             <type>Constant</type>

@@ -30,6 +30,7 @@
            </fluid>
 
             <porous_medium>
+               <porous_medium id="0">
                     <permeability>
                         <values>1.e-14 0 0 1.e-14</values>
                     </permeability>
@@ -41,6 +42,7 @@
                         <type>Constant</type>
                         <value>0.0</value>
                     </storage>
+                </porous_medium>
             </porous_medium>
 
             <!--intrinsic_permeability>kappa</intrinsic_permeability-->

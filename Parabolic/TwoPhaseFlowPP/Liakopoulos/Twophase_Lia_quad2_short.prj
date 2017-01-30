@@ -63,7 +63,7 @@
                             </curve>
                         </capillary_pressure>
                         <relative_permeability>
-						    <relative_permeability id="0">
+                            <relative_permeability id="0">
                                 <type>Curve</type>
                                 <curve>
                                     <coords>0.5    0.526315789    0.552631579    0.578947368    0.605263158    0.631578947    0.657894737    0.684210526    0.710526316    0.736842105    0.763157895    0.789473684    0.815789474    0.842105263    0.868421053    0.894736842    0.921052632    0.947368421    0.973684211    1
@@ -72,7 +72,7 @@
                                     </values>
                                 </curve>
                             </relative_permeability>
-						    <relative_permeability id="1">
+                            <relative_permeability id="1">
                                 <type>Curve</type>
                                 <curve>
                                     <coords>0.575    0.6    0.625    0.65    0.675    0.7    0.725    0.75    0.775    0.8    0.825    0.85    0.875    0.9    0.925    0.95    0.975    1
@@ -94,7 +94,8 @@
             <specific_body_force>0 -9.81</specific_body_force>
             <mass_lumping> true </mass_lumping>
             <diffusion_coeff_componentb> diff_coef_b </diffusion_coeff_componentb>
-			<diffusion_coeff_componenta> diff_coef_a </diffusion_coeff_componenta>
+            <diffusion_coeff_componenta> diff_coef_a </diffusion_coeff_componenta>
+             <temperature> temp </temperature>
         </process>
     </processes>
 
@@ -129,10 +130,15 @@
             <type>Constant</type>
             <value>0.0</value>
         </parameter>
-		<parameter>
+        <parameter>
             <name>diff_coef_a</name>
             <type>Constant</type>
             <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>temp</name>
+            <type>Constant</type>
+            <value>293.15</value>
         </parameter>
     </parameters>
 

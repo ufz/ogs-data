@@ -15,20 +15,44 @@
                 <pressure>p</pressure>
             </process_variables>
 
-            <porosity>poro</porosity>
-            <intrinsic_permeability>kappa</intrinsic_permeability>
-            <specific_storage>S</specific_storage>
-            <viscosity>mu</viscosity>
-            <reference_temperature_fluid_density_model>reference_temperature</reference_temperature_fluid_density_model>
+
+           <fluid>
+               <density>
+                   <type>TemperatureDependent</type>
+                   <rho0>1000</rho0>
+                   <temperature0>20</temperature0>
+                   <beta>4.3e-4</beta>
+               </density>
+               <viscosity>
+                   <type>Constant</type>
+                   <value>1.0e-3</value>
+               </viscosity>
+           </fluid>
+
+            <porous_medium>
+               <porous_medium id="0">
+                    <permeability>
+                        <values>1.e-14 0 0 1.e-14</values>
+                    </permeability>
+                    <porosity>
+                        <type>Constant</type>
+                        <value>0.001</value>
+                    </porosity>
+                    <storage>
+                        <type>Constant</type>
+                        <value>0.0</value>
+                    </storage>
+                </porous_medium>
+            </porous_medium>
+
             <density_solid>rho_solid</density_solid>
-            <density_fluid>rho_fluid</density_fluid>
+            <fluid_reference_density>rho_fluid</fluid_reference_density>
             <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
             <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
             <thermal_dispersivity_longitudinal>alpha_l</thermal_dispersivity_longitudinal>
             <thermal_dispersivity_transversal>alpha_t</thermal_dispersivity_transversal>
-            <thermal_expansion_coefficient_fluid>beta</thermal_expansion_coefficient_fluid>
             <specific_body_force>0 -9.81</specific_body_force>
 
             <secondary_variables>
@@ -104,31 +128,6 @@
 
     <parameters>
         <parameter>
-            <name>poro</name>
-            <type>Constant</type>
-            <value>0.001</value>
-        </parameter>
-        <parameter>
-            <name>kappa</name>
-            <type>Constant</type>
-            <value>1e-14</value>
-        </parameter>
-        <parameter>
-            <name>S</name>
-            <type>Constant</type>
-            <value>0.0</value>
-        </parameter>
-        <parameter>
-            <name>mu</name>
-            <type>Constant</type>
-            <value>1.0e-3</value>
-        </parameter>
-        <parameter>
-            <name>reference_temperature</name>
-            <type>Constant</type>
-            <value>20</value>
-        </parameter>
-        <parameter>
             <name>rho_solid</name>
             <type>Constant</type>
             <value>0.0</value>
@@ -167,11 +166,6 @@
             <name>c_fluid</name>
             <type>Constant</type>
             <value>4200</value>
-        </parameter>
-        <parameter>
-            <name>beta</name>
-            <type>Constant</type>
-            <value>4.3e-4</value>
         </parameter>
        <parameter>
             <name>T0</name>

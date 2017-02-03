@@ -1,17 +1,6 @@
 <?xml version="1.0"?>
 <VTKFile type="UnstructuredGrid" version="1.0" byte_order="LittleEndian" header_type="UInt64" compressor="vtkZLibDataCompressor">
   <UnstructuredGrid>
-    <FieldData>
-      <DataArray type="Int32" Name="ElementBlockIds" NumberOfTuples="1" format="binary" RangeMin="1" RangeMax="1">
-        AQAAAAAAAAAAgAAAAAAAAAQAAAAAAAAADAAAAAAAAAA=eJxjZGBgAAAACAAC
-      </DataArray>
-      <DataArray type="Int8" Name="QA_Records" NumberOfComponents="33" NumberOfTuples="4" format="binary" RangeMin="97.066987179" RangeMax="168.68609901">
-        AQAAAAAAAAAAgAAAAAAAAIQAAAAAAAAALAAAAAAAAAA=eJxzDnXyDGHAAwyN9QzwyTMYWOobmugbGRia4TLB1MrE0srAHKcJALKvBd0=
-      </DataArray>
-      <Array type="String" Name="Title" NumberOfTuples="1" format="binary">
-        AQAAAAAAAAAAgAAAAAAAAEYAAAAAAAAATgAAAAAAAAA=eJxLLk3KLNFwttIPLU4tKtbPS0xPzSnRd0ktzi7JL9B3ycxN1C8sTUyxiDc0MNBL17RSMLDUNzTRNzIwNLNSMDS1MrG0MjBnAAA6jBRy
-      </Array>
-    </FieldData>
     <Piece NumberOfPoints="341" NumberOfCells="100">
       <PointData>
       </PointData>

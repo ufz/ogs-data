@@ -53,7 +53,7 @@
                             <type>Constant</type>
                             <value> 0.0 </value>
                         </storage>
-                       <capillary_pressure>
+                        <capillary_pressure>
                             <type>Curve</type>
                             <curve>
                                 <coords>0.900000007    0.910000009    0.920000003    0.929821599    0.939999996    0.950000006    0.960000005    0.97    0.980000004    0.982500005    0.984999999    0.9875    0.989999997    0.9925    0.995000002    0.997499999    0.99962099    1
@@ -64,13 +64,11 @@
                         </capillary_pressure>
                         <relative_permeability>
                             <relative_permeability id="0">
-                                <type>Curve</type>
-                                <curve>
-                                    <coords>0.5    0.526315789    0.552631579    0.578947368    0.605263158    0.631578947    0.657894737    0.684210526    0.710526316    0.736842105    0.763157895    0.789473684    0.815789474    0.842105263    0.868421053    0.894736842    0.921052632    0.947368421    0.973684211    1
-                                    </coords>
-                                    <values>0.314450055    0.271936357    0.23287969    0.197274783    0.165088789    0.136262934    0.110713898    0.088335002    0.068997233    0.052550139    0.03882262    0.027623632    0.018742814    0.011951062    0.007001038    0.003627644    0.001548453    0.000464104    0.0001    0.0001
-                                    </values>
-                                </curve>
+                                <type>NonWettingPhaseBrookCoreyOilGas</type>
+                                <sr>  0.2 </sr>
+                                <smax> 1.0</smax>
+                                <m> 3 </m>
+                                <krel_min> 1.e-4 </krel_min>
                             </relative_permeability>
                             <relative_permeability id="1">
                                 <type>Curve</type>
@@ -93,9 +91,7 @@
 
             <specific_body_force>0 -9.81</specific_body_force>
             <mass_lumping> true </mass_lumping>
-            <diffusion_coeff_componentb> diff_coef_b </diffusion_coeff_componentb>
-            <diffusion_coeff_componenta> diff_coef_a </diffusion_coeff_componenta>
-            <temperature> temp </temperature>
+             <temperature> temp </temperature>
         </process>
     </processes>
 
@@ -124,16 +120,6 @@
             <name>pg_0</name>
             <type>Constant</type>
             <value>101325.0</value>
-        </parameter>
-        <parameter>
-            <name>diff_coef_b</name>
-            <type>Constant</type>
-            <value>0.0</value>
-        </parameter>
-        <parameter>
-            <name>diff_coef_a</name>
-            <type>Constant</type>
-            <value>0.0</value>
         </parameter>
         <parameter>
             <name>temp</name>
@@ -169,9 +155,12 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>200</t_end>
-           <timesteps>
-                <pair><repeat>100</repeat><delta_t>0.2</delta_t></pair>
+            <t_end>20</t_end>
+            <timesteps>
+                <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
+                <pair><repeat>8</repeat><delta_t>1</delta_t></pair>
+                <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
+                <pair><repeat>8</repeat><delta_t>1</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -180,7 +169,7 @@
             <prefix>twophaseflow</prefix>
             <timesteps>
                 <!-- only output last timestep -->
-                <pair><repeat> 1 </repeat><each_steps> 200 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps> 218 </each_steps></pair>
             </timesteps>
             <output_iteration_results>false</output_iteration_results>
         </output>
@@ -255,4 +244,5 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
+
 </OpenGeoSysProject>

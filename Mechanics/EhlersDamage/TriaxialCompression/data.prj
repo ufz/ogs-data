@@ -99,7 +99,8 @@
             <type>VTK</type>
             <prefix>uc_01</prefix>
             <timesteps>
-                <pair><repeat>10000000</repeat><each_steps>1</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>2823</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>5000</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -263,7 +264,7 @@
         <curve>
             <name>Dirichlet_top_temporal</name>
             <coords>0. 5.</coords>
-            <values>0. -0.008</values>
+            <values>0. -0.0025</values>
         </curve>
 
         <curve>

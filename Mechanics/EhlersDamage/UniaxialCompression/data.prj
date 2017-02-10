@@ -11,7 +11,7 @@
             <dimension>3</dimension>
 
             <constitutive_relation>
-                <type>EhlersDamage</type>
+                <type>Ehlers</type>
                 <shear_modulus>G</shear_modulus>
                 <bulk_modulus>K</bulk_modulus>
                 <kappa>kappa</kappa>
@@ -28,9 +28,12 @@
                 <mp>mp</mp>
                 <betap>betap</betap>
                 <gammap>gammap</gammap>
-		<alpha_d>alphad</alpha_d>
-		<beta_d>betad</beta_d>
-		<h_d>hd</h_d>
+
+                <damage_properties>
+                    <alpha_d>alphad</alpha_d>
+                    <beta_d>betad</beta_d>
+                    <h_d>hd</h_d>
+                </damage_properties>
             </constitutive_relation>
 
             <process_variables>
@@ -186,21 +189,21 @@
             <type>Constant</type>
             <value>1.</value>
         </parameter>
-	<parameter>
+        <parameter>
             <name>alphad</name>
             <type>Constant</type>
             <value>0.00001</value>
-	</parameter>	
-	<parameter>
+        </parameter>
+        <parameter>
             <name>betad</name>
             <type>Constant</type>
             <value>0.05</value>
-	</parameter>
-	<parameter>
+        </parameter>
+        <parameter>
             <name>hd</name>
             <type>Constant</type>
             <value>15.0</value>
-	</parameter>
+        </parameter>
 
         <parameter>
             <name>displacement0</name>

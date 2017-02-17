@@ -282,7 +282,7 @@
             </eigen>
             <petsc>
                 <prefix>T</prefix>
-                <parameters>-T_ksp_type bcgs -gw_pc_type bjacobi -T_ksp_rtol 1e-16 -T_ksp_max_it 10000</parameters>
+                <parameters>-T_ksp_type bcgs -T_pc_type bjacobi -T_ksp_rtol 1e-16 -T_ksp_max_it 10000</parameters>
             </petsc>
         </linear_solver>
         <linear_solver>
@@ -296,7 +296,7 @@
             </eigen>
             <petsc>
                 <prefix>H</prefix>
-                <parameters>-H_ksp_type cg -gw_pc_type bjacobi -H_ksp_rtol 1e-16 -H_ksp_max_it 10000</parameters>
+                <parameters>-H_ksp_type cg -H_pc_type bjacobi -H_ksp_rtol 1e-16 -H_ksp_max_it 10000</parameters>
             </petsc>
         </linear_solver>
     </linear_solvers>

@@ -128,12 +128,4 @@
         </linear_solver>
     </linear_solvers>
 
-    <insitu>
-        <scripts>
-            <script>
-                <name>cube.py</name>
-            </script>
-        </scripts>
-    </insitu>
-
 </OpenGeoSysProject>

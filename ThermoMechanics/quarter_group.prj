@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh axially_symmetric="true">square_1x1_quad_1e0.vtu</mesh>
-    <geometry>square_1x1.gml</geometry>
+    <mesh>tm_q.vtu</mesh>
+    <geometry>quarter_group.gml</geometry>
 
     <processes>
         <process>
@@ -57,7 +57,7 @@
                 <convergence_criterion>
                     <type>DeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-13</abstol>
+                    <abstol>1e-16</abstol>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -81,17 +81,17 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>10</t_end>
+            <t_end>1000</t_end>
             <timesteps>
-                <pair><repeat>10</repeat><delta_t>1</delta_t></pair>
+                <pair><repeat>20</repeat><delta_t>50</delta_t></pair>
             </timesteps>
         </time_stepping>
 
         <output>
             <type>VTK</type>
-            <prefix>square_1e0_tm</prefix>
+            <prefix>tm_q</prefix>
             <timesteps>
-                <pair><repeat>10</repeat><each_steps>1</each_steps></pair>
+                <pair><repeat>20</repeat><each_steps>1</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -99,33 +99,81 @@
     <parameters>
         <parameter>
             <name>E</name>
-            <type>Constant</type>
-            <value>21</value>
+            <type>Group</type>
+	    <group_id_property>MaterialIDs</group_id_property>
+	    <index_values>
+	    <index>0</index>
+	    <value>1.911e3</value>
+	    </index_values>
+	    <index_values>
+	    <index>1</index>
+	    <value>68.9e3</value>
+	    </index_values>
         </parameter>
         <parameter>
             <name>nu</name>
-            <type>Constant</type>
-            <value>.3</value>
+            <type>Group</type>
+	    <group_id_property>MaterialIDs</group_id_property>
+	    <index_values>
+	    <index>0</index>
+	    <value>0.17</value>
+	    </index_values>
+	    <index_values>
+	    <index>1</index>
+	    <value>0.4</value>
+	    </index_values>
         </parameter>
 	<parameter>
             <name>rho_sr</name>
-            <type>Constant</type>
-            <value>1.2e-6</value>
+            <type>Group</type>
+	    <group_id_property>MaterialIDs</group_id_property>
+	    <index_values>
+	    <index>0</index>
+	    <value>1.583e-6</value>
+	    </index_values>
+	    <index_values>
+	    <index>1</index>
+	    <value>1.825e-6</value>
+	    </index_values>
         </parameter>
 	<parameter>
             <name>alpha</name>
-            <type>Constant</type>
-            <value>7e-6</value>
+            <type>Group</type>
+	    <group_id_property>MaterialIDs</group_id_property>
+	    <index_values>
+	    <index>0</index>
+	    <value>1.069e-5</value>
+	    </index_values>
+	    <index_values>
+	    <index>1</index>
+	    <value>3e-5</value>
+	    </index_values>
         </parameter>
 	<parameter>
             <name>cs</name>
-            <type>Constant</type>
-            <value>1714</value>
+            <type>Group</type>
+	    <group_id_property>MaterialIDs</group_id_property>
+	    <index_values>
+	    <index>0</index>
+	    <value>2083.4</value>
+	    </index_values>
+	    <index_values>
+	    <index>1</index>
+	    <value>2200</value>
+	    </index_values>
         </parameter>
 	<parameter>
             <name>lambda</name>
-            <type>Constant</type>
-            <value>9e-4</value>
+            <type>Group</type>
+	    <group_id_property>MaterialIDs</group_id_property>
+	    <index_values>
+	    <index>0</index>
+	    <value>0.96</value>
+	    </index_values>
+	    <index_values>
+	    <index>1</index>
+	    <value>0.4</value>
+	    </index_values>
         </parameter>
 	<parameter>
             <name>temperature_ic</name>
@@ -148,9 +196,14 @@
             <value>0</value>
         </parameter>
         <parameter>
-            <name>dirichlet1</name>
+            <name>neumann_in</name>
             <type>Constant</type>
-            <value>0.05</value>
+            <value>2</value>
+        </parameter>
+	<parameter>
+            <name>neumann_out</name>
+            <type>Constant</type>
+            <value>1</value>
         </parameter>
     </parameters>
 
@@ -179,6 +232,22 @@
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
 
+                <boundary_condition>
+                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                    <geometry>in</geometry>
+                    <type>Neumann</type>
+                    <component>1</component>
+                    <parameter>neumann_in</parameter>
+                </boundary_condition>
+
+                <boundary_condition>
+                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                    <geometry>out</geometry>
+                    <type>Neumann</type>
+                    <component>1</component>
+                    <parameter>neumann_out</parameter>
+                </boundary_condition>
+
             </boundary_conditions>
 
         </process_variable>
@@ -193,11 +262,19 @@
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
-                    <geometry>left</geometry>
+                    <geometry>in</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
                     <parameter>temperature_bc</parameter>
-                </boundary_condition>
+            	</boundary_condition>
+
+	    	<boundary_condition>
+                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                    <geometry>out</geometry>
+                    <type>Dirichlet</type>
+                    <component>0</component>
+                    <parameter>temperature_bc</parameter>
+            	</boundary_condition>
 
             </boundary_conditions>
 

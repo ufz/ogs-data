@@ -16,9 +16,9 @@
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
 
-            <residual_stiffness>1e-5</residual_stiffness>
+            <residual_stiffness>1e-3</residual_stiffness>
             <crack_resistance>2.7</crack_resistance>
-            <crack_length_scale>0.01</crack_length_scale>
+            <crack_length_scale>0.02</crack_length_scale>
             <kinetic_coefficient>1e6</kinetic_coefficient>
             <penalty_constant>1e6</penalty_constant>
             <critical_tolerance>5e-2</critical_tolerance>
@@ -51,7 +51,7 @@
                 <convergence_criterion>
                     <type>PerComponentResidual</type>
                     <norm_type>NORM2</norm_type>
-                    <abstols>1e-4 1e-2 1e-2</abstols>
+                    <abstols>1e-3 1e-2 1e-2</abstols>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -138,8 +138,8 @@
     <curves>
         <curve>
             <name>Dirichlet_temporal</name>
-            <coords>0 100</coords>
-            <values>0 2.5</values>
+            <coords>0 1</coords>
+            <values>0 0.01</values>
         </curve>
     </curves>
 

@@ -30,12 +30,6 @@
         <DataArray type="UInt8" Name="types" format="binary" RangeMin="3" RangeMax="3">
           AQAAAACAAAA8AAAADAAAAA==eJxjZiYfAAAVrgC1
         </DataArray>
-        <DataArray type="Int64" Name="faces" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAADgAQAADgAAAA==eJxjYBgFwxkAAAHgAAE=
-        </DataArray>
-        <DataArray type="Int64" Name="faceoffsets" format="binary" RangeMin="1" RangeMax="60">
-          AQAAAACAAADgAQAAaAAAAA==eJwtxTMCAwEAALDatq+2rf+/q0OTJeHQX8RRxxx3wkmnnHbGWeecd8FFl1x2xVXXXHfDTbfcdsdd99z3wIGHHnnsiaeeee6Fl1557Y233nnvg48++eyLr7757oeffvntj7/+AZ/8Byc=
-        </DataArray>
       </Cells>
     </Piece>
   </UnstructuredGrid>

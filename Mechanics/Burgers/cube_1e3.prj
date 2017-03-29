@@ -20,6 +20,11 @@
                 <dependency_parameter_mk>mK</dependency_parameter_mk>
                 <dependency_parameter_mvk>mvK</dependency_parameter_mvk>
                 <dependency_parameter_mvm>mvM</dependency_parameter_mvm>
+
+                <nonlinear_solver>
+                    <maximum_iterations>20</maximum_iterations>
+                    <error_tolerance>1e-10</error_tolerance>
+                </nonlinear_solver>
             </constitutive_relation>
 
             <process_variables>

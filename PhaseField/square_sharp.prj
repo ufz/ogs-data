@@ -19,8 +19,8 @@
             <residual_stiffness>1e-3</residual_stiffness>
             <crack_resistance>2.7</crack_resistance>
             <crack_length_scale>0.02</crack_length_scale>
-            <kinetic_coefficient>1e6</kinetic_coefficient>
-            <penalty_constant>1e6</penalty_constant>
+            <kinetic_coefficient>1e10</kinetic_coefficient>
+            <penalty_constant>1e10</penalty_constant>
             <critical_tolerance>5e-2</critical_tolerance>
             <solid_density>rho_sr</solid_density>
 
@@ -38,6 +38,14 @@
                     internal_name="sigma_zz" output_name="sigma_zz" />
                 <secondary_variable type="static"
                     internal_name="sigma_xy" output_name="sigma_xy" />
+		<secondary_variable type="static"
+                    internal_name="epsilon_xx" output_name="epsilon_xx" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_yy" output_name="epsilon_yy" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_zz" output_name="epsilon_zz" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_xy" output_name="epsilon_xy" />
             </secondary_variables>
 
             <specific_body_force>0 0</specific_body_force>
@@ -63,6 +71,10 @@
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
                         <variable>sigma_xy</variable>
+			<variable>epsilon_xx</variable>
+                        <variable>epsilon_yy</variable>
+                        <variable>epsilon_zz</variable>
+                        <variable>epsilon_xy</variable>
                     </variables>
                 </output>
             </process>
@@ -71,7 +83,7 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>100</t_end>
+            <t_end>1</t_end>
             <timesteps>
                 <pair><repeat>1000000</repeat><delta_t>1e-6</delta_t></pair>
             </timesteps>
@@ -81,7 +93,7 @@
             <type>VTK</type>
             <prefix>square_sharp</prefix>
             <timesteps>
-                <pair><repeat>1000000</repeat><each_steps>1000</each_steps></pair>
+                <pair><repeat>1000</repeat><each_steps>1000</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -139,7 +151,7 @@
         <curve>
             <name>Dirichlet_temporal</name>
             <coords>0 1</coords>
-            <values>0 0.01</values>
+            <values>0 0.006</values>
         </curve>
     </curves>
 

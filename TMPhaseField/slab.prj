@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>square_1x1_quad_1e0.vtu</mesh>
-    <geometry>square_1x1.gml</geometry>
+    <mesh>slab.vtu</mesh>
+    <geometry>slab.gml</geometry>
 
     <processes>
         <process>
@@ -54,7 +54,7 @@
                 <convergence_criterion>
                     <type>PerComponentResidual</type>
                     <norm_type>NORM2</norm_type>
-                    <abstols>1.e-6 1.e-6 1e-6 1e-6</abstols>
+                    <abstols>1.e-3 1.e-3 1e-3 1e-3</abstols>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -77,15 +77,15 @@
             <t_initial>0</t_initial>
             <t_end>20</t_end>
             <timesteps>
-                <pair><repeat>200000</repeat><delta_t>1e-4</delta_t></pair>
+                <pair><repeat>2000000</repeat><delta_t>1e-4</delta_t></pair>
             </timesteps>
         </time_stepping>
 
         <output>
             <type>VTK</type>
-            <prefix>square_1e0_tm</prefix>
+            <prefix>slab_tm</prefix>
             <timesteps>
-                <pair><repeat>20</repeat><each_steps>10000</each_steps></pair>
+                <pair><repeat>200</repeat><each_steps>10000</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -95,12 +95,12 @@
         <parameter>
             <name>E</name>
             <type>Constant</type>
-            <value>2.1e5</value>
+            <value>3.4e5</value>
         </parameter>
         <parameter>
             <name>nu</name>
             <type>Constant</type>
-            <value>.3</value>
+            <value>0.22</value>
         </parameter>
 
         <parameter>
@@ -117,7 +117,7 @@
 	<parameter>
             <name>gc</name>
             <type>Constant</type>
-            <value>2.7</value>
+            <value>0.04247</value>
         </parameter>
 	<parameter>
             <name>ls</name>
@@ -133,27 +133,22 @@
 	<parameter>
             <name>alpha</name>
             <type>Constant</type>
-            <value>7e-6</value>
+            <value>8e-6</value>
         </parameter>
 	<parameter>
             <name>cs</name>
             <type>Constant</type>
-            <value>1714</value>
+            <value>2000</value>
         </parameter>
 	<parameter>
             <name>lambda</name>
             <type>Constant</type>
-            <value>9e-4</value>
+            <value>1</value>
         </parameter>
 	<parameter>
             <name>temperature_ic</name>
             <type>Constant</type>
             <value>283.15</value>
-        </parameter>
-	<parameter>
-            <name>temperature_bc</name>
-            <type>Constant</type>
-            <value>363.15</value>
         </parameter>
 
         <parameter>
@@ -179,7 +174,7 @@
             <value>1</value>
         </parameter>
         <parameter>
-            <name>dirichlet1</name>
+            <name>temperature_bc</name>
             <type>CurveScaled</type>
             <curve>Dirichlet_temporal</curve>
             <parameter>Dirichlet_spatial</parameter>
@@ -189,8 +184,8 @@
     <curves>
         <curve>
             <name>Dirichlet_temporal</name>
-            <coords>0 20</coords>
-            <values>0 0.02</values>
+            <coords>0 10 20</coords>
+            <values>283.15 183.15 183.15</values>
         </curve>
     </curves>
 
@@ -204,7 +199,7 @@
 
             <boundary_conditions>
                 <boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                    <geometrical_set>slab_geometry</geometrical_set>
                     <geometry>leftb</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
@@ -212,20 +207,13 @@
                 </boundary_condition>
 
                 <boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                    <geometrical_set>slab_geometry</geometrical_set>
                     <geometry>bottom</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
 
-                <!--<boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
-                    <geometry>top</geometry>
-                    <type>Dirichlet</type>
-                    <component>1</component>
-                    <parameter>dirichlet1</parameter>
-                </boundary_condition>-->
             </boundary_conditions>
 
         </process_variable>
@@ -251,13 +239,20 @@
 
             <boundary_conditions>
                 <boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
-                    <geometry>left</geometry>
+                    <geometrical_set>slab_geometry</geometrical_set>
+                    <geometry>bottom</geometry>
                     <type>Dirichlet</type>
-                    <component>0</component>
+		    <component>1</component>
+                    <parameter>temperature_ic</parameter>
+                </boundary_condition>
+		<boundary_condition>
+                    <geometrical_set>slab_geometry</geometrical_set>
+                    <geometry>top</geometry>
+                    <type>Dirichlet</type>
+		    <component>1</component>
                     <parameter>temperature_bc</parameter>
                 </boundary_condition>
-
+        
             </boundary_conditions>
 
         </process_variable>

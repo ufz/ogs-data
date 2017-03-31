@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>slab.vtu</mesh>
+    <mesh>slab1.vtu</mesh>
     <geometry>slab.gml</geometry>
 
     <processes>
@@ -54,7 +54,7 @@
                 <convergence_criterion>
                     <type>PerComponentResidual</type>
                     <norm_type>NORM2</norm_type>
-                    <abstols>1.e-3 1.e-3 1e-3 1e-3</abstols>
+                    <abstols>1.e-3 1.e-3 1e-2 1e-2</abstols>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -77,7 +77,7 @@
             <t_initial>0</t_initial>
             <t_end>20</t_end>
             <timesteps>
-                <pair><repeat>2000000</repeat><delta_t>1e-4</delta_t></pair>
+                <pair><repeat>200000</repeat><delta_t>1e-4</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -85,7 +85,7 @@
             <type>VTK</type>
             <prefix>slab_tm</prefix>
             <timesteps>
-                <pair><repeat>200</repeat><each_steps>10000</each_steps></pair>
+                <pair><repeat>2000</repeat><each_steps>100</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -122,12 +122,12 @@
 	<parameter>
             <name>ls</name>
             <type>Constant</type>
-            <value>2</value>
+            <value>4</value>
         </parameter>
 	<parameter>
             <name>M</name>
             <type>Constant</type>
-            <value>1e10</value>
+            <value>1e-2</value>
         </parameter>
 
 	<parameter>
@@ -143,7 +143,7 @@
 	<parameter>
             <name>lambda</name>
             <type>Constant</type>
-            <value>1</value>
+            <value>8e-4</value>
         </parameter>
 	<parameter>
             <name>temperature_ic</name>
@@ -185,7 +185,7 @@
         <curve>
             <name>Dirichlet_temporal</name>
             <coords>0 10 20</coords>
-            <values>283.15 183.15 183.15</values>
+            <values>283.15 83.15 83.15</values>
         </curve>
     </curves>
 

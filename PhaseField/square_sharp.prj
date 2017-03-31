@@ -18,7 +18,7 @@
 
             <residual_stiffness>1e-3</residual_stiffness>
             <crack_resistance>2.7</crack_resistance>
-            <crack_length_scale>0.02</crack_length_scale>
+            <crack_length_scale>0.08</crack_length_scale>
             <kinetic_coefficient>1e10</kinetic_coefficient>
             <penalty_constant>1e10</penalty_constant>
             <critical_tolerance>5e-2</critical_tolerance>
@@ -83,9 +83,9 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>1</t_end>
+            <t_end>0.1</t_end>
             <timesteps>
-                <pair><repeat>1000000</repeat><delta_t>1e-6</delta_t></pair>
+                <pair><repeat>1000</repeat><delta_t>1e-4</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -93,7 +93,7 @@
             <type>VTK</type>
             <prefix>square_sharp</prefix>
             <timesteps>
-                <pair><repeat>1000</repeat><each_steps>1000</each_steps></pair>
+                <pair><repeat>100</repeat><each_steps>10</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -150,7 +150,7 @@
     <curves>
         <curve>
             <name>Dirichlet_temporal</name>
-            <coords>0 1</coords>
+            <coords>0 0.1</coords>
             <values>0 0.006</values>
         </curve>
     </curves>

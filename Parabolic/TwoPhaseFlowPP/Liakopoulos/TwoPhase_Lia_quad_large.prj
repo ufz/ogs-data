@@ -12,7 +12,7 @@
 
             <jacobian_assembler>
                 <type>CentralDifferences</type>
-                <component_magnitudes>1e4 1e+5</component_magnitudes>
+                <component_magnitudes>1e5 1e+4</component_magnitudes>
                 <relative_epsilons>1e-7 1e-7</relative_epsilons>
             </jacobian_assembler>
 
@@ -53,6 +53,33 @@
                             <type>Constant</type>
                             <value> 0.0 </value>
                         </storage>
+                       <capillary_pressure>
+                            <type>Curve</type>
+                            <curve>
+                                <coords>0.900000007    0.910000009    0.920000003    0.929821599    0.939999996    0.950000006    0.960000005    0.97    0.980000004    0.982500005    0.984999999    0.9875    0.989999997    0.9925    0.995000002    0.997499999    0.99962099    1
+                                </coords>
+                                <values>9938.064    9516.018    9065.393    8589.271    8052.432    7469.886    6813.948    6052.562    5121.663    4847.584    4549.372    4220.252    3849.668    3419.508    2893.579    2174.942    1000    0
+                                </values>
+                            </curve>
+                        </capillary_pressure>
+                        <relative_permeability>
+                            <relative_permeability id="0">
+                                <type>NonWettingPhaseBrookCoreyOilGas</type>
+                                <sr>  0.2 </sr>
+                                <smax> 1.0</smax>
+                                <m> 3 </m>
+                                <krel_min> 1.e-4 </krel_min>
+                            </relative_permeability>
+                            <relative_permeability id="1">
+                                <type>Curve</type>
+                                <curve>
+                                    <coords>0.575    0.6    0.625    0.65    0.675    0.7    0.725    0.75    0.775    0.8    0.825    0.85    0.875    0.9    0.925    0.95    0.975    1
+                                    </coords>
+                                    <values>0    0.12693    0.18214    0.2373    0.29242    0.34748    0.40248    0.45743    0.51231    0.56711    0.62184    0.67646    0.73098    0.78536    0.83958    0.89358    0.94723    1
+                                    </values>
+                                </curve>
+                            </relative_permeability>
+                        </relative_permeability>
                     </porous_medium>
                 </porous_medium>
             </material_property>
@@ -64,6 +91,7 @@
 
             <specific_body_force>0 -9.81</specific_body_force>
             <mass_lumping> true </mass_lumping>
+            <temperature> temp </temperature>
         </process>
     </processes>
 
@@ -92,6 +120,11 @@
             <name>pg_0</name>
             <type>Constant</type>
             <value>101325.0</value>
+        </parameter>
+        <parameter>
+            <name>temp</name>
+            <type>Constant</type>
+            <value>293.15</value>
         </parameter>
     </parameters>
 
@@ -122,11 +155,12 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>1000</t_end>
+            <t_end>1000.0</t_end>
            <timesteps>
                 <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
-                <pair><repeat>90</repeat><delta_t>0.1</delta_t></pair>
-                <pair><repeat>10</repeat><delta_t>1</delta_t></pair>
+                <pair><repeat>8</repeat><delta_t>1</delta_t></pair>
+                <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
+                <pair><repeat>8</repeat><delta_t>1</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -135,7 +169,7 @@
             <prefix>twophaseflow</prefix>
             <timesteps>
                 <!-- only output last timestep -->
-                <pair><repeat> 1 </repeat><each_steps> 200 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps> 1000 </each_steps></pair>
             </timesteps>
             <output_iteration_results>false</output_iteration_results>
         </output>
@@ -197,42 +231,13 @@
      <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
-            <lis>-i  -p jacobi -tol 1e-16 -maxiter 10000</lis>
+            <lis>-i bicgstab -p ilu -tol 1e-18 -maxiter 10000</lis>
             <eigen>
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>ILUT</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
                 <error_tolerance>1e-18</error_tolerance>
             </eigen>
-            <petsc>
-                <prefix>multiphase</prefix>
-                <parameters>-gw_ksp_type cg -gw_pc_type bjacobi -gw_ksp_rtol 1e-16 -gw_ksp_max_it 10000</parameters>
-            </petsc>
         </linear_solver>
     </linear_solvers>
-
-    <curves>
-        <curve>
-            <name>curve_PC_S</name>
-            <coords>9938.064    9516.018    9065.393    8589.271    8052.432    7469.886    6813.948    6052.562    5121.663    4847.584    4549.372    4220.252    3849.668    3419.508    2893.579    2174.942    1000    0
-</coords>
-            <values>0.900000007    0.910000009    0.920000003    0.929821599    0.939999996    0.950000006    0.960000005    0.97    0.980000004    0.982500005    0.984999999    0.9875    0.989999997    0.9925    0.995000002    0.997499999    0.99962099    1
-</values>
-        </curve>
-        <curve>
-            <name>curve_S_Krel_wet</name>
-            <coords>0.575    0.6    0.625    0.65    0.675    0.7    0.725    0.75    0.775    0.8    0.825    0.85    0.875    0.9    0.925    0.95    0.975    1
-</coords>
-            <values>0    0.12693    0.18214    0.2373    0.29242    0.34748    0.40248    0.45743    0.51231    0.56711    0.62184    0.67646    0.73098    0.78536    0.83958    0.89358    0.94723    1
-</values>
-        </curve>
-        <curve>
-            <name>curve_S_Krel_nonwet</name>
-            <coords>0.5    0.526315789    0.552631579    0.578947368    0.605263158    0.631578947    0.657894737    0.684210526    0.710526316    0.736842105    0.763157895    0.789473684    0.815789474    0.842105263    0.868421053    0.894736842    0.921052632    0.947368421    0.973684211    1
-</coords>
-            <values>0.314450055    0.271936357    0.23287969    0.197274783    0.165088789    0.136262934    0.110713898    0.088335002    0.068997233    0.052550139    0.03882262    0.027623632    0.018742814    0.011951062    0.007001038    0.003627644    0.001548453    0.000464104    0.0001    0.0001
-</values>
-        </curve>
-    </curves>
-
 </OpenGeoSysProject>

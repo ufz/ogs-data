@@ -7,7 +7,7 @@
     <processes>
         <process>
             <name>hc</name>
-            <type>HC</type>
+            <type>ComponentTransport</type>
             <integration_order>2</integration_order>
 
             <process_variables>

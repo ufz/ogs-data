@@ -64,7 +64,7 @@
                         </capillary_pressure>
                         <relative_permeability>
                             <relative_permeability id="0">
-                                <type>NonWettingPhaseBrookCoreyOilGas</type>
+                                <type>NonWettingPhaseBrooksCoreyOilGas</type>
                                 <sr>  0.2 </sr>
                                 <smax> 1.0</smax>
                                 <m> 3 </m>

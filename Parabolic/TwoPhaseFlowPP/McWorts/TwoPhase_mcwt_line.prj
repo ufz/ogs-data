@@ -54,7 +54,7 @@
                             <value> 0.0 </value>
                         </storage>
                          <capillary_pressure>
-                            <type>BrookCorey</type>
+                            <type>BrooksCorey</type>
                             <pd> 5000 </pd>
                             <sr> 0.0 </sr>
                             <smax> 1. </smax>
@@ -63,14 +63,14 @@
                         </capillary_pressure>
                          <relative_permeability>
                             <relative_permeability id="0">
-                                <type>NonWettingPhaseBrookCoreyOilGas</type>
+                                <type>NonWettingPhaseBrooksCoreyOilGas</type>
                                 <sr>  0.0 </sr>
                                 <smax> 1.0</smax>
                                 <m> 2 </m>
                                 <krel_min> 1e-9 </krel_min>
                             </relative_permeability>
                             <relative_permeability id="1">
-                                <type>WettingPhaseBrookCoreyOilGas</type>
+                                <type>WettingPhaseBrooksCoreyOilGas</type>
                                 <sr>  0.0 </sr>
                                 <smax> 1.0</smax>
                                 <m> 2 </m>

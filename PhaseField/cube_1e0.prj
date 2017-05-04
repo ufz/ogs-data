@@ -128,7 +128,7 @@
 	<parameter>
             <name>M</name>
             <type>Constant</type>
-            <value>1e-2</value>
+            <value>1e8</value>
         </parameter>
 	<parameter>
             <name>H</name>
@@ -176,7 +176,7 @@
         <curve>
             <name>Dirichlet_temporal</name>
             <coords>0 1</coords>
-            <values>0 0.1</values>
+            <values>0 -0.1</values>
         </curve>
     </curves>
 

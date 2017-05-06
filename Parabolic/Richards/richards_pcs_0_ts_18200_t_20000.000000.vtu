@@ -4,10 +4,10 @@
     <Piece NumberOfPoints="153" NumberOfCells="100">
       <PointData>
         <DataArray type="Float64" Name="pressure" format="binary" RangeMin="-21500" RangeMax="0">
-          AQAAAACAAADIBAAAUAAAAA==eJxjYACC/1cOMIzSo/QQpN//B4J/CHruGlT6xcl3/5BpliMWsn+R6LSz5mZXfyBovqSNEys5z8BpBmxgEPh7uNLo8Ygeb+jxxAAFAGB5vKw=
+          AQAAAACAAADIBAAAQwEAAA==eJxjYACC/1cOMIzSdKG/Pfn///8/BN378xcKrZ4lhkIrmv28CqIVoPS16d8qfgDp61B6lvadXUv+Imi9nweW8R1E0FNZU4+e6zgNpz+/7eHgr1h/4AuUVnxeVc/3fRmcFjp4NDk8fjGczjKLKhGYvQBO661MtD/OMhdOv3U28X1+fyacXvfJbmrlhOkH1kPpo6oF/tZXpsLpSVuX68cZTIHTIZ2eatmNk+D0XL2WBMYTE+C0iVnm+hWcfQdMofTHvrx7WYVdBz5B6QMvlB8qnWyD05Na+9dfF2qG0z7rDGalL6w74A2lr3/faPWDsxxOB3V6CCmcyIPTBl+Sym5cjIPTDNjAIEhH5KY79HSGnq7Q0xEs3XxDSy/o6QOWHt5B0wEs/o+hxTssnuehxS96fE6Exh8s3m6ixZchWvwAANCwLio=
         </DataArray>
-        <DataArray type="Float64" Name="saturation" format="binary" RangeMin="0.45452590796" RangeMax="1.0578240881">
-          AQAAAACAAADIBAAAgQAAAA==eJyT2Flx9bPYXXtJKC0OpUVxiI/yR/kDyZdA46tBaVUofeo3hD4BpQ+YBV8D0fug9MYkD5VvQHoDlGYqW5j5SPqu/f9SCJ3qH71GtvKBfTKU5v5Y8vnGmw/2PFAali+E0PLJKE0dWgVKH4PG3x5ovMHi6w80nhKh8QOLFwCdeo18
+        <DataArray type="Float64" Name="saturation" format="binary" RangeMin="0.45452590796" RangeMax="1.0005283387">
+          AQAAAACAAADIBAAACgEAAA==eJwT2llx9bPYXXtBKC2ERqOLj/Ip4687B6E3QOnbe2vA9B0obd1mfA1E20DpvWtEvoPoA1BaanXPrZ9I9BKujz2cEgh605q0K7Eed+23Qmn+LbaPSiwe2gtA6SuCeg5LRV7D6YjK6xdC7N/ZR0Fph9l8Ijk73tk7Qmn2QwUGJcLv7TmhdN3G+S8ep7y3b4DSblMDDQuXIeilE9oOTr//3n4FlO64dY1Bi+kDnP7xHwTe2/+C0oOd/w1K/4bSImjxKjLIaVi62wRNb/eg6cwWmr4OQtOVDDQ9LYOmo23Q9ANLN1eh6SUamk6coemDC5oumqDpwQOaDlahxf9vtHCkFs0ABh/sAShn5LY=
         </DataArray>
       </PointData>
       <CellData>
@@ -29,12 +29,6 @@
         </DataArray>
         <DataArray type="UInt8" Name="types" format="binary" RangeMin="9" RangeMax="9">
           AQAAAACAAABkAAAADAAAAA==eJzj5KQ9AACx7gOF
-        </DataArray>
-        <DataArray type="Int64" Name="faces" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAAgAwAAEAAAAA==eJxjYBgFo2AU4AIAAyAAAQ==
-        </DataArray>
-        <DataArray type="Int64" Name="faceoffsets" format="binary" RangeMin="1" RangeMax="100">
-          AQAAAACAAAAgAwAArwAAAA==eJwtxdciAgAAAEAjkYRskazskpUtFJGRUbYI//8NHrp7ueamhha3OuA2B93uDofc6bC7HHG3e9zrqPvc7wEPesjDHvGoYx7zuOOecMKTnvK0ZzzrpOc87wUvesnLXnHKaa864zWve8Ob3nLW297xrve87wMf+sg5H/vEp8674DOfu+gLX7rkK1/7xrcu+873fvCjK676yc9+8avf/O4Pf7rmL3+77h//+s//+ewTuw==
         </DataArray>
       </Cells>
     </Piece>

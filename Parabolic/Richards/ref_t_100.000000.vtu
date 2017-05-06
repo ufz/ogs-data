@@ -4,10 +4,10 @@
     <Piece NumberOfPoints="153" NumberOfCells="100">
       <PointData>
         <DataArray type="Float64" Name="pressure" format="binary" RangeMin="-21500" RangeMax="0">
-          AQAAAACAAADIBAAADQEAAA==eJxjYACC/1cOMIzSw5Lu+w8E/xC05EMILQGl+7p+gOkuKL3gouU/ED0bSr9vOjIVmZaJWnnoOZCWh9LP2Rl4V/5E0JML94ttenv5wHQovTxlX8wjuz0HlkLp2LoDvzaLLj8QDaU/1Fi7WrgtgtOqoU+FbJ/MPaAGpaVX/H/52GwmnHYRmKC79e1UOP0yv/2CDfNkOH0x8iOvIcOEAxeg9H/2XPvj5zoPMHBA6A+yz7UOVDbD6Q7dFuWpIlUHOqH04l9TNY6qZh1YBKUZsIFBEK/0omHpBpZe+qHpBJY+XkHThRxaeoClg9XQeI+Cxvd7aDzD4lcGGq+uaPEJi8d/7KjxBosn9PgBAPjIDoE=
+          AQAAAACAAADIBAAAUgAAAA==eJxjYACC/1cOMIzSo/QQpN/8B4J/CFpoESpd0nXlHzK9lsnszR8kunp2YcGsHwg6PHPS59ePTx+IhNIM2MAg8PdwpdHjET3eYPGEHj8AOl7AiA==
         </DataArray>
-        <DataArray type="Float64" Name="saturation" format="binary" RangeMin="0.45452590796" RangeMax="1.0004278199">
-          AQAAAACAAADIBAAA8AAAAA==eJwT3llx9bPYXXshKC2KxsclPsofGvw8KF0ApU9dhNBnoLTYhjowLQmjPzy+BqJlofS2kFytL0B6O5Q+kv3dnF38rv1RKN2Q0sZgKX3XvhFKh2evbXmcf9c+FEqbirROZSt/Bqcf/3q3pefBW/tnULo6si/y7s139nVQ2szOcndE4Ht7Cygd1Lgn9M/W9/YhUPp6F/usA4wf7G9A6T//QeC9/V8oTW3+Lyj9H0qLQcNRAEqLDXO6CEqfQ0svCtD0sQeaLo5B00MzNB1EocX/c2h8N0Dj2Qoav+HQeL0Jjc9/0HAmlmZiAIEP9gCSGsAB
+        <DataArray type="Float64" Name="saturation" format="binary" RangeMin="0.45452590796" RangeMax="1.0591243206">
+          AQAAAACAAADIBAAAdwAAAA==eJwT2llx9bPYXXtBKC2ERqOLj/JH+QPJF0ATV4LSylBaj6USTBtA6RiTjGsgOg5KvzOq8v6GRD/d8zFTUOau/TMorfFuHa9R0wM4bZf0LVzn0wc4LYJmv8goTRUaFr+qUNoIGn/x0Hh7D40v9HhygMYLAG1HhAk=
         </DataArray>
       </PointData>
       <CellData>
@@ -29,12 +29,6 @@
         </DataArray>
         <DataArray type="UInt8" Name="types" format="binary" RangeMin="9" RangeMax="9">
           AQAAAACAAABkAAAADAAAAA==eJzj5KQ9AACx7gOF
-        </DataArray>
-        <DataArray type="Int64" Name="faces" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAAgAwAAEAAAAA==eJxjYBgFo2AU4AIAAyAAAQ==
-        </DataArray>
-        <DataArray type="Int64" Name="faceoffsets" format="binary" RangeMin="1" RangeMax="100">
-          AQAAAACAAAAgAwAArwAAAA==eJwtxdciAgAAAEAjkYRskazskpUtFJGRUbYI//8NHrp7ueamhha3OuA2B93uDofc6bC7HHG3e9zrqPvc7wEPesjDHvGoYx7zuOOecMKTnvK0ZzzrpOc87wUvesnLXnHKaa864zWve8Ob3nLW297xrve87wMf+sg5H/vEp8674DOfu+gLX7rkK1/7xrcu+873fvCjK676yc9+8avf/O4Pf7rmL3+77h//+s//+ewTuw==
         </DataArray>
       </Cells>
     </Piece>

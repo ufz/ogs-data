@@ -254,6 +254,10 @@
         <linear_solver>
             <name>general_linear_solver</name>
             <lis>-i bicgstab -p jacobi -tol 1e-12 -maxiter 10000</lis>
+            <petsc>
+               <prefix>T</prefix>
+               <parameters> -T_ksp_type bcgs -T_pc_type bjacobi  -T_ksp_rtol 1e-16 -T_ksp_max_it 4000</parameters>
+            </petsc>
             <eigen>
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>ILUT</precon_type>

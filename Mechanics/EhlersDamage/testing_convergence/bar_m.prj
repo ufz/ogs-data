@@ -110,7 +110,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>b_f_</prefix>
+            <prefix>med</prefix>
             <timesteps>
                 <pair><repeat>10000</repeat><each_steps>1</each_steps></pair>
             </timesteps>

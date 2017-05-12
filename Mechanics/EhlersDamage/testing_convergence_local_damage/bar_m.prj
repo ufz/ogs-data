@@ -6,7 +6,7 @@
     <processes>
         <process>
             <name>SD</name>
-            <type>SMALL_DEFORMATION_NONLOCAL</type>
+            <type>SMALL_DEFORMATION</type>
             <integration_order>2</integration_order>
             <dimension>2</dimension>
 
@@ -42,15 +42,11 @@
 
             </constitutive_relation>
 
-	    <internal_length>0.25</internal_length>
-
             <process_variables>
                 <process_variable>displacement</process_variable>
             </process_variables>
 
             <secondary_variables>
-                <secondary_variable type="static"
-                    internal_name="damage" output_name="damage" />
                 <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
@@ -85,7 +81,6 @@
                 <output>
                     <variables>
                         <variable>displacement</variable>
-                        <variable>damage</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
@@ -104,7 +99,7 @@
             <t_initial>0</t_initial>
             <t_end>1.</t_end>
             <timesteps>
-                <pair><repeat>10000</repeat><delta_t>0.002</delta_t></pair>
+                <pair><repeat>10000</repeat><delta_t>0.00025</delta_t></pair>
             </timesteps>
         </time_stepping>
 

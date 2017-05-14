@@ -17,14 +17,14 @@
             </process_variables>
             <material_property>
                 <fluid>
-                     <fluid_density>
+                     <density>
                         <type>Constant</type>
                         <value> 1.e3 </value>
-                    </fluid_density>
-                    <fluid_viscosity>
+                    </density>
+                    <viscosity>
                         <type>Constant</type>
                         <value> 1.e-3 </value>
-                    </fluid_viscosity>
+                    </viscosity>
                 </fluid>
                 <porous_medium>
                     <porous_medium id="0">

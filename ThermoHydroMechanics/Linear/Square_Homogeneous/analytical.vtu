@@ -1,0 +1,90 @@
+<VTKFile type="UnstructuredGrid" version="1.0" byte_order="LittleEndian" header_type="UInt64">
+  <UnstructuredGrid>
+    <Piece NumberOfPoints="8" NumberOfCells="1">
+      <PointData>
+        <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="ascii" RangeMin="0" RangeMax="0.0035977593068">
+          0 0 0.0025440000029 0 0 0.0025440000029
+          0.0025440000029 0.0025440000029 0.0012720000015 0 0 0.0012720000015
+          0.0025440000029 0.0012720000015 0.0012720000015 0.0025440000029
+        </DataArray>
+        <DataArray type="Float64" Name="epsilon_xx" format="ascii" RangeMin="0.0025440000022" RangeMax="0.0025440000022">
+          0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022
+          0.0025440000022 0.0025440000022
+        </DataArray>
+        <DataArray type="Float64" Name="epsilon_xy" format="ascii" RangeMin="-5.92874814e-17" RangeMax="2.4911654964e-17">
+          -4.1934711385e-19 -3.1595520622e-18 -5.92874814e-17 -3.0676173528e-17 2.4911654964e-17 1.5853368106e-18
+          1.3412793242e-17 -1.9038893196e-17
+        </DataArray>
+        <DataArray type="Float64" Name="epsilon_yy" format="ascii" RangeMin="0.0025440000022" RangeMax="0.0025440000022">
+          0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022
+          0.0025440000022 0.0025440000022
+        </DataArray>
+        <DataArray type="Float64" Name="epsilon_zz" format="ascii" RangeMin="0.0025440000022" RangeMax="0.0025440000022">
+          0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022 0.0025440000022
+          0.0025440000022 0.0025440000022
+        </DataArray>
+        <DataArray type="Float64" Name="pressure" format="ascii" RangeMin="0" RangeMax="0.10416000015">
+          0.10416000015 0.10416000015 0.10416000015 0.10416000015 0 0
+          0 0
+        </DataArray>
+        <DataArray type="Float64" Name="sigma_xx" format="ascii" RangeMin="0.10416000011" RangeMax="0.10416000011">
+          0.10416000011 0.10416000011 0.10416000011 0.10416000011 0.10416000011 0.10416000011
+          0.10416000011 0.10416000011
+        </DataArray>
+        <DataArray type="Float64" Name="sigma_xy" format="ascii" RangeMin="-6.772154811e-16" RangeMax="2.8455274941e-16">
+          -4.7896544072e-18 -3.6087872202e-17 -6.772154811e-16 -3.5040068819e-16 2.8455274941e-16 1.8107560941e-17
+          1.5320720576e-16 -2.1747100702e-16
+        </DataArray>
+        <DataArray type="Float64" Name="sigma_yy" format="ascii" RangeMin="0.10416000011" RangeMax="0.10416000011">
+          0.10416000011 0.10416000011 0.10416000011 0.10416000011 0.10416000011 0.10416000011
+          0.10416000011 0.10416000011
+        </DataArray>
+        <DataArray type="Float64" Name="sigma_zz" format="ascii" RangeMin="0.10416000011" RangeMax="0.10416000011">
+          0.10416000011 0.10416000011 0.10416000011 0.10416000011 0.10416000011 0.10416000011
+          0.10416000011 0.10416000011
+        </DataArray>
+        <DataArray type="Float64" Name="temperature" format="ascii" RangeMin="0" RangeMax="353.15">
+          353.15 353.15 353.15 353.15 0 0
+          0 0
+        </DataArray>
+        <DataArray type="Float64" Name="pressure_ana" format="ascii" RangeMin="0" RangeMax="0.10415999999999997">
+          0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997 0 0
+          0 0
+        </DataArray>
+        <DataArray type="Float64" Name="sigma_xx_ana" format="ascii" RangeMin="0.10415999999999997" RangeMax="0.10415999999999997">
+          0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997
+          0.10415999999999997 0.10415999999999997
+        </DataArray>
+        <DataArray type="Float64" Name="sigma_yy_ana" format="ascii" RangeMin="0.10415999999999997" RangeMax="0.10415999999999997">
+          0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997 0.10415999999999997
+          0.10415999999999997 0.10415999999999997
+        </DataArray>
+      </PointData>
+      <CellData>
+        <DataArray type="Int32" Name="MaterialIDs" format="ascii" RangeMin="0" RangeMax="0">
+          0
+        </DataArray>
+      </CellData>
+      <Points>
+        <DataArray type="Float64" Name="Points" NumberOfComponents="3" format="ascii" RangeMin="0" RangeMax="1.4142135624">
+          0 0 0 1 0 0
+          0 1 0 1 1 0
+          0.5 0 0 0 0.5 0
+          1 0.5 0 0.5 1 0
+        </DataArray>
+      </Points>
+      <Cells>
+        <DataArray type="Int64" Name="connectivity" format="ascii" RangeMin="0" RangeMax="7">
+          0 1 3 2 4 6
+          7 5
+        </DataArray>
+        <DataArray type="Int64" Name="offsets" format="ascii" RangeMin="8" RangeMax="8">
+          8
+        </DataArray>
+        <DataArray type="UInt8" Name="types" format="ascii" RangeMin="23" RangeMax="23">
+          23
+        </DataArray>
+      </Cells>
+    </Piece>
+  </UnstructuredGrid>
+</VTKFile>

@@ -4,10 +4,10 @@
 <OpenGeoSysGLI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.opengeosys.org/images/xsd/OpenGeoSysGLI.xsd" xmlns:ogs="http://www.opengeosys.org">
     <name>square_1x1_geometry</name>
     <points>
-        <point id="0" name="leftb" x="0" y="0" z="0"/>
-        <point id="1" x="0" y="1" z="0"/>
-        <point id="2" name="rightb" x="1" y="0" z="0"/>
-        <point id="3" x="1" y="1" z="0"/>
+        <point id="0" name="leftb" x="0" y="-0.5" z="0"/>
+        <point id="1" x="0" y="0.5" z="0"/>
+        <point id="2" name="rightb" x="1" y="-0.5" z="0"/>
+        <point id="3" x="1" y="0.5" z="0"/>
     </points>
 
     <polylines>

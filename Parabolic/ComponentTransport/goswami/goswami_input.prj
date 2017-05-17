@@ -201,7 +201,7 @@
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>left</geometry>
                     <search_length_algorithm>
-                        <type>fixed</fixed>
+                        <type>fixed</type>
                         <value>1e-3</value>
                     </search_length_algorithm>
                     <type>Dirichlet</type>
@@ -212,7 +212,7 @@
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>right</geometry>
                     <search_length_algorithm>
-                        <type>fixed</fixed>
+                        <type>fixed</type>
                         <value>1e-3</value>
                     </search_length_algorithm>
                     <type>Dirichlet</type>
@@ -234,7 +234,7 @@
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>topleft</geometry>
                     <search_length_algorithm>
-                        <type>fixed</fixed>
+                        <type>fixed</type>
                         <value>1e-3</value>
                     </search_length_algorithm>
                     <type>Dirichlet</type>
@@ -244,7 +244,7 @@
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>topright</geometry>
                     <search_length_algorithm>
-                        <type>fixed</fixed>
+                        <type>fixed</type>
                         <value>1e-3</value>
                     </search_length_algorithm>
                     <type>Dirichlet</type>

@@ -35,6 +35,8 @@
                     <h_d>hd</h_d>
                 </damage_properties>
 
+                <compute_local_damage>0</compute_local_damage>
+
             <nonlinear_solver>
                     <maximum_iterations>1000</maximum_iterations>
                     <error_tolerance>1e-6</error_tolerance>

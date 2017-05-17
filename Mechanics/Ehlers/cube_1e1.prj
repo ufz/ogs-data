@@ -29,6 +29,8 @@
                     <maximum_iterations>100</maximum_iterations>
                     <error_tolerance>1e-14</error_tolerance>
                 </nonlinear_solver>
+
+                <compute_local_damage>1</compute_local_damage>
             </constitutive_relation>
             <process_variables>
                 <process_variable>displacement</process_variable>

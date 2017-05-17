@@ -6,8 +6,8 @@
 
     <processes>
         <process>
-            <name>hc</name>
-            <type>HC</type>
+            <name>ComponentTransport</name>
+            <type>ComponentTransport</type>
             <integration_order>2</integration_order>
 
             <process_variables>
@@ -75,7 +75,7 @@
 
     <time_loop>
         <processes>
-            <process ref="hc">
+            <process ref="ComponentTransport">
                 <nonlinear_solver>basic_picard</nonlinear_solver>
                 <convergence_criterion>
                     <type>PerComponentDeltaX</type>
@@ -112,7 +112,7 @@
 
        <output>
            <type>VTK</type>
-           <prefix>hc</prefix>
+           <prefix>ComponentTransport</prefix>
            <timesteps>
                <pair><repeat>1</repeat><each_steps>50</each_steps></pair>
            </timesteps>
@@ -200,6 +200,10 @@
                <boundary_condition>
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>left</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Dirichlet</type>
                     <parameter>c_Dirichlet_left</parameter>
                 </boundary_condition>
@@ -207,6 +211,10 @@
                 <boundary_condition>
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>right</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Dirichlet</type>
                     <parameter>c_Dirichlet_right</parameter>
                 </boundary_condition>
@@ -225,12 +233,20 @@
                 <boundary_condition>
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>topleft</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_topleft</parameter>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>goswami_mesh</geometrical_set>
                     <geometry>topright</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_topright</parameter>
                 </boundary_condition>

@@ -36,6 +36,7 @@
                 </damage_properties>
 
                 <compute_local_damage>1</compute_local_damage>
+
                 <nonlinear_solver>
                     <maximum_iterations>100</maximum_iterations>
                     <error_tolerance>1e-14</error_tolerance>
@@ -47,6 +48,8 @@
             </process_variables>
 
             <secondary_variables>
+                <secondary_variable type="static"
+                    internal_name="damage" output_name="damage" />
                 <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
@@ -81,6 +84,7 @@
                 <output>
                     <variables>
                         <variable>displacement</variable>
+                        <variable>damage</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
@@ -108,6 +112,7 @@
             <type>VTK</type>
             <prefix>uc_01</prefix>
             <timesteps>
+                <pair><repeat>10000000</repeat><each_steps>1</each_steps></pair>
                 <pair><repeat>1</repeat><each_steps>2823</each_steps></pair>
                 <pair><repeat>1</repeat><each_steps>5000</each_steps></pair>
             </timesteps>

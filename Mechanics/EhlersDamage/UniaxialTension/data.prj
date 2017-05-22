@@ -49,6 +49,8 @@
 
             <secondary_variables>
                 <secondary_variable type="static"
+                    internal_name="damage" output_name="damage" />
+                <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
                     internal_name="sigma_yy" output_name="sigma_yy" />
@@ -82,6 +84,7 @@
                 <output>
                     <variables>
                         <variable>displacement</variable>
+                        <variable>damage</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
@@ -109,6 +112,7 @@
             <type>VTK</type>
             <prefix>uc_01</prefix>
             <timesteps>
+                <pair><repeat>10000000</repeat><each_steps>1</each_steps></pair>
                 <pair><repeat>1</repeat><each_steps>3276</each_steps></pair>
                 <pair><repeat>1</repeat><each_steps>10000</each_steps></pair>
             </timesteps>

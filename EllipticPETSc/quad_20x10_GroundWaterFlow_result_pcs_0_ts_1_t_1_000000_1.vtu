@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian" header_type="UInt32" compressor="vtkZLibDataCompressor">
   <UnstructuredGrid>
     <Piece NumberOfPoints="123" NumberOfCells="101">
       <PointData>
-        <DataArray type="Float64" Name="pressure" format="binary" RangeMin="-1" RangeMax="-0.25000000049">
-          AQAAAACAAADYAwAABwIAAA==eJxV0kFIk2Ecx/HBWKFlQokmraYEhpjDpk5lC8vczLl50L0KOsTDysGGrAJDlo0amgsUJaLMXNBQY5E6lk5FfI6FHZyHseowtkUUgdQOLShpjv+vDs97+fE+8Pm+z+G1hNOZ5zuz/NuRzkBXkxBmzsGGuVXfR5afUohEohg7Vt74yutLsMRQdrtJ+MxqT57InH9lKkVZ5vwbEzt+tJmEXTZhgz/4AV6tqCQf6YIXfPDPSuB9JvjrE/D/7zHgQme45BJ1FFXoyFzoaP6ic/cMOnduopN8wHdy5a+pM7WBTqsZndAmOgvyQ9SZb0HH7EInPsN3zstWqLOk0lLn4hd0Sk9pqGM3o/Pchs7YU3TkL/jODell8ldGq8hfeAj/0g/vnoU3bsAvBXnfeLuZfH1eNfmaI1ryW5LD5O0J+PFP8Ofe8b6gSEf+1xh89SB8jxFeVigl7886S/5NlPeF8hbyj/7Az2/DTz6Bj+vhG0rhY0ne7/brydf1KsnXH28inxuD1w3BT2nh/ZIk5/XtBvKBRfhoN3zkaA55wxy8+Ba8JYv3Kg+86jd87X149x6+712E77TCO9P8/evew4eT8Ken4U0Cvq/Zge/rgO9JwV/rv5c5DzFJGutJjdJWrLlplbNYq3KZ/rNpF94fH8B/p3MEaZl1lVaSs0ZbHMCqr67T/nyL3Qe0LA1z
+        <DataArray type="Float64" Name="pressure" format="binary" RangeMin="-1" RangeMax="-0.25">
+          AQAAAACAAADYAwAAEAEAAA==eJyFk01qwmAQhqvGanuCXsKFp7D+dFNwY0WMWq+lMVGK0H1XHeoP7kQEN65EEIsgHiFifMfFC4PfZsgkz/PNDJMwvJyThIiTIFvJlVdS+pj3f4ZrST5czkbc5cu3P9xKkNm/V8s7SUT5f2lE+YN4Uf4oM/BF4pvgffAx8C54H7zWMYanAE+M6lCPA08dnr7h0X4c8njwxOGpwdM1PK/kqcPTg+f6/f7m8cijdSTAN6iOe3PhefD9cZpHYPBcvzUHrj9v7IVP/bsGX6T+rb1oge8Y9zs0P+XT4D/B94h/M/ZyAP4RfNuYv/Ip4r9oH5vU/3OUX8gTYhIxRc+6Z5r/xbP+l3+II8QpvVf+DL3vDXI=
         </DataArray>
       </PointData>
       <CellData>
@@ -23,12 +23,6 @@
         </DataArray>
         <DataArray type="UInt8" Name="types" format="binary" RangeMin="9" RangeMax="9">
           AQAAAACAAABlAAAADAAAAA==eJzj5KQDAAC1fAOO
-        </DataArray>
-        <DataArray type="Int64" Name="faces" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAAoAwAAEAAAAA==eJxjYBgFo2AUEAIAAygAAQ==
-        </DataArray>
-        <DataArray type="Int64" Name="faceoffsets" format="binary" RangeMin="1" RangeMax="101">
-          AQAAAACAAAAoAwAAsgAAAA==eJwtxdciAgAAAEAjiawiI5tsJSMzsyIyQrJHxv//gofuXq6xoa7JzQ64xUG3OuQ2tzvsDne6y93uccRR97rPMfd7wIMectzDHvGoxzzuCU96ytNOeMaznvO8F7zoJS876ZRXnPaq17zuDWe86S1ve8e73nPW+z7woY987BPnnHfBpz5z0ee+cMmXvvK1b1z2re9874ofXPWjn/zsF7/6ze/+8Ke/XPO3f/zrP/8DmvsUIA==
         </DataArray>
       </Cells>
     </Piece>

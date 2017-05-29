@@ -16,7 +16,7 @@
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
 
-	    <solid_density>rho_sr</solid_density>
+	    <reference_solid_density>rho_sr</reference_solid_density>
 	    <linear_thermal_expansion_coefficient>alpha</linear_thermal_expansion_coefficient>
 	    <specific_heat_capacity>cs</specific_heat_capacity>
 	    <thermal_conductivity>lambda</thermal_conductivity>

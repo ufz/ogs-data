@@ -16,15 +16,15 @@
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
 
-	    <reference_solid_density>rho_sr</reference_solid_density>
-	    <linear_thermal_expansion_coefficient>alpha</linear_thermal_expansion_coefficient>
-	    <specific_heat_capacity>cs</specific_heat_capacity>
-	    <thermal_conductivity>lambda</thermal_conductivity>
-	    <reference_temperature>283.15</reference_temperature>
+            <reference_solid_density>rho_sr</reference_solid_density>
+            <linear_thermal_expansion_coefficient>alpha</linear_thermal_expansion_coefficient>
+            <specific_heat_capacity>cs</specific_heat_capacity>
+            <thermal_conductivity>lambda</thermal_conductivity>
+            <reference_temperature>283.15</reference_temperature>
 
             <process_variables>
                 <displacement>displacement</displacement>
-		<temperature>temperature</temperature>
+                <temperature>temperature</temperature>
             </process_variables>
 
             <secondary_variables>
@@ -46,7 +46,7 @@
                     internal_name="epsilon_xy" output_name="epsilon_xy" />
             </secondary_variables>
 
-	    <specific_body_force>0 0</specific_body_force>
+            <specific_body_force>0 0</specific_body_force>
         </process>
     </processes>
 
@@ -64,7 +64,7 @@
                 <output>
                     <variables>
                         <variable>displacement</variable>
-			<variable>temperature</variable>
+                        <variable>temperature</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
@@ -100,87 +100,87 @@
         <parameter>
             <name>E</name>
             <type>Group</type>
-	    <group_id_property>MaterialIDs</group_id_property>
-	    <index_values>
-	    <index>0</index>
-	    <value>1.911e3</value>
-	    </index_values>
-	    <index_values>
-	    <index>1</index>
-	    <value>68.9e3</value>
-	    </index_values>
+            <group_id_property>MaterialIDs</group_id_property>
+            <index_values>
+            <index>0</index>
+            <value>1.911e3</value>
+            </index_values>
+            <index_values>
+            <index>1</index>
+            <value>68.9e3</value>
+            </index_values>
         </parameter>
         <parameter>
             <name>nu</name>
             <type>Group</type>
-	    <group_id_property>MaterialIDs</group_id_property>
-	    <index_values>
-	    <index>0</index>
-	    <value>0.17</value>
-	    </index_values>
-	    <index_values>
-	    <index>1</index>
-	    <value>0.4</value>
-	    </index_values>
+            <group_id_property>MaterialIDs</group_id_property>
+            <index_values>
+            <index>0</index>
+            <value>0.17</value>
+            </index_values>
+            <index_values>
+            <index>1</index>
+            <value>0.4</value>
+            </index_values>
         </parameter>
-	<parameter>
+        <parameter>
             <name>rho_sr</name>
             <type>Group</type>
-	    <group_id_property>MaterialIDs</group_id_property>
-	    <index_values>
-	    <index>0</index>
-	    <value>1.583e-6</value>
-	    </index_values>
-	    <index_values>
-	    <index>1</index>
-	    <value>1.825e-6</value>
-	    </index_values>
+            <group_id_property>MaterialIDs</group_id_property>
+            <index_values>
+            <index>0</index>
+            <value>1.583e-6</value>
+            </index_values>
+            <index_values>
+            <index>1</index>
+            <value>1.825e-6</value>
+            </index_values>
         </parameter>
-	<parameter>
+        <parameter>
             <name>alpha</name>
             <type>Group</type>
-	    <group_id_property>MaterialIDs</group_id_property>
-	    <index_values>
-	    <index>0</index>
-	    <value>1.069e-5</value>
-	    </index_values>
-	    <index_values>
-	    <index>1</index>
-	    <value>3e-5</value>
-	    </index_values>
+            <group_id_property>MaterialIDs</group_id_property>
+            <index_values>
+            <index>0</index>
+            <value>1.069e-5</value>
+            </index_values>
+            <index_values>
+            <index>1</index>
+            <value>3e-5</value>
+            </index_values>
         </parameter>
-	<parameter>
+        <parameter>
             <name>cs</name>
             <type>Group</type>
-	    <group_id_property>MaterialIDs</group_id_property>
-	    <index_values>
-	    <index>0</index>
-	    <value>2083.4</value>
-	    </index_values>
-	    <index_values>
-	    <index>1</index>
-	    <value>2200</value>
-	    </index_values>
+            <group_id_property>MaterialIDs</group_id_property>
+            <index_values>
+            <index>0</index>
+            <value>2083.4</value>
+            </index_values>
+            <index_values>
+            <index>1</index>
+            <value>2200</value>
+            </index_values>
         </parameter>
-	<parameter>
+        <parameter>
             <name>lambda</name>
             <type>Group</type>
-	    <group_id_property>MaterialIDs</group_id_property>
-	    <index_values>
-	    <index>0</index>
-	    <value>0.96e-3</value>
-	    </index_values>
-	    <index_values>
-	    <index>1</index>
-	    <value>0.4e-3</value>
-	    </index_values>
+            <group_id_property>MaterialIDs</group_id_property>
+            <index_values>
+            <index>0</index>
+            <value>0.96e-3</value>
+            </index_values>
+            <index_values>
+            <index>1</index>
+            <value>0.4e-3</value>
+            </index_values>
         </parameter>
-	<parameter>
+        <parameter>
             <name>temperature_ic</name>
             <type>Constant</type>
             <value>283.15</value>
         </parameter>
-	<parameter>
+        <parameter>
             <name>temperature_bc</name>
             <type>Constant</type>
             <value>363.15</value>
@@ -200,7 +200,7 @@
             <type>Constant</type>
             <value>2</value>
         </parameter>
-	<parameter>
+        <parameter>
            <name>pressure_out</name>
             <type>Constant</type>
             <value>1</value>
@@ -250,7 +250,7 @@
 
         </process_variable>
 
-	<process_variable>
+        <process_variable>
             <name>temperature</name>
             <components>1</components>
             <order>1</order>
@@ -264,7 +264,7 @@
                     <type>Dirichlet</type>
                     <component>0</component>
                     <parameter>temperature_bc</parameter>
-            	</boundary_condition>
+                </boundary_condition>
 
             </boundary_conditions>
 
@@ -284,14 +284,12 @@
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
-            <lis>-i bicgstab -p ilu -tol 1e-16 -maxiter 10000</lis>
+            <lis>-i bicgstab -p jacobi -tol 1e-16 -maxiter 10000</lis>
             <eigen>
-                <solver_type>SparseLU</solver_type>
-                <!--
-                <precon_type>ILUT</precon_type>
+                <solver_type>BiCGSTAB</solver_type>
+                <precon_type>DIAGONAL</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
-                <error_tolerance>1e-16</error_tolerance>
-                -->
+                <error_tolerance>1e-11</error_tolerance>
             </eigen>
             <petsc>
                 <prefix>sd</prefix>

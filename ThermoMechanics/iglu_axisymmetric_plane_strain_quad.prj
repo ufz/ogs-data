@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh axially_symmetric="true">tm_a.vtu</mesh>
+    <mesh axially_symmetric="true">tm_a_quad.vtu</mesh>
     <geometry>axis_group.gml</geometry>
 
     <processes>
         <process>
             <name>ThermoMechanics</name>
             <type>THERMO_MECHANICS</type>
-            <integration_order>2</integration_order>
+            <integration_order>3</integration_order>
             <dimension>2</dimension>
 
             <constitutive_relation>
@@ -89,7 +89,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>tm_a</prefix>
+            <prefix>tm_a_quad</prefix>
             <timesteps>
                 <pair><repeat>20</repeat><each_steps>1</each_steps></pair>
             </timesteps>

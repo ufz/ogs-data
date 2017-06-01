@@ -18,17 +18,17 @@
 
             <intrinsic_permeability>k</intrinsic_permeability>
             <storage_coefficient>S</storage_coefficient>
-            <fluid_viscosity>mu</fluid_viscosity>
+           <!-- <fluid_viscosity>mu</fluid_viscosity> -->
             <biot_coefficient>alpha</biot_coefficient>
             <porosity>phi</porosity>
             <solid_density>rho_sr</solid_density>
-            <fluid_density>rho_fr</fluid_density>
+           <!-- <fluid_density>rho_fr</fluid_density> -->
             <fluid_volumetric_thermal_expansion_coefficient>beta_f</fluid_volumetric_thermal_expansion_coefficient>
             <solid_linear_thermal_expansion_coefficient>alpha_s</solid_linear_thermal_expansion_coefficient>
-            <fluid_specific_heat_capacity>C_f</fluid_specific_heat_capacity>
+           <!-- <fluid_specific_heat_capacity>C_f</fluid_specific_heat_capacity> -->
             <solid_specific_heat_capacity>C_s</solid_specific_heat_capacity>
             <solid_thermal_conductivity>lambda_s</solid_thermal_conductivity>
-            <fluid_thermal_conductivity>lambda_f</fluid_thermal_conductivity>
+           <!-- <fluid_thermal_conductivity>lambda_f</fluid_thermal_conductivity> -->
             <reference_temperature>T0</reference_temperature>
  
             <process_variables>
@@ -57,6 +57,27 @@
                 </secondary_variables>
 
             <specific_body_force>0 0</specific_body_force>
+			
+			<fluid>
+			    <density>
+			        <type>TemperatureDependent</type>
+			        <temperature0> 273.15 </temperature0>
+			        <beta> 4e-4 </beta>
+			        <rho0>1000</rho0>
+			    </density>
+			    <viscosity>
+			        <type>Constant</type>
+			        <value> 1.278e-3 </value>
+			    </viscosity>
+			    <specific_heat_capacity>
+			        <type>Constant</type>
+			        <value> 4186. </value>
+			    </specific_heat_capacity>
+			    <thermal_conductivity>
+			        <type>Constant</type>
+			        <value> 0.56 </value>
+			    </thermal_conductivity>
+			</fluid>
         </process>
     </processes>
 
@@ -92,9 +113,9 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>50000</t_end>
+            <t_end>7000000</t_end>
             <timesteps>
-            <pair><repeat>10</repeat><delta_t>5000</delta_t></pair>
+            <pair><repeat>10</repeat><delta_t>50000</delta_t></pair>
          <!--       <pair><repeat>1</repeat><delta_t>10</delta_t></pair>  -->
             </timesteps>
         </time_stepping>
@@ -125,7 +146,7 @@
         <parameter>
             <name>k</name>
             <type>Constant</type>
-            <value>1e-6</value>
+            <value>2e-20</value>
         </parameter>
 
         <parameter>
@@ -134,11 +155,11 @@
             <value>0</value>
         </parameter>
 
-        <parameter>
+      <!--  <parameter>
             <name>mu</name>
             <type>Constant</type>
-            <value>1.278e-9</value>
-        </parameter>
+            <value>1.278e-3</value>
+        </parameter> -->
 
         <parameter>
             <name>alpha</name>
@@ -158,11 +179,11 @@
             <value>2450</value>
         </parameter>
 
-        <parameter>
+       <!-- <parameter>
             <name>rho_fr</name>
             <type>Constant</type>
             <value>1000</value>
-        </parameter>
+        </parameter> -->
 
         <parameter>
             <name>alpha_s</name>
@@ -176,11 +197,11 @@
             <value>4e-4</value>
         </parameter>
 
-        <parameter>
+       <!-- <parameter>
             <name>lambda_f</name>
             <type>Constant</type>
             <value>0.56</value>
-        </parameter>
+        </parameter>  -->
 
         <parameter>
             <name>lambda_s</name>
@@ -188,11 +209,11 @@
             <value>1.64</value>
         </parameter>
 
-        <parameter>
+       <!-- <parameter>
             <name>C_f</name>
             <type>Constant</type>
             <value>4186.0</value>
-        </parameter>
+        </parameter> -->
 
         <parameter>
             <name>C_s</name>
@@ -263,7 +284,7 @@
         <parameter>
             <name>temperature_bc_center</name>
             <type>Constant</type>
-            <value>37.5</value>
+            <value>47.77</value>
         </parameter>
     </parameters>
 

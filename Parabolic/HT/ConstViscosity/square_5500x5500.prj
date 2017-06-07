@@ -27,6 +27,10 @@
                    <type>Constant</type>
                    <value>1.0e-3</value>
                </viscosity>
+               <specific_heat_capacity>
+                  <type>Constant</type>
+                  <value>4200</value>
+               </specific_heat_capacity>
            </fluid>
 
             <porous_medium>
@@ -48,7 +52,6 @@
             <density_solid>rho_solid</density_solid>
             <fluid_reference_density>rho_fluid</fluid_reference_density>
             <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
-            <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
             <thermal_dispersivity_longitudinal>alpha_l</thermal_dispersivity_longitudinal>
@@ -161,11 +164,6 @@
             <name>c_solid</name>
             <type>Constant</type>
             <value>0</value>
-        </parameter>
-        <parameter>
-            <name>c_fluid</name>
-            <type>Constant</type>
-            <value>4200</value>
         </parameter>
        <parameter>
             <name>T0</name>

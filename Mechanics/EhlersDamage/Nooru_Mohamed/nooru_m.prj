@@ -85,6 +85,7 @@
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
                 <output>
+                    <integration_point_data>1</integration_point_data>
                     <variables>
                         <variable>damage</variable>
                         <variable>displacement</variable>
@@ -307,14 +308,14 @@
                     <parameter>Dirichlet_top</parameter>
                 </boundary_condition>
 
-		<boundary_condition>
+                <boundary_condition>
                     <geometrical_set>nooru_m</geometrical_set>
                     <geometry>left</geometry>
                     <type>Neumann</type>
                     <component>0</component>
                     <parameter>Neumann_left</parameter>
                 </boundary_condition>
-             
+
             </boundary_conditions>
 
         </process_variable>

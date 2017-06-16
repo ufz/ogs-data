@@ -2,24 +2,21 @@
 <OpenGeoSysProject>
     <mesh axially_symmetric="true">inert-wedge-extracted-surface-t-1s.vtu</mesh>
     <geometry>square_1x1_axi.gml</geometry>
-
     <processes>
         <process>
             <name>TES_pcs</name>
             <type>TES</type>
             <integration_order>2</integration_order>
-
             <process_variables>
                 <fluid_pressure>       pressure    </fluid_pressure>
                 <temperature>          temperature </temperature>
                 <vapour_mass_fraction> v_mass_frac </vapour_mass_fraction>
             </process_variables>
-
             <secondary_variables>
             </secondary_variables>
-
-            <reactive_system><type>Inert</type></reactive_system>
-
+            <reactive_system>
+                <type>Inert</type>
+            </reactive_system>
             <fluid_specific_heat_source>            0.0     </fluid_specific_heat_source>
             <fluid_specific_isobaric_heat_capacity> 10.0    </fluid_specific_isobaric_heat_capacity>
             <solid_hydraulic_permeability>          1.e-10  </solid_hydraulic_permeability>
@@ -31,15 +28,12 @@
             <porosity>                              0.4     </porosity>
             <solid_density_dry>                     1150.0  </solid_density_dry>
             <solid_density_initial>                 1305.25 </solid_density_initial>
-
             <characteristic_pressure>             1e5  </characteristic_pressure>
             <characteristic_temperature>          200  </characteristic_temperature>
             <characteristic_vapour_mass_fraction> 0.01 </characteristic_vapour_mass_fraction>
-
             <output_element_matrices>false</output_element_matrices>
         </process>
     </processes>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>     basic_picard </name>
@@ -48,7 +42,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -65,7 +58,6 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
     <time_loop>
         <processes>
             <process ref="TES_pcs">
@@ -75,8 +67,9 @@
                     <norm_type>NORM2</norm_type>
                     <reltols>1.e-6 1e-6 1e-6</reltols>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable> pressure                </variable>
@@ -85,52 +78,51 @@
                     </variables>
                     <output_extrapolation_residuals>true</output_extrapolation_residuals>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial> 0.0 </t_initial>
+                    <t_end>     1.0 </t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat> 10 </repeat>
+                            <delta_t> 0.25 </delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial> 0.0 </t_initial>
-            <t_end>     1.0 </t_end>
-            <timesteps>
-                <pair><repeat> 10 </repeat><delta_t> 0.25 </delta_t></pair>
-            </timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>tes_inert_axi</prefix>
             <timesteps>
-                <pair><repeat> 1 </repeat><each_steps> 1 </each_steps></pair>
+                <pair>
+                    <repeat> 1 </repeat>
+                    <each_steps> 1 </each_steps>
+                </pair>
             </timesteps>
         </output>
     </time_loop>
-
     <parameters>
         <parameter>
             <name>p_initial</name>
             <type>Constant</type>
             <value>1e5</value>
         </parameter>
-
         <parameter>
             <name>T_in</name>
             <type>Constant</type>
             <value>333.15</value>
         </parameter>
-
         <parameter>
             <name>xmV_in</name>
             <type>Constant</type>
             <value>0.025</value>
         </parameter>
-
         <parameter>
             <name>mass_flux</name>
             <type>Constant</type>
             <value>0.04</value>
         </parameter>
-
         <parameter>
             <name>heat_transfer_coefficient</name>
             <type>Constant</type>
@@ -141,22 +133,18 @@
             <type>Constant</type>
             <value>293.15</value>
         </parameter>
-
         <parameter>
             <name>T_initial</name>
             <type>MeshNode</type>
             <field_name>T0</field_name>
         </parameter>
     </parameters>
-
     <process_variables>
         <process_variable>
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>p_initial</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
@@ -164,7 +152,6 @@
                     <type>Neumann</type>
                     <parameter>mass_flux</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>top</geometry>
@@ -172,15 +159,12 @@
                     <parameter>p_initial</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
         <process_variable>
             <name>temperature</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>T_initial</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
@@ -188,7 +172,6 @@
                     <type>Dirichlet</type>
                     <parameter>T_in</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>outer</geometry>
@@ -197,15 +180,12 @@
                     <u_0>T_ambient</u_0>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
         <process_variable>
             <name>v_mass_frac</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>xmV_in</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
@@ -214,7 +194,6 @@
                     <parameter>xmV_in</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
 </OpenGeoSysProject>

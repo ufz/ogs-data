@@ -2,25 +2,20 @@
 <OpenGeoSysProject>
     <mesh>line_1_line_1e1.vtu</mesh>
     <geometry>line_1.gml</geometry>
-
     <processes>
         <process>
             <name>GW23</name>
             <type>GROUNDWATER_FLOW</type>
             <integration_order>2</integration_order>
-
             <hydraulic_conductivity>K</hydraulic_conductivity>
-
             <process_variables>
                 <process_variable>pressure</process_variable>
             </process_variables>
-
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
+                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x"/>
             </secondary_variables>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="GW23">
@@ -30,37 +25,39 @@
                     <norm_type>NORM2</norm_type>
                     <abstol>1.e-6</abstol>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable>pressure</variable>
                         <variable>v_x</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0.0</t_initial>
+                    <t_end>10.0</t_end>
+                    <timesteps>
+                        <pair>
+                            <delta_t>1.0</delta_t>
+                            <repeat>1</repeat>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0.0</t_initial>
-            <t_end>10.0</t_end>
-            <timesteps><pair><delta_t>1.0</delta_t><repeat>1</repeat></pair></timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>line_1e1_time_dep_neumann</prefix>
         </output>
     </time_loop>
-
     <parameters>
         <parameter>
             <name>K</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
         <parameter>
             <name>p0</name>
             <type>Constant</type>
@@ -83,7 +80,6 @@
             <parameter>p_Neumann_right_spatial</parameter>
         </parameter>
     </parameters>
-
     <curves>
         <curve>
             <name>p_Neumann_right_temporal</name>
@@ -91,15 +87,12 @@
             <values>0.0 10.0</values>
         </curve>
     </curves>
-
     <process_variables>
         <process_variable>
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>p0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>line_1_geometry</geometrical_set>
@@ -107,7 +100,6 @@
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_left</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>line_1_geometry</geometrical_set>
                     <geometry>right</geometry>
@@ -115,10 +107,8 @@
                     <parameter>p_Neumann_right</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_picard</name>
@@ -127,7 +117,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -144,5 +133,4 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
 </OpenGeoSysProject>

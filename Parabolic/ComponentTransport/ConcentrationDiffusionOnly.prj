@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <OpenGeoSysProject>
     <mesh>square_1x1_quad_1e3.vtu</mesh>
     <geometry>square_1x1.gml</geometry>
-
     <processes>
         <process>
             <name>hc</name>
             <type>ComponentTransport</type>
             <integration_order>2</integration_order>
-
             <process_variables>
                 <concentration>concentration</concentration>
                 <pressure>pressure</pressure>
             </process_variables>
-
             <fluid>
-               <density>
-                   <type>ConcentrationDependent</type>
-                   <reference_density>1</reference_density>
-                   <reference_concentration>0</reference_concentration>
-                   <fluid_density_difference_ratio>0.026</fluid_density_difference_ratio>
-               </density>
-               <viscosity>
-                   <type>Constant</type>
-                   <value>1.0e-3</value>
-               </viscosity>
-           </fluid>
-
+                <density>
+                    <type>ConcentrationDependent</type>
+                    <reference_density>1</reference_density>
+                    <reference_concentration>0</reference_concentration>
+                    <fluid_density_difference_ratio>0.026</fluid_density_difference_ratio>
+                </density>
+                <viscosity>
+                    <type>Constant</type>
+                    <value>1.0e-3</value>
+                </viscosity>
+            </fluid>
             <porous_medium>
-               <porous_medium id="0">
+                <porous_medium id="0">
                     <permeability>
                         <values>1.239e-7 0 0 1.239e-7</values>
                     </permeability>
@@ -42,7 +37,7 @@
                         <value>1e-5</value>
                     </storage>
                 </porous_medium>
-               <porous_medium id="1">
+                <porous_medium id="1">
                     <permeability>
                         <values>1e-3 0 0 1e-3</values>
                     </permeability>
@@ -56,7 +51,6 @@
                     </storage>
                 </porous_medium>
             </porous_medium>
-
             <fluid_reference_density>rho_fluid</fluid_reference_density>
             <solute_dispersivity_longitudinal>beta_l</solute_dispersivity_longitudinal>
             <solute_dispersivity_transverse>beta_t</solute_dispersivity_transverse>
@@ -64,14 +58,12 @@
             <retardation_factor>retardation</retardation_factor>
             <decay_rate>decay</decay_rate>
             <specific_body_force>0 0</specific_body_force>
-
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
-                <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y" />
+                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x"/>
+                <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y"/>
             </secondary_variables>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="hc">
@@ -81,38 +73,41 @@
                     <norm_type>NORM2</norm_type>
                     <reltol>1e-1</reltol>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
-                      <variable>concentration</variable>
-                      <variable>pressure</variable>
-                      <variable>darcy_velocity_x</variable>
-                      <variable>darcy_velocity_y</variable>
+                        <variable>concentration</variable>
+                        <variable>pressure</variable>
+                        <variable>darcy_velocity_x</variable>
+                        <variable>darcy_velocity_y</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0.0</t_initial>
+                    <t_end>1</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>1</repeat>
+                            <delta_t>1</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0.0</t_initial>
-            <t_end>1</t_end>
-       <timesteps>
-         <pair><repeat>1</repeat><delta_t>1</delta_t></pair>
-       </timesteps>
-       </time_stepping>
-
-       <output>
-           <type>VTK</type>
-           <prefix>DiffusionOnly</prefix>
-           <timesteps>
-               <pair><repeat>1</repeat><each_steps>1</each_steps></pair>
-           </timesteps>
-      </output>
-
+        <output>
+            <type>VTK</type>
+            <prefix>DiffusionOnly</prefix>
+            <timesteps>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>1</each_steps>
+                </pair>
+            </timesteps>
+        </output>
     </time_loop>
-
     <parameters>
         <parameter>
             <name>rho_fluid</name>
@@ -144,18 +139,17 @@
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
-       <parameter>
+        <parameter>
             <name>c0</name>
             <type>Constant</type>
             <value>0</value>
-       </parameter>
-       <parameter>
+        </parameter>
+        <parameter>
             <name>p0</name>
             <type>Constant</type>
             <value>0</value>
-       </parameter>
-       <parameter>
+        </parameter>
+        <parameter>
             <name>p_Dirichlet_left</name>
             <type>Constant</type>
             <value>0</value>
@@ -165,7 +159,6 @@
             <type>Constant</type>
             <value>0</value>
         </parameter>
-
         <parameter>
             <name>c_Dirichlet_left</name>
             <type>Constant</type>
@@ -177,16 +170,14 @@
             <value>0</value>
         </parameter>
     </parameters>
-
-     <process_variables>
+    <process_variables>
         <process_variable>
             <name>concentration</name>
             <components>1</components>
             <order>1</order>
             <initial_condition>c0</initial_condition>
-
             <boundary_conditions>
-               <boundary_condition>
+                <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
@@ -199,17 +190,13 @@
                     <parameter>c_Dirichlet_right</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
-
         <process_variable>
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>p0</initial_condition>
-
-           <boundary_conditions>
+            <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>left</geometry>
@@ -223,10 +210,8 @@
                     <parameter>p_Dirichlet_right</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_picard</name>
@@ -235,8 +220,7 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
-   <linear_solvers>
+    <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
             <lis>-i cg -p jacobi -tol 1e-16 -maxiter 20000</lis>

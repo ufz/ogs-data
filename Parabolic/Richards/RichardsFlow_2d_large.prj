@@ -17,7 +17,7 @@
             </process_variables>
             <material_property>
                 <fluid>
-                     <density>
+                    <density>
                         <type>Constant</type>
                         <value> 1.e3 </value>
                     </density>
@@ -39,7 +39,7 @@
                             <type>Constant</type>
                             <value> 0.0 </value>
                         </storage>
-                       <capillary_pressure>
+                        <capillary_pressure>
                             <type>Curve</type>
                             <curve>
                                 <coords>1 0.98684211 0.97368421 0.96052632 0.94894737 0.92105263 0.89473684 0.86842105 0.84210526 0.81578947 0.78947368 0.65789474 0.63157895 0.57894737 0.52631579 0.39473684 0.26315789
@@ -50,21 +50,19 @@
                         </capillary_pressure>
                         <relative_permeability>
                             <type>Curve</type>
-                                <curve>
-                                    <coords>0.26315789 0.39473684 0.52631579 0.57894737 0.63157895 0.65789474 0.78947368 0.81578947 0.84210526 0.86842105 0.89473684 0.92105263 0.94894737 0.96052632 0.97368421 0.98684211 1
+                            <curve>
+                                <coords>0.26315789 0.39473684 0.52631579 0.57894737 0.63157895 0.65789474 0.78947368 0.81578947 0.84210526 0.86842105 0.89473684 0.92105263 0.94894737 0.96052632 0.97368421 0.98684211 1
                                     </coords>
-                                    <values>4.43E-05 0.00026547 0.00159003 0.00325358 0.00665757 0.00952343 0.05704014 0.08159396 0.11671736 0.16696017 0.23883078 0.34163922 0.49931406 0.58449912 0.69907308 0.8361059 1
+                                <values>4.43E-05 0.00026547 0.00159003 0.00325358 0.00665757 0.00952343 0.05704014 0.08159396 0.11671736 0.16696017 0.23883078 0.34163922 0.49931406 0.58449912 0.69907308 0.8361059 1
                                     </values>
-                                </curve>
+                            </curve>
                         </relative_permeability>
                     </porous_medium>
                 </porous_medium>
             </material_property>
-
             <secondary_variables>
                 <secondary_variable type="static" internal_name="saturation" output_name="saturation"/>
             </secondary_variables>
-
             <specific_body_force>0 -9.81</specific_body_force>
             <mass_lumping>true</mass_lumping>
             <temperature> temp </temperature>
@@ -88,35 +86,35 @@
                         <variable>saturation</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>20000</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>500</repeat>
+                            <delta_t>1</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>500</repeat>
+                            <delta_t>2</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>500</repeat>
+                            <delta_t>1</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>1300</repeat>
+                            <delta_t>2</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>500</repeat>
+                            <delta_t>1</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>20000</t_end>
-            <timesteps>
-                <pair>
-                    <repeat>500</repeat>
-                    <delta_t>1</delta_t>
-                </pair>
-                <pair>
-                    <repeat>500</repeat>
-                    <delta_t>2</delta_t>
-                </pair>
-                <pair>
-                    <repeat>500</repeat>
-                    <delta_t>1</delta_t>
-                </pair>
-                <pair>
-                    <repeat>1300</repeat>
-                    <delta_t>2</delta_t>
-                </pair>
-                <pair>
-                    <repeat>500</repeat>
-                    <delta_t>1</delta_t>
-                </pair>
-            </timesteps>
-        </time_stepping>
         <output>
             <type>VTK</type>
             <prefix>richards</prefix>

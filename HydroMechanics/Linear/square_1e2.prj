@@ -2,20 +2,17 @@
 <OpenGeoSysProject>
     <mesh>square_1x1_quad8_1e2.vtu</mesh>
     <geometry>square_1x1.gml</geometry>
-
     <processes>
         <process>
             <name>HM</name>
             <type>HYDRO_MECHANICS</type>
             <integration_order>3</integration_order>
             <dimension>2</dimension>
-
             <constitutive_relation>
                 <type>LinearElasticIsotropic</type>
                 <youngs_modulus>E</youngs_modulus>
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
-
             <intrinsic_permeability>k</intrinsic_permeability>
             <specific_storage>S</specific_storage>
             <fluid_viscosity>mu</fluid_viscosity>
@@ -23,39 +20,25 @@
             <biot_coefficient>alpha</biot_coefficient>
             <porosity>phi</porosity>
             <solid_density>rho_sr</solid_density>
-
             <process_variables>
                 <displacement>displacement</displacement>
                 <pressure>pressure</pressure>
             </process_variables>
-
             <secondary_variables>
-                <secondary_variable type="static"
-                    internal_name="sigma_xx" output_name="sigma_xx" />
-                <secondary_variable type="static"
-                    internal_name="sigma_yy" output_name="sigma_yy" />
-                <secondary_variable type="static"
-                    internal_name="sigma_zz" output_name="sigma_zz" />
-                <secondary_variable type="static"
-                    internal_name="sigma_xy" output_name="sigma_xy" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_xx" output_name="epsilon_xx" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_yy" output_name="epsilon_yy" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_zz" output_name="epsilon_zz" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_xy" output_name="epsilon_xy" />
-                <secondary_variable type="static"
-                    internal_name="velocity_x" output_name="velocity_x" />
-                <secondary_variable type="static"
-                    internal_name="velocity_y" output_name="velocity_y" />
+                <secondary_variable type="static" internal_name="sigma_xx" output_name="sigma_xx"/>
+                <secondary_variable type="static" internal_name="sigma_yy" output_name="sigma_yy"/>
+                <secondary_variable type="static" internal_name="sigma_zz" output_name="sigma_zz"/>
+                <secondary_variable type="static" internal_name="sigma_xy" output_name="sigma_xy"/>
+                <secondary_variable type="static" internal_name="epsilon_xx" output_name="epsilon_xx"/>
+                <secondary_variable type="static" internal_name="epsilon_yy" output_name="epsilon_yy"/>
+                <secondary_variable type="static" internal_name="epsilon_zz" output_name="epsilon_zz"/>
+                <secondary_variable type="static" internal_name="epsilon_xy" output_name="epsilon_xy"/>
+                <secondary_variable type="static" internal_name="velocity_x" output_name="velocity_x"/>
+                <secondary_variable type="static" internal_name="velocity_y" output_name="velocity_y"/>
             </secondary_variables>
-
             <specific_body_force>0 0</specific_body_force>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="HM">
@@ -65,8 +48,9 @@
                     <norm_type>NORM2</norm_type>
                     <abstol>1e-8</abstol>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable>displacement</variable>
@@ -83,31 +67,46 @@
                         <variable>velocity_y</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>4000</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>40</repeat>
+                            <delta_t>5</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>1</repeat>
+                            <delta_t>10</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>4000</t_end>
-            <timesteps>
-                <pair><repeat>40</repeat><delta_t>5</delta_t></pair>
-                <pair><repeat>1</repeat><delta_t>10</delta_t></pair>
-            </timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>square_1e2</prefix>
             <timesteps>
-                <pair><repeat>1</repeat><each_steps>1</each_steps></pair>
-                <pair><repeat>1</repeat><each_steps>19</each_steps></pair>
-                <pair><repeat>1</repeat><each_steps>100</each_steps></pair>
-                <pair><repeat>1</repeat><each_steps>300</each_steps></pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>1</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>19</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>100</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>300</each_steps>
+                </pair>
             </timesteps>
         </output>
     </time_loop>
-
     <parameters>
         <!-- Mechanics -->
         <parameter>
@@ -120,7 +119,6 @@
             <type>Constant</type>
             <value>.1</value>
         </parameter>
-
         <!-- Model parameters -->
         <parameter>
             <name>k</name>
@@ -147,7 +145,6 @@
             <type>Constant</type>
             <value>0.8</value>
         </parameter>
-
         <parameter>
             <name>rho_sr</name>
             <type>Constant</type>
@@ -158,13 +155,11 @@
             <type>Constant</type>
             <value>1.0e-6</value>
         </parameter>
-
         <parameter>
             <name>displacement0</name>
             <type>Constant</type>
             <values>0 0</values>
         </parameter>
-
         <parameter>
             <name>pressure_ic</name>
             <type>Constant</type>
@@ -197,7 +192,6 @@
             <parameter>displacementTop</parameter>
         </parameter>
     </parameters>
-
     <curves>
         <curve>
             <name>timeRamp</name>
@@ -205,16 +199,12 @@
             <values>0 1   1</values>
         </curve>
     </curves>
-
-
     <process_variables>
         <process_variable>
             <name>displacement</name>
             <components>2</components>
             <order>2</order>
-
             <initial_condition>displacement0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
@@ -223,7 +213,6 @@
                     <component>0</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>right</geometry>
@@ -231,7 +220,6 @@
                     <component>0</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
@@ -239,7 +227,6 @@
                     <component>1</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
@@ -248,16 +235,12 @@
                     <parameter>displacementRamp</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
-
         <process_variable>
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>pressure_ic</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
@@ -266,7 +249,6 @@
                     <component>0</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <!-- boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
@@ -274,10 +256,8 @@
                     <parameter>p_neumann</parameter>
                 </boundary_condition -->
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_newton</name>
@@ -286,7 +266,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -303,5 +282,4 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
 </OpenGeoSysProject>

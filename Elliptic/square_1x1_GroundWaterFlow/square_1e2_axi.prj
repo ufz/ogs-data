@@ -2,25 +2,20 @@
 <OpenGeoSysProject>
     <mesh axially_symmetric="true">square_1x1_quad_1e2.vtu</mesh>
     <geometry>square_1x1_axi.gml</geometry>
-
     <processes>
         <process>
             <name>GW23</name>
             <type>GROUNDWATER_FLOW</type>
             <integration_order>2</integration_order>
-
             <hydraulic_conductivity>lambda</hydraulic_conductivity>
-
             <process_variables>
                 <process_variable>temperature</process_variable>
             </process_variables>
-
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
+                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x"/>
             </secondary_variables>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="GW23">
@@ -30,27 +25,25 @@
                     <norm_type>NORM2</norm_type>
                     <abstol>1.e-6</abstol>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable> temperature </variable>
                         <variable> v_x      </variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>SingleStep</type>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>SingleStep</type>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>square_1e2_axi</prefix>
         </output>
     </time_loop>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_picard</name>
@@ -59,7 +52,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -76,14 +68,12 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
     <parameters>
         <parameter>
             <name>lambda</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
         <parameter>
             <name>T0</name>
             <type>Constant</type>
@@ -105,15 +95,12 @@
             <value>0</value>
         </parameter>
     </parameters>
-
     <process_variables>
         <process_variable>
             <name>temperature</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>T0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
@@ -121,14 +108,12 @@
                     <type>Neumann</type>
                     <parameter>heat_flux_bottom</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>top</geometry>
                     <type>Dirichlet</type>
                     <parameter>ambient_temperature</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>outer</geometry>
@@ -137,8 +122,6 @@
                     <u_0>ambient_temperature</u_0>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
 </OpenGeoSysProject>

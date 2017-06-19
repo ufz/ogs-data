@@ -7,7 +7,7 @@ node('docker') {
     image.pull()
     image.inside() {
         stage('git diff check') {
-            sh """git remote add upstream ${upstream_repo}
+            sh """git remote set-url --add upstream ${upstream_repo}
                   git fetch upstream master
                   git config core.whitespace -blank-at-eof
                   git diff --check `git merge-base upstream/master HEAD`

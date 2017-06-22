@@ -103,8 +103,8 @@
                     <t_end> 300 </t_end>
                     <timesteps>
                         <pair>
-                            <repeat>5</repeat>
-                            <delta_t>60</delta_t>
+                            <repeat>10</repeat>
+                            <delta_t>30</delta_t>
                         </pair>
                     </timesteps>
                 </time_stepping>
@@ -134,8 +134,8 @@
                     <t_end> 300 </t_end>
                     <timesteps>
                         <pair>
-                            <repeat>5</repeat>
-                            <delta_t>60</delta_t>
+                            <repeat>10</repeat>
+                            <delta_t>30</delta_t>
                         </pair>
                     </timesteps>
                 </time_stepping>

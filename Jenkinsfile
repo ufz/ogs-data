@@ -7,14 +7,12 @@ node('docker') {
     image.pull()
     image.inside() {
         stage('git diff check') {
-            sh """git remote set-url --add upstream ${upstream_repo}
-                  git fetch upstream master
-                  git config core.whitespace -blank-at-eof
-                  git diff --check `git merge-base upstream/master HEAD`
-                  git remote rm upstream""".stripIndent()
+            sh """git config core.whitespace -blank-at-eof
+                  git diff --check `git merge-base origin/master HEAD`
+                  """.stripIndent()
         }
         stage('xml lint') {
-            sh 'xmllint --noout ./**/*.prj'
+            sh 'find -name \'*.prj\' -exec xmllint --noout {} \\;'
         }
     }
 }

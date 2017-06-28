@@ -107,7 +107,6 @@
                     <rel_dt_min> 0.01 </rel_dt_min>
                     <rel_dt_max> 5 </rel_dt_max>
                     <tol> 1.e-1 </tol>
-                    <norm_type> NORM2 </norm_type>
                 </time_stepping>
                 <coupled_processes>
                     <coupled_process> LiquidFlow </coupled_process>
@@ -139,7 +138,6 @@
                     <rel_dt_min> 0.01 </rel_dt_min>
                     <rel_dt_max> 5 </rel_dt_max>
                     <tol> 1.e-1 </tol>
-                    <norm_type> NORM2 </norm_type>
                 </time_stepping>
                 <coupled_processes>
                     <coupled_process> HeatConduction </coupled_process>

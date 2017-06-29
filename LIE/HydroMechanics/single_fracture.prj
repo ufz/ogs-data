@@ -305,7 +305,7 @@
                 <solver_type>PardisoLU</solver_type>
                 <precon_type>NONE</precon_type>
                 -->
-                <solver_type>BiCGSTAB</solver_type>
+                <solver_type>SparseLU</solver_type>
                 <precon_type>ILUT</precon_type>
                 <scaling>1</scaling>
                 <max_iteration_step>3000</max_iteration_step>

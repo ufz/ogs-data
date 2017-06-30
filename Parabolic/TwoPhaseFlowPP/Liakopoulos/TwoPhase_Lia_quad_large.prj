@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <OpenGeoSysProject>
     <mesh>Twophase_Lia_quad.vtu</mesh>
     <geometry>Twophase_Lia.gml</geometry>
-
     <processes>
         <process>
             <name>GW23</name>
             <type>TWOPHASE_FLOW_PP</type>
             <integration_order>2</integration_order>
-
             <jacobian_assembler>
                 <type>CentralDifferences</type>
                 <component_magnitudes>1e5 1e+4</component_magnitudes>
                 <relative_epsilons>1e-7 1e-7</relative_epsilons>
             </jacobian_assembler>
-
             <process_variables>
                 <gas_pressure>gas_pressure</gas_pressure>
                 <capillary_pressure>capillary_pressure</capillary_pressure>
             </process_variables>
-
             <material_property>
                 <fluid>
-                     <liquid_density>
+                    <liquid_density>
                         <type>Constant</type>
                         <value> 1.e3 </value>
                     </liquid_density>
@@ -53,7 +48,7 @@
                             <type>Constant</type>
                             <value> 0.0 </value>
                         </storage>
-                       <capillary_pressure>
+                        <capillary_pressure>
                             <type>Curve</type>
                             <curve>
                                 <coords>0.900000007    0.910000009    0.920000003    0.929821599    0.939999996    0.950000006    0.960000005    0.97    0.980000004    0.982500005    0.984999999    0.9875    0.989999997    0.9925    0.995000002    0.997499999    0.99962099    1
@@ -83,18 +78,15 @@
                     </porous_medium>
                 </porous_medium>
             </material_property>
-
             <secondary_variables>
-                <secondary_variable type="static" internal_name="saturation" output_name="saturation" />
-                <secondary_variable type="static" internal_name="pressure_wetting" output_name="pressure_wetting" />
+                <secondary_variable type="static" internal_name="saturation" output_name="saturation"/>
+                <secondary_variable type="static" internal_name="pressure_wetting" output_name="pressure_wetting"/>
             </secondary_variables>
-
             <specific_body_force>0 -9.81</specific_body_force>
             <mass_lumping> true </mass_lumping>
             <temperature> temp </temperature>
         </process>
     </processes>
-
     <parameters>
         <parameter>
             <name>pc_Dirichlet_bottom</name>
@@ -127,7 +119,6 @@
             <value>293.15</value>
         </parameter>
     </parameters>
-
     <time_loop>
         <processes>
             <process ref="GW23">
@@ -138,10 +129,9 @@
                     <abstol>1.e-7</abstol>
                 </convergence_criterion>
                 <time_discretization>
-                <type>CrankNicolson</type>
-                <theta>0.5</theta>
+                    <type>CrankNicolson</type>
+                    <theta>0.5</theta>
                 </time_discretization>
-
                 <output>
                     <variables>
                         <variable> capillary_pressure </variable>
@@ -149,42 +139,52 @@
                         <variable> saturation </variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>1000.0</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>100</repeat>
+                            <delta_t>0.01</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>8</repeat>
+                            <delta_t>1</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>100</repeat>
+                            <delta_t>0.01</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>8</repeat>
+                            <delta_t>1</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>1000.0</t_end>
-           <timesteps>
-                <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
-                <pair><repeat>8</repeat><delta_t>1</delta_t></pair>
-                <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
-                <pair><repeat>8</repeat><delta_t>1</delta_t></pair>
-            </timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>twophaseflow</prefix>
             <timesteps>
                 <!-- only output last timestep -->
-                <pair><repeat> 1 </repeat><each_steps> 1000 </each_steps></pair>
+                <pair>
+                    <repeat> 1 </repeat>
+                    <each_steps> 1000 </each_steps>
+                </pair>
             </timesteps>
             <output_iteration_results>false</output_iteration_results>
         </output>
     </time_loop>
-
     <process_variables>
         <process_variable>
             <name>gas_pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>pg_0</initial_condition>
-
             <boundary_conditions>
-                 <boundary_condition>
+                <boundary_condition>
                     <geometrical_set>Twophase_Lia_Geometry</geometrical_set>
                     <geometry>TOP</geometry>
                     <type>Dirichlet</type>
@@ -197,16 +197,12 @@
                     <parameter>pg_Dirichlet_bottom</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
-
         </process_variable>
         <process_variable>
             <name>capillary_pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>pc_0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>Twophase_Lia_Geometry</geometrical_set>
@@ -215,10 +211,8 @@
                     <parameter>pc_Dirichlet_bottom</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>     basic_newton </name>
@@ -227,8 +221,7 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
-     <linear_solvers>
+    <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
             <lis>-i bicgstab -p ilu -tol 1e-18 -maxiter 10000</lis>

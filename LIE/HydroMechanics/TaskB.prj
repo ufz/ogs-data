@@ -2,26 +2,22 @@
 <OpenGeoSysProject>
     <mesh>TaskB_mesh.vtu</mesh>
     <geometry>TaskB.gml</geometry>
-
     <processes>
         <process>
             <name>HM</name>
             <type>HYDRO_MECHANICS_WITH_LIE</type>
             <integration_order>3</integration_order>
             <dimension>2</dimension>
-
             <process_variables>
                 <process_variable>pressure</process_variable>
                 <process_variable>displacement</process_variable>
                 <process_variable>displacement_jump1</process_variable>
             </process_variables>
-
             <constitutive_relation>
                 <type>LinearElasticIsotropic</type>
                 <youngs_modulus>E</youngs_modulus>
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
-
             <intrinsic_permeability>k</intrinsic_permeability>
             <specific_storage>S</specific_storage>
             <fluid_viscosity>mu</fluid_viscosity>
@@ -33,25 +29,21 @@
             <initial_effective_stress>effective_stress0</initial_effective_stress>
             <initial_fracture_effective_stress>fracture_effective_stress0</initial_fracture_effective_stress>
             <deactivate_matrix_in_flow>1</deactivate_matrix_in_flow>
-
             <fracture_constitutive_relation>
                 <type>LinearElasticIsotropic</type>
                 <normal_stiffness>Kn</normal_stiffness>
                 <shear_stiffness>Ks</shear_stiffness>
             </fracture_constitutive_relation>
-
             <fracture_properties>
                 <material_id>1</material_id>
                 <initial_aperture>aperture0</initial_aperture>
                 <specific_storage>S_f</specific_storage>
                 <biot_coefficient>biot_f</biot_coefficient>
             </fracture_properties>
-
             <secondary_variables>
             </secondary_variables>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="HM">
@@ -61,8 +53,9 @@
                     <norm_type>NORM2</norm_type>
                     <reltols>1e-8 1e-8 1e-8 1e-8 1e-8</reltols>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable>pressure</variable>
@@ -70,29 +63,35 @@
                         <variable>displacement_jump1</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>18</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>1</repeat>
+                            <delta_t>3.0</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>3</repeat>
+                            <delta_t>5.0</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>18</t_end>
-            <timesteps>
-                <pair><repeat>1</repeat><delta_t>3.0</delta_t></pair>
-                <pair><repeat>3</repeat><delta_t>5.0</delta_t></pair>
-            </timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>TaskB</prefix>
             <output_iteration_results>0</output_iteration_results>
             <timesteps>
-                <pair><repeat>1</repeat><each_steps>1</each_steps></pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>1</each_steps>
+                </pair>
             </timesteps>
         </output>
     </time_loop>
-
     <parameters>
         <!-- Fluid phase properties -->
         <parameter>
@@ -108,14 +107,12 @@
             <type>Constant</type>
             <value>1e-3</value>
         </parameter>
-
         <!-- Solid phase properties -->
         <parameter>
             <name>rho_sr</name>
             <type>Constant</type>
             <value>2450</value>
         </parameter>
-
         <!-- Porous medium properties -->
         <parameter>
             <name>phi</name>
@@ -150,8 +147,6 @@
         <!--
         K=5.9GPa, G=2.3GPa
         -->
-
-
         <!-- Fracture properties -->
         <parameter>
             <name>aperture0</name>
@@ -178,7 +173,6 @@
             <type>Constant</type>
             <value>20e9</value>
         </parameter>
-
         <!-- Flow properties -->
         <parameter>
             <name>p0</name>
@@ -196,7 +190,6 @@
             <curve>timeRamp_p_in</curve>
             <parameter>p_in</parameter>
         </parameter>
-
         <!-- Mechancis properties -->
         <parameter>
             <name>displacement0</name>
@@ -220,7 +213,6 @@
             <value>0</value>
         </parameter>
     </parameters>
-
     <curves>
         <curve>
             <name>timeRamp_p_in</name>
@@ -228,15 +220,12 @@
             <values>0.7446 0.7446  1.919 1.919  3.627 3.627   4.094 4.094   4.511 4.511    4.99 4.99     5.484 5.484   6.302 6.302   3.382 3.382</values>
         </curve>
     </curves>
-
     <process_variables>
         <process_variable>
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>p0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>TaskB</geometrical_set>
@@ -245,7 +234,6 @@
                     <component>0</component>
                     <parameter>p_in_transient</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>TaskB</geometrical_set>
                     <geometry>PLY_TOP</geometry>
@@ -261,16 +249,12 @@
                     <parameter>p0</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
-
         <process_variable>
             <name>displacement</name>
             <components>2</components>
             <order>2</order>
-
             <initial_condition>displacement0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>TaskB</geometrical_set>
@@ -286,7 +270,6 @@
                     <component>1</component>
                     <parameter>zero_u</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>TaskB</geometrical_set>
                     <geometry>PLY_LEFT</geometry>
@@ -302,16 +285,12 @@
                     <parameter>zero_u</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
-
         <process_variable>
             <name>displacement_jump1</name>
             <components>2</components>
             <order>2</order>
-
             <initial_condition>displacement0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>TaskB</geometrical_set>
@@ -328,10 +307,8 @@
                     <parameter>zero_u</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_newton</name>
@@ -340,7 +317,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -353,5 +329,4 @@
             </eigen>
         </linear_solver>
     </linear_solvers>
-
 </OpenGeoSysProject>

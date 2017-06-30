@@ -2,29 +2,23 @@
 <OpenGeoSysProject>
     <mesh>cube_1x1x1_hex_1e1.vtu</mesh>
     <geometry>cube_1x1x1.gml</geometry>
-
     <processes>
         <process>
             <name>GW23</name>
             <type>GROUNDWATER_FLOW</type>
             <integration_order>2</integration_order>
-
             <hydraulic_conductivity>K</hydraulic_conductivity>
-
             <jacobian_assembler>
                 <type>CentralDifferences</type>
             </jacobian_assembler>
-
             <process_variables>
                 <process_variable>pressure</process_variable>
             </process_variables>
-
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
+                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x"/>
             </secondary_variables>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="GW23">
@@ -34,34 +28,31 @@
                     <norm_type>NORM2</norm_type>
                     <abstol>1.e-6</abstol>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable> pressure </variable>
                         <variable> v_x      </variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>SingleStep</type>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>SingleStep</type>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>cube_1e1_newton</prefix>
         </output>
     </time_loop>
-
     <parameters>
         <parameter>
             <name>K</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
         <parameter>
             <name>p0</name>
             <type>Constant</type>
@@ -78,15 +69,12 @@
             <value>-1</value>
         </parameter>
     </parameters>
-
     <process_variables>
         <process_variable>
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>p0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
@@ -94,7 +82,6 @@
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_left</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>right</geometry>
@@ -102,10 +89,8 @@
                     <parameter>p_Dirichlet_right</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_newton</name>
@@ -114,7 +99,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -131,5 +115,4 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
 </OpenGeoSysProject>

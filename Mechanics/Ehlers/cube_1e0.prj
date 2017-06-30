@@ -2,14 +2,12 @@
 <OpenGeoSysProject>
     <mesh>cube_1x1x1_hex_1e0.vtu</mesh>
     <geometry>cube_1x1x1.gml</geometry>
-
     <processes>
         <process>
             <name>SD</name>
             <type>SMALL_DEFORMATION</type>
             <integration_order>2</integration_order>
             <dimension>3</dimension>
-
             <constitutive_relation>
                 <type>Ehlers</type>
                 <shear_modulus>G</shear_modulus>
@@ -28,38 +26,26 @@
                 <mp>mp</mp>
                 <betap>betap</betap>
                 <gammap>gammap</gammap>
-
                 <nonlinear_solver>
                     <maximum_iterations>100</maximum_iterations>
                     <error_tolerance>1e-14</error_tolerance>
                 </nonlinear_solver>
             </constitutive_relation>
-
             <process_variables>
                 <process_variable>displacement</process_variable>
             </process_variables>
-
             <secondary_variables>
-                <secondary_variable type="static"
-                    internal_name="sigma_xx" output_name="sigma_xx" />
-                <secondary_variable type="static"
-                    internal_name="sigma_yy" output_name="sigma_yy" />
-                <secondary_variable type="static"
-                    internal_name="sigma_zz" output_name="sigma_zz" />
-                <secondary_variable type="static"
-                    internal_name="sigma_xy" output_name="sigma_xy" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_xx" output_name="epsilon_xx" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_yy" output_name="epsilon_yy" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_zz" output_name="epsilon_zz" />
-                <secondary_variable type="static"
-                    internal_name="epsilon_xy" output_name="epsilon_xy" />
+                <secondary_variable type="static" internal_name="sigma_xx" output_name="sigma_xx"/>
+                <secondary_variable type="static" internal_name="sigma_yy" output_name="sigma_yy"/>
+                <secondary_variable type="static" internal_name="sigma_zz" output_name="sigma_zz"/>
+                <secondary_variable type="static" internal_name="sigma_xy" output_name="sigma_xy"/>
+                <secondary_variable type="static" internal_name="epsilon_xx" output_name="epsilon_xx"/>
+                <secondary_variable type="static" internal_name="epsilon_yy" output_name="epsilon_yy"/>
+                <secondary_variable type="static" internal_name="epsilon_zz" output_name="epsilon_zz"/>
+                <secondary_variable type="static" internal_name="epsilon_xy" output_name="epsilon_xy"/>
             </secondary_variables>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="SD">
@@ -69,8 +55,9 @@
                     <norm_type>NORM2</norm_type>
                     <abstol>1e-14</abstol>
                 </convergence_criterion>
-                <time_discretization><type>BackwardEuler</type></time_discretization>
-
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable>displacement</variable>
@@ -84,28 +71,34 @@
                         <variable>epsilon_xy</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>5.1</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>1</repeat>
+                            <delta_t>0.05</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>1000</repeat>
+                            <delta_t>0.025</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>5.1</t_end>
-            <timesteps>
-                <pair><repeat>1</repeat><delta_t>0.05</delta_t></pair>
-                <pair><repeat>1000</repeat><delta_t>0.025</delta_t></pair>
-            </timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
             <prefix>cube_1e0</prefix>
             <timesteps>
-                <pair><repeat>10000000</repeat><each_steps>1</each_steps></pair>
+                <pair>
+                    <repeat>10000000</repeat>
+                    <each_steps>1</each_steps>
+                </pair>
             </timesteps>
         </output>
     </time_loop>
-
     <parameters>
         <parameter>
             <name>G</name>
@@ -192,51 +185,43 @@
             <type>Constant</type>
             <values>0 0 0</values>
         </parameter>
-
         <parameter>
             <name>Dirichlet_left</name>
             <type>Constant</type>
             <value>0.</value>
         </parameter>
-
         <parameter>
             <name>Dirichlet_bottom</name>
             <type>Constant</type>
             <value>0.</value>
         </parameter>
-
         <parameter>
             <name>Dirichlet_front</name>
             <type>Constant</type>
             <value>0.</value>
         </parameter>
-
         <parameter>
             <name>Dirichlet_top_spatial</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
         <parameter>
             <name>Neumann_spatial</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
         <parameter>
             <name>Dirichlet_top</name>
             <type>CurveScaled</type>
             <curve>Dirichlet_top_temporal</curve>
             <parameter>Dirichlet_top_spatial</parameter>
         </parameter>
-
         <parameter>
             <name>Neumann_force_right</name>
             <type>CurveScaled</type>
             <curve>Neumann_temporal_right</curve>
             <parameter>Neumann_spatial</parameter>
         </parameter>
-
         <parameter>
             <name>Neumann_force_top</name>
             <type>CurveScaled</type>
@@ -244,35 +229,29 @@
             <parameter>Neumann_spatial</parameter>
         </parameter>
     </parameters>
-
     <curves>
         <curve>
             <name>Dirichlet_top_temporal</name>
             <coords>0.0 0.1 5.1</coords>
             <values>0.0 0.0 -0.005</values>
         </curve>
-
         <curve>
             <name>Neumann_temporal_right</name>
             <coords>0.0 0.1 5.1</coords>
             <values>0.0 -0.07 -0.02</values>
         </curve>
-
         <curve>
             <name>Neumann_temporal_top</name>
             <coords>0.0 0.1 5.1</coords>
             <values>0 -0.07 -0.02</values>
         </curve>
     </curves>
-
     <process_variables>
         <process_variable>
             <name>displacement</name>
             <components>3</components>
             <order>1</order>
-
             <initial_condition>displacement0</initial_condition>
-
             <boundary_conditions>
                 <!-- fixed boundaries -->
                 <boundary_condition>
@@ -282,7 +261,6 @@
                     <component>0</component>
                     <parameter>Dirichlet_left</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>front</geometry>
@@ -290,7 +268,6 @@
                     <component>1</component>
                     <parameter>Dirichlet_front</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
@@ -298,7 +275,6 @@
                     <component>2</component>
                     <parameter>Dirichlet_bottom</parameter>
                 </boundary_condition>
-
                 <!-- force -->
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
@@ -307,7 +283,6 @@
                     <component>0</component>
                     <parameter>Neumann_force_right</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>back</geometry>
@@ -315,7 +290,6 @@
                     <component>1</component>
                     <parameter>Dirichlet_top</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
@@ -324,10 +298,8 @@
                     <parameter>Neumann_force_top</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_newton</name>
@@ -336,7 +308,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -353,5 +324,4 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
 </OpenGeoSysProject>

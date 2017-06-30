@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <OpenGeoSysProject>
     <mesh>H2_H20_2D_small.vtu</mesh>
     <geometry>H2_H20_2D.gml</geometry>
-
     <processes>
         <process>
             <name>GW23</name>
             <type>TWOPHASE_FLOW_PRHO</type>
             <integration_order>2</integration_order>
-
             <process_variables>
                 <liquid_pressure> liquid_pressure </liquid_pressure>
                 <overall_mass_density>overall_mass_density</overall_mass_density>
             </process_variables>
-
             <jacobian_assembler>
                 <type>CentralDifferences</type>
                 <component_magnitudes>1e6 1.0</component_magnitudes>
                 <relative_epsilons>1e-6 1e-7</relative_epsilons>
             </jacobian_assembler>
-
             <material_property>
                 <fluid>
-                     <liquid_density>
+                    <liquid_density>
                         <type>Constant</type>
                         <value> 1.e3 </value>
                     </liquid_density>
@@ -82,8 +77,8 @@
                 </porous_medium>
             </material_property>
             <secondary_variables>
-                <secondary_variable type="static" internal_name="saturation" output_name="saturation" />
-                <secondary_variable type="static" internal_name="pressure_nonwetting" output_name="pressure_nonwetting" />
+                <secondary_variable type="static" internal_name="saturation" output_name="saturation"/>
+                <secondary_variable type="static" internal_name="pressure_nonwetting" output_name="pressure_nonwetting"/>
             </secondary_variables>
             <specific_body_force>0 0</specific_body_force>
             <mass_lumping> true </mass_lumping>
@@ -93,7 +88,7 @@
         </process>
     </processes>
     <parameters>
-         <parameter>
+        <parameter>
             <name>HEN0</name>
             <type>Constant</type>
             <value>7.65E-6</value>
@@ -118,17 +113,17 @@
             <type>Constant</type>
             <value>1e+6</value>
         </parameter>
-         <parameter>
+        <parameter>
             <name>T_neumann</name>
             <type>Constant</type>
             <value>5.57e-6</value>
         </parameter>
-         <parameter>
+        <parameter>
             <name>henry_const</name>
             <type>Constant</type>
             <value>7.65e-6</value>
         </parameter>
-         <parameter>
+        <parameter>
             <name>diff_coef_b</name>
             <type>Constant</type>
             <value>9.467e-2</value>
@@ -154,8 +149,8 @@
                     <abstol>1.e-6</abstol>
                 </convergence_criterion>
                 <time_discretization>
-                <type>CrankNicolson</type>
-                <theta>0.5</theta>
+                    <type>CrankNicolson</type>
+                    <theta>0.5</theta>
                 </time_discretization>
                 <output>
                     <variables>
@@ -165,21 +160,27 @@
                         <variable> pressure_nonwetting </variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>10000.0</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1000</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>10000.0</t_end>
-           <timesteps>
-                <pair><repeat>10</repeat><delta_t>1000</delta_t></pair>
-            </timesteps>
-        </time_stepping>
         <output>
             <type>VTK</type>
             <prefix>twophaseflow_small</prefix>
             <timesteps>
-                <pair><repeat> 1 </repeat><each_steps> 10 </each_steps></pair>
+                <pair>
+                    <repeat> 1 </repeat>
+                    <each_steps> 10 </each_steps>
+                </pair>
             </timesteps>
             <output_iteration_results>false</output_iteration_results>
         </output>
@@ -191,7 +192,7 @@
             <order>1</order>
             <initial_condition>pg_0</initial_condition>
             <boundary_conditions>
-                 <boundary_condition>
+                <boundary_condition>
                     <geometrical_set>H2_H20_2D</geometrical_set>
                     <geometry>PLY_RIGHT</geometry>
                     <type>Dirichlet</type>
@@ -234,7 +235,7 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-     <linear_solvers>
+    <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
             <lis>-i bicgstab -p ilu -tol 1e-18 -maxiter 10000</lis>

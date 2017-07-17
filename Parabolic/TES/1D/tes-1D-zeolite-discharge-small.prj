@@ -13,11 +13,10 @@
                 <vapour_mass_fraction> v_mass_frac </vapour_mass_fraction>
             </process_variables>
             <secondary_variables>
-                <secondary_variable type="static" internal_name="solid_density" output_name="solid_density"/>
-                <secondary_variable type="static" internal_name="fct_TES_solid_density" output_name="fct_solid_density"/>
+                <secondary_variable type="static" internal_name="TES_solid_density" output_name="solid_density"/>
                 <secondary_variable type="static" internal_name="reaction_rate" output_name="reaction_rate"/>
                 <secondary_variable type="static" internal_name="velocity_x" output_name="velocity_x"/>
-                <secondary_variable type="static" internal_name="fct_vapour_partial_pressure" output_name="vapour_partial_pressure"/>
+                <secondary_variable type="static" internal_name="vapour_partial_pressure" output_name="vapour_partial_pressure"/>
                 <secondary_variable type="static" internal_name="relative_humidity" output_name="relative_humidity"/>
                 <secondary_variable type="static" internal_name="loading" output_name="loading"/>
                 <secondary_variable type="static" internal_name="equilibrium_loading" output_name="equilibrium_loading"/>
@@ -85,7 +84,6 @@
                         <variable> temperature             </variable>
                         <variable> v_mass_frac             </variable>
                         <variable> solid_density           </variable>
-                        <variable> fct_solid_density       </variable>
                         <variable> reaction_rate           </variable>
                         <variable> velocity_x              </variable>
                         <variable> loading                 </variable>

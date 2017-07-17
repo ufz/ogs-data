@@ -12,7 +12,7 @@
                 <process_variable>pressure</process_variable>
             </process_variables>
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x"/>
+                <secondary_variable type="static" internal_name="darcy_velocity" output_name="v"/>
             </secondary_variables>
             <calculatesurfaceflux>
                 <mesh>cube_1x1x1_prism_2e3_complete_surface.vtu</mesh>
@@ -36,7 +36,7 @@
                 <output>
                     <variables>
                         <variable> pressure </variable>
-                        <variable> v_x      </variable>
+                        <variable> v      </variable>
                     </variables>
                 </output>
                 <time_stepping>

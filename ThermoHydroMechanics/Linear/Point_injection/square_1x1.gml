@@ -7,7 +7,7 @@
         <point id="0" x="0" y="0" z="0" name="center"/>
         <point id="1" x="0" y="10" z="0"/>
         <point id="2" x="10" y="0" z="0"/>
-        <point id="3" x="0.5" y="0" z="0"/>
+        <point id="3" x="0.0261395" y="0" z="0"/>
         <point id="4" x="0" y="0.4" z="0"/>
         <point id="5" x="0" y="0.6" z="0"/>
     </points>
@@ -21,7 +21,7 @@
             <pnt>0</pnt>
             <pnt>2</pnt>
         </polyline>
-        <polyline id="2" name="bc_flux">
+        <polyline id="2" name="flux_bc">
             <pnt>0</pnt>
             <pnt>3</pnt>
         </polyline>

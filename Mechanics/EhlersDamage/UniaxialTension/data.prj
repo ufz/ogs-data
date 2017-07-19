@@ -50,6 +50,9 @@
 
                 <secondary_variable type="static" internal_name="damage.value" output_name="damage_value"/>
                 <secondary_variable type="static" internal_name="damage.kappa_d" output_name="damage_kappa_d"/>
+                <secondary_variable type="static" internal_name="eps_p.D" output_name="eps_p_D"/>
+                <secondary_variable type="static" internal_name="eps_p.V" output_name="eps_p_V"/>
+                <secondary_variable type="static" internal_name="eps_p.eff" output_name="eps_p_eff"/>
             </secondary_variables>
         </process>
     </processes>
@@ -79,6 +82,9 @@
 
                         <variable>damage_value</variable>
                         <variable>damage_kappa_d</variable>
+                        <variable>eps_p_D</variable>
+                        <variable>eps_p_V</variable>
+                        <variable>eps_p_eff</variable>
                     </variables>
                 </output>
                 <time_stepping>

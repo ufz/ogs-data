@@ -292,7 +292,7 @@
         <parameter>
             <name>temperature_bc_center</name>
             <type>Constant</type>
-            <value>76124</value>
+            <value>304496</value>
         </parameter>
     </parameters>
 

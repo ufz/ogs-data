@@ -12,7 +12,7 @@
                 <process_variable>pressure</process_variable>
             </process_variables>
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity" output_name="v"/>
+                <secondary_variable type="static" internal_name="darcy_velocity" output_name="mass_flux"/>
             </secondary_variables>
         </process>
     </processes>
@@ -30,8 +30,8 @@
                 </time_discretization>
                 <output>
                     <variables>
-                        <variable> pressure </variable>
-                        <variable> v      </variable>
+                        <variable> pressure  </variable>
+                        <variable> mass_flux </variable>
                     </variables>
                 </output>
                 <time_stepping>
@@ -41,7 +41,7 @@
         </processes>
         <output>
             <type>VTK</type>
-            <prefix>square_1e3_neumann</prefix>
+            <prefix>neumann_nonuniform</prefix>
         </output>
     </time_loop>
     <parameters>

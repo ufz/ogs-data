@@ -75,7 +75,7 @@
                 <convergence_criterion>
                     <type>DeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-11</abstol>
+                    <abstol>1e-8</abstol>
                 </convergence_criterion>
                 <time_discretization>
                     <type>BackwardEuler</type>
@@ -91,10 +91,10 @@
                      <t_initial> 0.0 </t_initial>
                      <t_end> 1600 </t_end>
                      <dt_guess> 0.1 </dt_guess>
-                     <dt_min> 0.1 </dt_min>
+                     <dt_min> 0.01 </dt_min>
                      <dt_max> 2 </dt_max>
                      <rel_dt_min> 0.01 </rel_dt_min>
-                     <rel_dt_max> 5 </rel_dt_max>
+                     <rel_dt_max> 4 </rel_dt_max>
                      <tol> 1.0 </tol>
                  </time_stepping>
             </process>

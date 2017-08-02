@@ -296,7 +296,7 @@
     <linear_solvers>
         <linear_solver>
             <name>linear_solver_T</name>
-            <lis>-i cg -p jacobi -tol 1e-8 -maxiter 10000</lis>
+            <lis>-i bicgstab -p jacobi -tol 1e-14 -maxiter 3000</lis>
             <eigen>
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>DIAGONAL</precon_type>
@@ -310,7 +310,7 @@
         </linear_solver>
         <linear_solver>
             <name>linear_solver_H</name>
-            <lis>-i cg -p jacobi -tol 1e-8 -maxiter 10000</lis>
+            <lis>-i bicgstab -p jacobi -tol 1e-14 -maxiter 3000</lis>
             <eigen>
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>DIAGONAL</precon_type>

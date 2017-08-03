@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>shear_square.vtu</mesh>
-    <geometry>square_1x1.gml</geometry>
+    <mesh>cube_1x1x1_hex_1e0.vtu</mesh>
+    <geometry>cube_1x1x1.gml</geometry>
 
     <processes>
         <process>
             <name>PhaseField</name>
             <type>PHASE_FIELD</type>
             <integration_order>2</integration_order>
-            <dimension>2</dimension>
+            <dimension>3</dimension>
 
             <constitutive_relation>
                 <type>LinearElasticIsotropicPhaseField</type>
@@ -20,7 +20,7 @@
             <crack_resistance>gc</crack_resistance>
             <crack_length_scale>ls</crack_length_scale>
             <kinetic_coefficient>M</kinetic_coefficient>
-	    <history_field>H</history_field>	    
+	    <history_field>H</history_field>
             <solid_density>rho_sr</solid_density>
 
             <process_variables>
@@ -37,7 +37,7 @@
                     internal_name="sigma_zz" output_name="sigma_zz" />
                 <secondary_variable type="static"
                     internal_name="sigma_xy" output_name="sigma_xy" />
-		<secondary_variable type="static"
+				<secondary_variable type="static"
                     internal_name="epsilon_xx" output_name="epsilon_xx" />
                 <secondary_variable type="static"
                     internal_name="epsilon_yy" output_name="epsilon_yy" />
@@ -58,7 +58,7 @@
                 <convergence_criterion>
                     <type>PerComponentResidual</type>
                     <norm_type>NORM2</norm_type>
-                    <abstols>1e-2 1e-2 1e-2</abstols>
+                    <abstols>1.e-6 1.e-6 1.e-6 1.e-6</abstols>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -76,26 +76,22 @@
                         <variable>epsilon_xy</variable>
                     </variables>
                 </output>
+		        <time_stepping>
+		            <type>FixedTimeStepping</type>
+		            <t_initial>0</t_initial>
+		            <t_end>1</t_end>
+		            <timesteps>
+		                <pair><repeat>10000</repeat><delta_t>1e-4</delta_t></pair>
+		            </timesteps>
+		        </time_stepping>
             </process>
         </processes>
 
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>1000</t_end>
-            <timesteps>
-                <pair><repeat>20000</repeat><delta_t>5e-2</delta_t></pair>
-		<!--<pair><repeat>13000</repeat><delta_t>5e-2</delta_t></pair>-->
-            </timesteps>
-        </time_stepping>
-
         <output>
             <type>VTK</type>
-            <prefix>square_shear_h</prefix>
+            <prefix>cube_1e0</prefix>
             <timesteps>
-                <pair><repeat>200</repeat><each_steps>100</each_steps></pair>
-		<!--<pair><repeat>10</repeat><each_steps>1</each_steps></pair>
-		<pair><repeat>50</repeat><each_steps>100</each_steps></pair>-->
+                <pair><repeat>100</repeat><each_steps>100</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -113,7 +109,7 @@
             <value>0.3</value>
         </parameter>
 
-	<parameter>
+        <parameter>
             <name>k</name>
             <type>Constant</type>
             <value>1e-3</value>
@@ -126,15 +122,20 @@
 	<parameter>
             <name>ls</name>
             <type>Constant</type>
-            <value>0.01</value>
+            <value>1</value>
+        </parameter>
+	<parameter>
+            <name>M</name>
+            <type>Constant</type>
+            <value>1e8</value>
         </parameter>
 	<parameter>
             <name>H</name>
-            <type>MeshElement</type>
-            <field_name>history_field</field_name>
+            <type>Constant</type>
+            <value>0</value>
         </parameter>
 
-        <parameter>
+	<parameter>
             <name>rho_sr</name>
             <type>Constant</type>
             <value>1.2e-6</value>
@@ -143,7 +144,7 @@
         <parameter>
             <name>displacement0</name>
             <type>Constant</type>
-            <values>0 0</values>
+            <values>0 0 0</values>
         </parameter>
 
         <parameter>
@@ -168,39 +169,44 @@
             <curve>Dirichlet_temporal</curve>
             <parameter>Dirichlet_spatial</parameter>
         </parameter>
-	<parameter>
-            <name>M</name>
-            <type>CurveScaled</type>
-            <curve>damping_nodamping</curve>
-            <parameter>Dirichlet_spatial</parameter>
-        </parameter>
     </parameters>
 
     <curves>
         <curve>
             <name>Dirichlet_temporal</name>
-            <coords>0 600 1000</coords>
-            <values>0 0.017 0.017</values>
+            <coords>0 1</coords>
+            <values>0 -0.1</values>
         </curve>
-	<curve>
-            <name>damping_nodamping</name>
-            <coords>0 1000</coords>
-            <values>1e3 1e3</values>
-        </curve>
-
     </curves>
 
     <process_variables>
         <process_variable>
             <name>displacement</name>
-            <components>2</components>
+            <components>3</components>
             <order>1</order>
 
             <initial_condition>displacement0</initial_condition>
 
             <boundary_conditions>
-		<boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                <!-- fixed boundaries -->
+                <boundary_condition>
+                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
+                    <geometry>left</geometry>
+                    <type>Dirichlet</type>
+                    <component>0</component>
+                    <parameter>dirichlet0</parameter>
+                </boundary_condition>
+
+                <boundary_condition>
+                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
+                    <geometry>back</geometry>
+                    <type>Dirichlet</type>
+                    <component>2</component>
+                    <parameter>dirichlet0</parameter>
+                </boundary_condition>
+
+                <boundary_condition>
+                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
@@ -208,26 +214,10 @@
                 </boundary_condition>
 
                 <boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
-                    <geometry>bottom</geometry>
-                    <type>Dirichlet</type>
-                    <component>0</component>
-                    <parameter>dirichlet0</parameter>
-                </boundary_condition>
-
-                <boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
+                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
-                    <parameter>dirichlet0</parameter>
-                </boundary_condition>
-
-                <boundary_condition>
-                    <geometrical_set>square_1x1_geometry</geometrical_set>
-                    <geometry>top</geometry>
-                    <type>Dirichlet</type>
-                    <component>0</component>
                     <parameter>dirichlet1</parameter>
                 </boundary_condition>
             </boundary_conditions>
@@ -261,8 +251,7 @@
             <name>general_linear_solver</name>
             <lis>-i bicgstab -p ilu -tol 1e-16 -maxiter 10000</lis>
             <eigen>
-               <!-- <solver_type>SparseLU</solver_type>-->
-                <solver_type>PardisoLU</solver_type>
+                <solver_type>SparseLU</solver_type>
             </eigen>
             <petsc>
                 <prefix>sd</prefix>

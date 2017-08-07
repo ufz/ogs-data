@@ -2,32 +2,26 @@
 <OpenGeoSysProject>
     <mesh>cube_1x1x1_hex_1e0.vtu</mesh>
     <geometry>cube_1x1x1.gml</geometry>
-
     <processes>
         <process>
             <name>PhaseField</name>
             <type>PHASE_FIELD</type>
             <integration_order>2</integration_order>
-            <dimension>3</dimension>
-
             <constitutive_relation>
                 <type>LinearElasticIsotropicPhaseField</type>
                 <youngs_modulus>E</youngs_modulus>
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
-
             <residual_stiffness>k</residual_stiffness>
             <crack_resistance>gc</crack_resistance>
             <crack_length_scale>ls</crack_length_scale>
             <kinetic_coefficient>M</kinetic_coefficient>
 	    <history_field>H</history_field>
             <solid_density>rho_sr</solid_density>
-
             <process_variables>
                 <displacement>displacement</displacement>
                 <phasefield>phasefield</phasefield>
             </process_variables>
-
             <secondary_variables>
                 <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
@@ -46,7 +40,6 @@
                 <secondary_variable type="static"
                     internal_name="epsilon_xy" output_name="epsilon_xy" />
             </secondary_variables>
-
             <specific_body_force>0 0</specific_body_force>
         </process>
     </processes>

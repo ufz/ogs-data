@@ -3,7 +3,7 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="41" NumberOfCells="40">
       <PointData>
-        <DataArray type="UInt64" Name="bulk_mesh_node_ids" format="binary" RangeMin="4100" RangeMax="4140">
+        <DataArray type="UInt64" Name="OriginalSubsurfaceNodeIDs" format="binary" RangeMin="4100" RangeMax="4140">
           AQAAAAAAAAAAgAAAAAAAAEgBAAAAAAAAVAAAAAAAAAA=eJwtxdkSQgAAAEAPJJ0SHaQcpYP//75mzO7Lhmkwi7xw7KUTr7z2xlvvvHfqgzMfnbvwyWdffHXpyjfXvvvhxq0793765cFvf/z1z6Mn/wF/xQZp
         </DataArray>
         <DataArray type="Float64" Name="mass_flux" format="binary" RangeMin="2.213712936e-07" RangeMax="0.82748527828">

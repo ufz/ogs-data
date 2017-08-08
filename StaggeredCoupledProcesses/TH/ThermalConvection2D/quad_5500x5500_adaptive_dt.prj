@@ -108,8 +108,8 @@
                     <dt_min> 1 </dt_min>
                     <dt_max> 4e8 </dt_max>
                     <rel_dt_min> 0.1 </rel_dt_min>
-                    <rel_dt_max> 10 </rel_dt_max>
-		    <specific_times>5.0e9 2.e10</specific_times>
+                    <rel_dt_max> 2 </rel_dt_max>
+                    <specific_times>5.0e9 2.e10</specific_times>
                     <tol> 1.e-2 </tol>
                 </time_stepping>
                 <coupled_processes>

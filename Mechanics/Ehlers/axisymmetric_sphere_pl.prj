@@ -188,11 +188,6 @@
             <curve>load_inner_temporal</curve>
             <parameter>pressure_inside_spatial</parameter>
         </parameter>
-        <parameter>
-            <name>pressure_outside</name>
-            <type>Constant</type>
-            <value>0</value>
-        </parameter>
     </parameters>
     <curves>
         <curve>
@@ -212,19 +207,21 @@
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>inner</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Pressure</type>
                     <parameter>pressure_inside</parameter>
-                </boundary_condition>
-                <boundary_condition>
-                    <geometrical_set>geometry</geometrical_set>
-                    <geometry>outer</geometry>
-                    <type>Pressure</type>
-                    <parameter>pressure_outside</parameter>
                 </boundary_condition>
                 <!-- Fix axis -->
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>axis</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Dirichlet</type>
                     <component>0</component>
                     <parameter>dirichlet0</parameter>
@@ -233,6 +230,10 @@
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>central_outer</geometry>
+                    <search_length_algorithm>
+                        <type>fixed</type>
+                        <value>1e-3</value>
+                    </search_length_algorithm>
                     <type>Dirichlet</type>
                     <component>1</component>
                     <parameter>dirichlet0</parameter>

@@ -8,7 +8,6 @@
             <name>SD</name>
             <type>SMALL_DEFORMATION</type>
             <integration_order>2</integration_order>
-            <dimension>3</dimension>
 
             <constitutive_relation>
                 <type>Ehlers</type>
@@ -73,11 +72,11 @@
                 <secondary_variable type="static"
                     internal_name="damage.kappa_d" output_name="damage_kappa_d" />
                 <secondary_variable type="static"
-                    internal_name="eps.p_D" output_name="eps_p_D" />
+                    internal_name="eps_p.D" output_name="eps_p_D" />
                 <secondary_variable type="static"
-                    internal_name="eps.p_V" output_name="eps_p_V" />
+                    internal_name="eps_p.V" output_name="eps_p_V" />
                 <secondary_variable type="static"
-                    internal_name="eps.p_eff" output_name="eps_p_eff" />
+                    internal_name="eps_p.eff" output_name="eps_p_eff" />
             </secondary_variables>
         </process>
     </processes>

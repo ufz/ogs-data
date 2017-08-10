@@ -59,8 +59,7 @@
             <decay_rate>decay</decay_rate>
             <specific_body_force>0 0</specific_body_force>
             <secondary_variables>
-                <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x"/>
-                <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y"/>
+                <secondary_variable type="static" internal_name="darcy_velocity" output_name="darcy_velocity"/>
             </secondary_variables>
         </process>
     </processes>
@@ -80,8 +79,7 @@
                     <variables>
                         <variable>concentration</variable>
                         <variable>pressure</variable>
-                        <variable>darcy_velocity_x</variable>
-                        <variable>darcy_velocity_y</variable>
+                        <variable>darcy_velocity</variable>
                     </variables>
                 </output>
                 <time_stepping>

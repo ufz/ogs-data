@@ -2,47 +2,41 @@
 <OpenGeoSysProject>
     <mesh>beam3d.vtu</mesh>
     <geometry>beam3d.gml</geometry>
-
     <processes>
         <process>
             <name>PhaseField</name>
             <type>PHASE_FIELD</type>
             <integration_order>2</integration_order>
-
             <constitutive_relation>
                 <type>LinearElasticIsotropic</type>
                 <youngs_modulus>E</youngs_modulus>
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
-			<phasefield_parameters>
+            <phasefield_parameters>
                 <residual_stiffness>k</residual_stiffness>
                 <crack_resistance>gc</crack_resistance>
                 <crack_length_scale>ls</crack_length_scale>
                 <kinetic_coefficient>M</kinetic_coefficient>
                 <history_field>H</history_field>
-			</phasefield_parameters>
+            </phasefield_parameters>
             <solid_density>rho_sr</solid_density>
-
             <process_variables>
                 <displacement>displacement</displacement>
                 <phasefield>phasefield</phasefield>
             </process_variables>
-
             <secondary_variables>
                 <secondary_variable type="static" internal_name="sigma_xx" output_name="sigma_xx"/>
                 <secondary_variable type="static" internal_name="sigma_yy" output_name="sigma_yy"/>
                 <secondary_variable type="static" internal_name="sigma_zz" output_name="sigma_zz"/>
                 <secondary_variable type="static" internal_name="sigma_xy" output_name="sigma_xy"/>
-		<secondary_variable type="static" internal_name="epsilon_xx" output_name="epsilon_xx"/>
+                <secondary_variable type="static" internal_name="epsilon_xx" output_name="epsilon_xx"/>
                 <secondary_variable type="static" internal_name="epsilon_yy" output_name="epsilon_yy"/>
                 <secondary_variable type="static" internal_name="epsilon_zz" output_name="epsilon_zz"/>
                 <secondary_variable type="static" internal_name="epsilon_xy" output_name="epsilon_xy"/>
             </secondary_variables>
-
             <specific_body_force>0 0 0</specific_body_force>
         </process>
     </processes>
-
     <time_loop>
         <processes>
             <process ref="PhaseField">
@@ -53,9 +47,8 @@
                     <abstols>1.e-2 1.e-3 1.e-3 1.e-3</abstols>
                 </convergence_criterion>
                 <time_discretization>
-		    <type>BackwardEuler</type>
-		</time_discretization>
-
+                    <type>BackwardEuler</type>
+                </time_discretization>
                 <output>
                     <variables>
                         <variable>displacement</variable>
@@ -64,32 +57,36 @@
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
                         <variable>sigma_xy</variable>
-			<variable>epsilon_xx</variable>
+                        <variable>epsilon_xx</variable>
                         <variable>epsilon_yy</variable>
                         <variable>epsilon_zz</variable>
                         <variable>epsilon_xy</variable>
                     </variables>
                 </output>
-		        <time_stepping>
-		            <type>FixedTimeStepping</type>
-		            <t_initial>0</t_initial>
-		            <t_end>10</t_end>
-		            <timesteps>
-		                <pair><repeat>10000</repeat><delta_t>1e-3</delta_t></pair>
-		            </timesteps>
-		        </time_stepping>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>10</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>10000</repeat>
+                            <delta_t>1e-3</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
         <output>
             <type>VTK</type>
             <prefix>beam3d</prefix>
             <timesteps>
-                <pair><repeat>100</repeat><each_steps>100</each_steps></pair>
+                <pair>
+                    <repeat>100</repeat>
+                    <each_steps>100</each_steps>
+                </pair>
             </timesteps>
         </output>
     </time_loop>
-
     <parameters>
         <!-- Mechanics -->
         <parameter>
@@ -104,51 +101,46 @@
             <type>Constant</type>
             <value>0.3</value>
         </parameter>
-
         <parameter>
             <name>k</name>
             <type>Constant</type>
             <value>1e-3</value>
         </parameter>
-	<parameter>
+        <parameter>
             <name>gc</name>
             <type>Constant</type>
             <value>2.7</value>
         </parameter>
-	<parameter>
+        <parameter>
             <name>ls</name>
             <type>Constant</type>
             <value>0.02</value>
         </parameter>
-	<parameter>
+        <parameter>
             <name>M</name>
             <type>Constant</type>
             <value>1e6</value>
         </parameter>
-	<parameter>
+        <parameter>
             <name>H</name>
             <type>Constant</type>
             <value>0</value>
         </parameter>
-
-	<parameter>
+        <parameter>
             <name>rho_sr</name>
             <type>Constant</type>
             <value>0</value>
         </parameter>
-
         <parameter>
             <name>displacement0</name>
             <type>Constant</type>
             <values>0 0 0</values>
         </parameter>
-
         <parameter>
             <name>phasefield_ic</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
-
         <parameter>
             <name>dirichlet0</name>
             <type>Constant</type>
@@ -172,7 +164,6 @@
             <parameter>Dirichlet_spatial</parameter>
         </parameter>
     </parameters>
-
     <curves>
         <curve>
             <name>Dirichlet_temporal</name>
@@ -185,15 +176,12 @@
             <values>0 -0.0098</values>
         </curve>
     </curves>
-
     <process_variables>
         <process_variable>
             <name>displacement</name>
             <components>3</components>
             <order>1</order>
-
             <initial_condition>displacement0</initial_condition>
-
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>beam3d_geometry</geometrical_set>
@@ -202,7 +190,6 @@
                     <component>1</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>beam3d_geometry</geometrical_set>
                     <geometry>top</geometry>
@@ -210,7 +197,6 @@
                     <component>1</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>beam3d_geometry</geometrical_set>
                     <geometry>back</geometry>
@@ -218,7 +204,6 @@
                     <component>2</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>beam3d_geometry</geometrical_set>
                     <geometry>front</geometry>
@@ -226,7 +211,6 @@
                     <component>2</component>
                     <parameter>dirichlet0</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>beam3d_geometry</geometrical_set>
                     <geometry>left</geometry>
@@ -234,7 +218,6 @@
                     <component>0</component>
                     <parameter>dirichlet2</parameter>
                 </boundary_condition>
-
                 <boundary_condition>
                     <geometrical_set>beam3d_geometry</geometrical_set>
                     <geometry>right</geometry>
@@ -243,22 +226,16 @@
                     <parameter>dirichlet1</parameter>
                 </boundary_condition>
             </boundary_conditions>
-
         </process_variable>
-
         <process_variable>
             <name>phasefield</name>
             <components>1</components>
             <order>1</order>
-
             <initial_condition>phasefield_ic</initial_condition>
-
             <boundary_conditions>
             </boundary_conditions>
-
         </process_variable>
     </process_variables>
-
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_newton</name>
@@ -267,7 +244,6 @@
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
-
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
@@ -276,5 +252,4 @@
             </eigen>
         </linear_solver>
     </linear_solvers>
-
 </OpenGeoSysProject>

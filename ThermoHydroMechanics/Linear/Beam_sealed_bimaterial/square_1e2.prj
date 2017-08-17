@@ -17,18 +17,14 @@
             </constitutive_relation>
 
             <intrinsic_permeability>k</intrinsic_permeability>
-            <storage_coefficient>S</storage_coefficient>
-          <!--  <fluid_viscosity>mu</fluid_viscosity> -->
+            <specific_storage>S</specific_storage>
             <biot_coefficient>alpha</biot_coefficient>
             <porosity>phi</porosity>
             <solid_density>rho_sr</solid_density>
-         <!--   <fluid_density>rho_fr</fluid_density> -->
             <fluid_volumetric_thermal_expansion_coefficient>beta_f</fluid_volumetric_thermal_expansion_coefficient>
             <solid_linear_thermal_expansion_coefficient>beta_s</solid_linear_thermal_expansion_coefficient>
-        <!--    <fluid_specific_heat_capacity>C_f</fluid_specific_heat_capacity> -->
             <solid_specific_heat_capacity>C_s</solid_specific_heat_capacity>
             <solid_thermal_conductivity>lambda_s</solid_thermal_conductivity>
-          <!--  <fluid_thermal_conductivity>lambda_f</fluid_thermal_conductivity> -->
             <reference_temperature>T0</reference_temperature>
  
             <process_variables>
@@ -61,7 +57,6 @@
                 </secondary_variables>
 
             <specific_body_force>0 0</specific_body_force>
-			
 			<fluid>
 			    <density>
 			        <type>TemperatureDependent</type>
@@ -95,7 +90,6 @@
                     <abstol>1e-5</abstol>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
-
                 <output>
                     <variables>
                         <variable>displacement</variable>
@@ -109,21 +103,20 @@
                         <variable>epsilon_yy</variable>
                         <variable>epsilon_xy</variable>
                         <variable>epsilon_zz</variable>
-						<variable>velocity_x</variable>
-						<variable>velocity_y</variable>
+		        <variable>velocity_x</variable>
+			<variable>velocity_y</variable>
                     </variables>
                 </output>
+                <time_stepping>
+                    <type>FixedTimeStepping</type>
+                    <t_initial>0</t_initial>
+                    <t_end>1500</t_end>
+                    <timesteps>
+                        <pair><repeat>30</repeat><delta_t>50</delta_t></pair>
+                    </timesteps>
+                </time_stepping>
             </process>
         </processes>
-
-        <time_stepping>
-            <type>FixedTimeStepping</type>
-            <t_initial>0</t_initial>
-            <t_end>1500</t_end>
-            <timesteps>
-            <pair><repeat>30</repeat><delta_t>50</delta_t></pair>
-            </timesteps>
-        </time_stepping>
 
         <output>
             <type>VTK</type>

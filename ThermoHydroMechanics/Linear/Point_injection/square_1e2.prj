@@ -105,7 +105,7 @@
                 <time_stepping>
                     <type>FixedTimeStepping</type>
                     <t_initial>0</t_initial>
-                    <t_end>7000000</t_end>
+                    <t_end>70000</t_end>
                     <timesteps>
                         <pair><repeat>10</repeat><delta_t>5000</delta_t></pair>
                     </timesteps>
@@ -117,7 +117,7 @@
             <type>VTK</type>
             <prefix>square_1e0</prefix>
             <timesteps>
-                <pair><repeat>1</repeat><each_steps>1</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>14</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>

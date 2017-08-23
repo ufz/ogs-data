@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh axially_symmetric="true">quad_hete_2nd.vtu</mesh>
+    <mesh axially_symmetric="true">beam_2nd.vtu</mesh>
     <geometry>square_1x1.gml</geometry>
 
     <processes>
@@ -110,9 +110,9 @@
                 <time_stepping>
                     <type>FixedTimeStepping</type>
                     <t_initial>0</t_initial>
-                    <t_end>1500</t_end>
+                    <t_end>100</t_end>
                     <timesteps>
-                        <pair><repeat>30</repeat><delta_t>50</delta_t></pair>
+                        <pair><repeat>10</repeat><delta_t>10</delta_t></pair>
                     </timesteps>
                 </time_stepping>
             </process>
@@ -122,7 +122,7 @@
             <type>VTK</type>
             <prefix>square_1e2</prefix>
             <timesteps>
-                <pair><repeat>1</repeat><each_steps>6</each_steps></pair>
+                <pair><repeat>1</repeat><each_steps>10</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -140,7 +140,7 @@
            </index_values>
            <index_values>
            <index>1</index>
-           <value>21</value>
+           <value>0.105</value>
            </index_values>
            <index_values>
            <index>2</index>
@@ -154,15 +154,15 @@
            <group_id_property>MaterialIDs</group_id_property>
            <index_values>
            <index>0</index>
-           <value>0.35e-5</value>
+           <value>0.7e-5</value>
            </index_values>
            <index_values>
            <index>1</index>
-           <value>0.35e-5</value>
+           <value>0.7e-5</value>
            </index_values>
            <index_values>
            <index>2</index>
-           <value>0.7e-5</value>
+           <value>1.4e-5</value>
            </index_values>
         </parameter>
 		
@@ -201,6 +201,24 @@
            <value>1e-6</value>
            </index_values>
         </parameter>
+
+        <parameter>
+           <name>alpha</name>
+           <type>Group</type>
+           <group_id_property>MaterialIDs</group_id_property>
+           <index_values>
+           <index>0</index>
+           <value>1</value>
+           </index_values>
+           <index_values>
+           <index>1</index>
+           <value>0</value>
+           </index_values>
+           <index_values>
+           <index>2</index>
+           <value>1</value>
+           </index_values>
+        </parameter>
 		
         <parameter>
             <name>nu</name>
@@ -220,12 +238,6 @@
             <type>Constant</type>
             <value>1.278e-9</value>
         </parameter> -->
-
-        <parameter>
-            <name>alpha</name>
-            <type>Constant</type>
-            <value>1</value>
-        </parameter>
 
         <parameter>
             <name>rho_sr</name>

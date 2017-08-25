@@ -34,7 +34,7 @@
                 <secondary_variable type="static" internal_name="epsilon_zz" output_name="epsilon_zz"/>
                 <secondary_variable type="static" internal_name="epsilon_xy" output_name="epsilon_xy"/>
             </secondary_variables>
-            <specific_body_force>0 0</specific_body_force>
+            <specific_body_force>0 0 0</specific_body_force>
         </process>
     </processes>
     <time_loop>

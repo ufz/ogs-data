@@ -279,14 +279,14 @@
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
-                    <parameter>dirichlet0</dirichlet0>
+                    <parameter>dirichlet0</parameter>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
-                    <parameter>dirichlet0</dirichlet0>
+                    <parameter>dirichlet0</parameter>
                 </boundary_condition> 
             </boundary_conditions> 
         </process_variable>
@@ -309,7 +309,7 @@
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
-                    <parameter>temperature_bc_left</dirichlet0>
+                    <parameter>temperature_bc_left</parameter>
                 </boundary_condition>    
             </boundary_conditions>
         </process_variable>

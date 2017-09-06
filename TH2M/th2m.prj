@@ -9,10 +9,10 @@
     				<name>phase 1</name>
     				<components>
     					<component>
-    						<name>mat 1, phase 1, comp 1</name>
+    						<name>Water</name>
     						<properties>
     							<property>
-    								<name>m1, p1, c1, p1</name>
+    								<name>density</name>
     								<type>const</type>
     								<value>1</value>
     							</property>

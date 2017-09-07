@@ -23,16 +23,16 @@
     						</properties>
     					</component>
     					<component>
-    						<name>mat 1, phase 1, comp 2</name>
+    						<name>Water</name>
     						<properties>
     							<property>
-    								<name>m1, p1, c2, p1</name>
-    								<type>const</type>
+    								<name>density</name>
+    								<type>constant</type>
     								<value>1</value>
     							</property>
     							<property>
-    								<name>m1, p1, c2, p2</name>
-    								<type>const</type>
+    								<name>viscosity</name>
+    								<type>constant</type>
     								<value>2</value>
     							</property>
     						</properties>
@@ -40,74 +40,73 @@
     				</components>
     				<properties>
     							<property>
-    								<name>m1, p1, p1</name>
-    								<type>const</type>
+    								<name>molar_mass</name>
+    								<type>constant</type>
     								<value>1</value>
     							</property>
     							<property>
-    								<name>m1, p1, p2</name>
-    								<type>const</type>
+    								<name>density</name>
+    								<type>constant</type>
     								<value>2</value>
     							</property>
     				</properties>
     			</phase>
     			<phase>
-    				<name>phase 2</name>
     				<components>
     					<component>
-    						<name>mat 1, phase 2, comp 1</name>
+    						<name>Water</name>
     						<properties>
     							<property>
-    								<name>m1, p2, c1, p1</name>
-    								<type>const</type>
+    								<name>density</name>
+    								<type>constant</type>
     								<value>1</value>
     							</property>
     							<property>
-    								<name>m1, p2, c1, p2</name>
-    								<type>const</type>
+    								<name>viscosity</name>
+    								<type>constant</type>
     								<value>2</value>
     							</property>
     						</properties>
     					</component>
     					<component>
-    						<name>mat 1, phase 2, comp 2</name>
+    						<name>Water</name>
     						<properties>
     							<property>
-    								<name>m1, p2, c2, p1</name>
-    								<type>const</type>
+    								<name>density</name>
+    								<type>constant</type>
     								<value>1</value>
     							</property>
     							<property>
-    								<name>m1, p2, c2, p2</name>
-    								<type>const</type>
+    								<name>viscosity</name>
+    								<type>constant</type>
     								<value>2</value>
     							</property>
     						</properties>
     					</component>
     				</components>
     				<properties>
-    					<property>
-    						<name>m1, p2, p1</name>
-							<type>const</type>
-    						<value>1</value>
-    					</property>
-    					<property>
-    						<name>m1, p2, p2</name>
-    						<type>const</type>
-    						<value>2</value>
-    					</property>
+    							<property>
+    								<name>molar_mass</name>
+    								<type>constant</type>
+    								<value>1</value>
+    							</property>
+    							<property>
+    								<name>density</name>
+    								<type>constant</type>
+    								<value>2</value>
+    							</property>
     				</properties>
     			</phase>
     		</phases>
     		<properties>
     			<property>
-    				<name>m1, p1</name>
-    				<type>const</type>
+    				<name>density</name>
+    				<type>constant</type>
     				<value>1</value>
     			</property>
     			<property>
-    				<name>m1, p2</name>
-    				<type>const</type>
+    				<name>molar_mass</name>
+    				<type>constant</type>
     				<value>2</value>
     			</property>
     		</properties>

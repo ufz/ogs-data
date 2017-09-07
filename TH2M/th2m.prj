@@ -6,19 +6,18 @@
     	<medium>
     		<phases>
     			<phase>
-    				<name>phase 1</name>
     				<components>
     					<component>
     						<name>Water</name>
     						<properties>
     							<property>
     								<name>density</name>
-    								<type>const</type>
+    								<type>constant</type>
     								<value>1</value>
     							</property>
     							<property>
-    								<name>m1, p1, c1, p2</name>
-    								<type>const</type>
+    								<name>viscosity</name>
+    								<type>constant</type>
     								<value>2</value>
     							</property>
     						</properties>

@@ -88,7 +88,7 @@
                 <time_stepping>
                     <type>FixedTimeStepping</type>
                     <t_initial> 0.0 </t_initial>
-                    <t_end>40000</t_end>
+                    <t_end>20000</t_end>
                     <timesteps>
                         <pair>
                             <repeat>10</repeat>
@@ -108,7 +108,27 @@
             <timesteps>
                 <pair>
                     <repeat>1</repeat>
+                    <each_steps>550</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>500</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>1000</each_steps>
+                </pair>
+                <pair>
+                    <repeat>23</repeat>
                     <each_steps>50</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>300</each_steps>
+                </pair>
+                <pair>
+                    <repeat>1</repeat>
+                    <each_steps>1000</each_steps>
                 </pair>
             </timesteps>
         </output>
@@ -150,17 +170,6 @@
             <value>1</value>
         </parameter>
         <parameter>
-            <name>c1_scaled</name>
-            <type>CurveScaled</type>
-            <curve>Dirichlet_top_conc</curve>
-            <parameter>c1</parameter>
-        </parameter>
-        <parameter>
-            <name>c0</name>
-            <type>Constant</type>
-            <value>0</value>
-        </parameter>
-        <parameter>
             <name>p0_mesh</name>
             <type>MeshNode</type>
             <field_name>pressure</field_name>
@@ -176,34 +185,17 @@
             <value>0</value>
         </parameter>
         <parameter>
-            <name>p_bottom_NaCl6</name>
-            <type>Constant</type>
-            <value>-4800</value>
-        </parameter>
-        <parameter>
             <name>q_top_NaCl1</name>
             <type>Constant</type>
             <value>2.12789E-05</value>
         </parameter>
-        <parameter>
-            <name>q_top_NaCl6</name>
-            <type>Constant</type>
-            <value>6.46004E-06</value>
-        </parameter>
     </parameters>
-    <curves>
-        <curve>
-            <name>Dirichlet_top_conc</name>
-            <coords>0 10000 10001 1e20</coords>
-            <values>1 1     0     0</values>
-        </curve>
-    </curves>
     <process_variables>
         <process_variable>
             <name>concentration</name>
             <components>1</components>
             <order>1</order>
-            <initial_condition>c0</initial_condition>
+            <initial_condition>c_ini</initial_condition>
             <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>h_us_mesh</geometrical_set>

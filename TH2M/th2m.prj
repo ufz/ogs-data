@@ -37,19 +37,33 @@
     									 using the determinant of the deformation gradient and temp-
     									 erature. Each property type must correspond to a special
     									 class derived from base class Property. -->
-    								<type>Bilinear_F_T</type>
-    								<!-- A type other than 'constant' must non have any values. -->
+    								<type>LinearTemperature</type>
+    								<!-- A type other than 'constant' must not have any values. -->
     							</property>
+									<property>
+										<name>reference_temperature</name>
+										<type>constant</type>
+										<value>333</value>
+									</property>
+									<property>
+										<name>drhodT</name>
+										<type>constant</type>
+										<value>-0.4</value>										
+									</property>
+									<property>
+										<name>reference_density</name>
+										<type>constant</type>
+										<value>2100.0</value>										
+									</property>									
     							<property>
     								<name>effective_stress</name>
-    								<type>linear_epsilon</type>
+    								<type>LinearEpsilon</type>
     							</property>
     						</properties>
     					</component>
     					<!-- This was the definition of the first (and only) component of the solid 
     						 phase. -->
     				</components>
-    				<properties>
     					<!-- The properties defined here correspond to phase, not to single components.
     						 Phase properties may or may not refer to component properties, as shown in 
     						 later examples. 
@@ -58,14 +72,11 @@
     						 is possible to omit the definition of phase properties. In such a case, the
     						 necessary phase properties would directly match the properties of the only 
     						 component. But, it is also possible to overwrite the properties of the com-
-    						 ponent.  -->
-    					<property>
-    						<!-- If the phase properties (of a single-component) phase are omitted in the
-    							 input file, they will be applied automatically by a default-implementation
-    							 (in which case the component properties serve for phase properties as well)
-    							  -->
-    					</property>
-    				</properties>
+    						 ponent.
+    						 
+    						 If the phase properties (of a single-component) phase are omitted in the
+    						 input file, they will be applied automatically by a default-implementation
+    						 (in which case the component properties serve for phase properties as well) -->
     			</phase>
     			<phase>
     				<name>liquid</name> <!-- again, phase name is optional and has no effect-->
@@ -93,7 +104,7 @@
     				<!-- These are the properties of the entire liquid phase. -->
     							<property>
     								<name>density</name>
-    								<type>Duan-EOS_H2O-CO2-NaCl</type>
+    								<type>Duan_2012</type>
     								<!-- This type refers to an equation of state for the 
     									 entire system water-co2-salt. It does not need to
     									 know the individual densities of the specified
@@ -134,7 +145,7 @@
     						<properties>
     							<property>
     								<name>viscosity</name>
-    								<type>Fenghour_et_al_1998</type>
+    								<type>Fenghour_1998</type>
     							</property>
     						</properties>
     					</component>
@@ -143,7 +154,7 @@
     				<!-- These are the properties of the gas phase.-->
     							<property>
     								<name>density</name>
-    								<type>PengRobinsonBinary</type>
+    								<type>Peng_Robinson_1976</type>
     								<!-- This type of EOS uses only individual material properties
     									 (such as critical temperature) of the components (which
     									 are predefined and specified by component name). It does 
@@ -155,8 +166,8 @@
     									 'constant') individually-->
     							</property>
     							<property>
-    								<name>viscositydensity</name>
-    								<type>Buddenberg_Wilke</type>
+    								<name>viscosity</name>
+    								<type>Buddenberg_Wilke_1949</type>
     								<!-- Unlike for the Peng-Robinson EOS of the density property
     									 this method is only a so-called mixing rule and needs to
     									 know the individual component viscosities. That is why we 
@@ -179,25 +190,19 @@
     				<value>1.0e-12</value>
     			</property>
     			<property>
-    				<name>effective_thermal_conductivity</name>
-    				<type>average_volume_fraction</type>
+    				<name>thermal_conductivity</name>
+    				<type>AverageVolumeFraction</type>
   					<!-- This specification could be avioded if there is a default implementation for
   						 that case. On the medium-level, this default could be the volume-fraction-
   						 average. But, it doesn't hurt to provide that info.-->
     			</property>
     			<property>
-    				<name>liquid_phase_velocity</name>
-    				<type>Darcy</type>
-    				<!-- Darcy-velocity is de facto a medium property and can thus be defined here.
-    					 Other options could be Forchheimer velocities etc.-->
-    			</property>
-    			<property>
-    				<name>liquid_saturation</name>
-    				<type>Brooks-Corey</type>
+    				<name>saturation</name>
+    				<type>Brooks_Corey_1964</type>
     			</property>
     			<property>
     				<name>relative_permeability</name>
-    				<type>Mualem</type>
+    				<type>Mualem_1978</type>
 	   			</property>
     		</properties>
     	</medium>	

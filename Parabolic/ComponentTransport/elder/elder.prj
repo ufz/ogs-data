@@ -80,7 +80,7 @@
 				<time_stepping>
 					<type>FixedTimeStepping</type>
 					<t_initial> 0.0 </t_initial>
-					<t_end>631152000</t_end>
+					<t_end>1.3149e8</t_end>
 					<timesteps>
 					   <pair><repeat>10</repeat><delta_t>262980</delta_t></pair>
 					</timesteps>
@@ -100,7 +100,7 @@
            <type>VTK</type>
            <prefix>elder</prefix>
            <timesteps>
-               <pair><repeat>1</repeat><each_steps>10</each_steps></pair>
+               <pair><repeat>1</repeat><each_steps>20</each_steps></pair>
            </timesteps>
       </output>
 

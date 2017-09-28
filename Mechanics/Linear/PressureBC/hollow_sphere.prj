@@ -114,13 +114,13 @@
                 <boundary_condition>
                     <geometrical_set>hollow_sphere</geometrical_set>
                     <geometry>inner_surface</geometry>
-                    <type>Pressure</type>
+                    <type>NormalTraction</type>
                     <parameter>pressure_inside</parameter>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>hollow_sphere</geometrical_set>
                     <geometry>outer_surface</geometry>
-                    <type>Pressure</type>
+                    <type>NormalTraction</type>
                     <parameter>pressure_outside</parameter>
                 </boundary_condition>
                 <!-- fixing x-axis -->

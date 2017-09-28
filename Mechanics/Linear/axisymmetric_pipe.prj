@@ -117,13 +117,13 @@
                 <boundary_condition>
                     <geometrical_set>axisymmetric_pipe</geometrical_set>
                     <geometry>left</geometry>
-                    <type>Pressure</type>
+                    <type>NormalTraction</type>
                     <parameter>pressure_inside</parameter>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>axisymmetric_pipe</geometrical_set>
                     <geometry>right</geometry>
-                    <type>Pressure</type>
+                    <type>NormalTraction</type>
                     <parameter>pressure_outside</parameter>
                 </boundary_condition>
                 <boundary_condition>

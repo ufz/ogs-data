@@ -107,17 +107,17 @@
             <order>1</order>
             <initial_condition>displacement0</initial_condition>
             <boundary_conditions>
-                <!-- Pressure -->
+                <!-- NormalTraction -->
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>inner</geometry>
-                    <type>Pressure</type>
+                    <type>NormalTraction</type>
                     <parameter>pressure_inside</parameter>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>geometry</geometrical_set>
                     <geometry>outer</geometry>
-                    <type>Pressure</type>
+                    <type>NormalTraction</type>
                     <parameter>pressure_outside</parameter>
                 </boundary_condition>
                 <!-- Fix axis -->

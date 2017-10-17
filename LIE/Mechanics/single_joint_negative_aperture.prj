@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>single_joint_0_10_inside.vtu</mesh>
+    <mesh>single_joint_beta50.vtu</mesh>
     <geometry>single_joint.gml</geometry>
     <processes>
         <process>
@@ -21,7 +21,7 @@
                 <type>LinearElasticIsotropic</type>
                 <normal_stiffness>Kn</normal_stiffness>
                 <shear_stiffness>Ks</shear_stiffness>
-                <penalty_aperture_cutoff>1e-5</penalty_aperture_cutoff>
+                <penalty_aperture_cutoff>1e-7</penalty_aperture_cutoff>
                 <tension_cutoff>1</tension_cutoff>
             </fracture_constitutive_relation>
             <fracture_properties>
@@ -42,7 +42,7 @@
                 <convergence_criterion>
                     <type>Residual</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-6</abstol>
+                    <abstol>1e-11</abstol>
                 </convergence_criterion>
                 <time_discretization>
                     <type>BackwardEuler</type>
@@ -63,7 +63,7 @@
                     <timesteps>
                         <pair>
                             <repeat>1</repeat>
-                            <delta_t>1.0</delta_t>
+                            <delta_t>1</delta_t>
                         </pair>
                     </timesteps>
                 </time_stepping>
@@ -71,7 +71,7 @@
         </processes>
         <output>
             <type>VTK</type>
-            <prefix>single_joint_inside</prefix>
+            <prefix>single_joint_negative_aperture</prefix>
             <timesteps>
                 <pair>
                     <repeat>1</repeat>
@@ -94,12 +94,12 @@
         <parameter>
             <name>Kn</name>
             <type>Constant</type>
-            <value>1e12</value>
+            <value>1e8</value>
         </parameter>
         <parameter>
             <name>Ks</name>
             <type>Constant</type>
-            <value>1e9</value>
+            <value>1e12</value>
         </parameter>
         <parameter>
             <name>displacement0</name>
@@ -113,8 +113,14 @@
         </parameter>
         <parameter>
             <name>load</name>
+            <type>CurveScaled</type>
+            <curve>load_curve</curve>
+            <parameter>load_value</parameter>
+        </parameter>
+        <parameter>
+            <name>load_value</name>
             <type>Constant</type>
-            <value>7e+3</value>
+            <value>-7e+3</value>
         </parameter>
         <parameter>
             <name>zero_u</name>
@@ -122,6 +128,13 @@
             <value>0</value>
         </parameter>
     </parameters>
+    <curves>
+        <curve>
+            <name>load_curve</name>
+            <coords>0 1</coords>
+            <values>0 1</values>
+        </curve>
+    </curves>
     <process_variables>
         <process_variable>
             <name>displacement</name>
@@ -165,7 +178,7 @@
         <nonlinear_solver>
             <name>basic_newton</name>
             <type>Newton</type>
-            <max_iter>4</max_iter>
+            <max_iter>1000</max_iter>
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
@@ -174,7 +187,7 @@
             <name>general_linear_solver</name>
             <lis>-i bicgstab -p jacobi -tol 1e-16 -maxiter 10000</lis>
             <eigen>
-                <solver_type>CG</solver_type>
+                <solver_type>SparseLU</solver_type>
                 <precon_type>DIAGONAL</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
                 <error_tolerance>1e-16</error_tolerance>

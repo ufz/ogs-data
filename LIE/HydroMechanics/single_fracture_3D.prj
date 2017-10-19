@@ -27,13 +27,13 @@
             <fluid_density>rho_fr</fluid_density>
             <specific_body_force>0 0 0</specific_body_force>
             <initial_effective_stress>effective_stress0</initial_effective_stress>
-            <fracture_constitutive_relation>
+            <fracture_model>
                 <type>LinearElasticIsotropic</type>
                 <normal_stiffness>Kn</normal_stiffness>
                 <shear_stiffness>Ks</shear_stiffness>
                 <penalty_aperture_cutoff>1e-5</penalty_aperture_cutoff>
                 <tension_cutoff>1</tension_cutoff>
-            </fracture_constitutive_relation>
+            </fracture_model>
             <fracture_properties>
                 <material_id>0</material_id>
                 <initial_aperture>aperture0</initial_aperture>

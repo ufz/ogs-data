@@ -18,13 +18,13 @@
                 <youngs_modulus>E</youngs_modulus>
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
-            <fracture_constitutive_relation>
+            <fracture_model>
                 <type>LinearElasticIsotropic</type>
                 <normal_stiffness>Kn</normal_stiffness>
                 <shear_stiffness>Ks</shear_stiffness>
                 <penalty_aperture_cutoff>1e-5</penalty_aperture_cutoff>
                 <tension_cutoff>1</tension_cutoff>
-            </fracture_constitutive_relation>
+            </fracture_model>
             <fracture_properties>
                 <material_id>1</material_id>
                 <initial_aperture>aperture0</initial_aperture>

@@ -8,6 +8,7 @@
         <point id="1" x="0" y="1" z="0"/>
         <point id="2" x="1" y="0" z="0"/>
         <point id="3" x="1" y="1" z="0"/>
+        <point id="4" x="0.5" y="0.5" z="0" name="middle_point"/>
     </points>
 
     <polylines>

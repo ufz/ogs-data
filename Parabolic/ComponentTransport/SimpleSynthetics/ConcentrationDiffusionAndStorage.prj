@@ -30,7 +30,7 @@
                     </permeability>
                     <porosity>
                         <type>Constant</type>
-                        <value>0.2</value>
+                        <porosity_parameter>constant_porosity_parameter</porosity_parameter>
                     </porosity>
                     <storage>
                         <type>Constant</type>
@@ -43,7 +43,7 @@
                     </permeability>
                     <porosity>
                         <type>Constant</type>
-                        <value>0.2</value>
+                        <porosity_parameter>constant_porosity_parameter</porosity_parameter>
                     </porosity>
                     <storage>
                         <type>Constant</type>
@@ -115,6 +115,11 @@
         </output>
     </time_loop>
     <parameters>
+        <parameter>
+            <name>constant_porosity_parameter</name>
+            <type>Constant</type>
+            <value>0.2</value>
+        </parameter>
         <parameter>
             <name>rho_fluid</name>
             <type>Constant</type>

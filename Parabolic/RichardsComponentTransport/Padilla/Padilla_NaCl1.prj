@@ -29,7 +29,7 @@
                     </permeability>
                     <porosity>
                         <type>Constant</type>
-                        <value>0.45</value>
+                        <porosity_parameter>constant_porosity_parameter</porosity_parameter>
                     </porosity>
                     <storage>
                         <type>Constant</type>
@@ -188,6 +188,11 @@
             <name>q_top_NaCl1</name>
             <type>Constant</type>
             <value>2.12789E-05</value>
+        </parameter>
+        <parameter>
+            <name>constant_porosity_parameter</name>
+            <type>Constant</type>
+            <value>0.45</value>
         </parameter>
     </parameters>
     <process_variables>

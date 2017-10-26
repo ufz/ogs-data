@@ -67,7 +67,7 @@
                         </permeability>
                         <porosity>
                             <type>Constant</type>
-                            <value> 0.4  </value>
+                            <porosity_parameter>constant_porosity_parameter</porosity_parameter>
                         </porosity>
                         <storage>
                             <type>Constant</type>
@@ -178,6 +178,11 @@
             <name>latent_heat_evp</name>
             <type>Constant</type>
             <value>2258000</value>
+        </parameter>
+        <parameter>
+            <name>constant_porosity_parameter</name>
+            <type>Constant</type>
+            <value>0.4</value>
         </parameter>
     </parameters>
     <time_loop>

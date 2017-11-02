@@ -26,7 +26,9 @@
             <porous_medium>
                 <porous_medium id="0">
                     <permeability>
-                        <values>1.239e-9 0 0 1.239e-9</values>
+                        <permeability_tensor_entries>kappa1</permeability_tensor_entries>
+                        <type>Constant</type>
+                        <number_of_entries>4</number_of_entries>
                     </permeability>
                     <porosity>
                         <type>Constant</type>
@@ -39,7 +41,9 @@
                 </porous_medium>
                 <porous_medium id="1">
                     <permeability>
-                        <values>1e-3 0 0 1e-3</values>
+                        <permeability_tensor_entries>kappa2</permeability_tensor_entries>
+                        <type>Constant</type>
+                        <number_of_entries>4</number_of_entries>
                     </permeability>
                     <porosity>
                         <type>Constant</type>
@@ -197,6 +201,16 @@
             <name>constant_porosity_parameter</name>
             <type>Constant</type>
             <value>0.385</value>
+        </parameter>
+        <parameter>
+            <name>kappa1</name>
+            <type>Constant</type>
+            <values>1.239e-9 0 0 1.239e-9</values>
+        </parameter>
+        <parameter>
+            <name>kappa2</name>
+            <type>Constant</type>
+            <values>1e-3 0 0 1e-3</values>
         </parameter>
     </parameters>
     <process_variables>

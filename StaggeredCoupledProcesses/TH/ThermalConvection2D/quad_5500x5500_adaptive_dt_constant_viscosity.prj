@@ -64,7 +64,7 @@
                         </permeability>
                         <porosity>
                             <type>Constant</type>
-                            <value>0.001</value>
+                            <porosity_parameter>constant_porosity_parameter</porosity_parameter>
                         </porosity>
                         <storage>
                             <type>Constant</type>
@@ -246,6 +246,11 @@
             <name>kappa1</name>
             <type>Constant</type>
             <values>1.0e-14</values>
+        </parameter>
+        <parameter>
+            <name>constant_porosity_parameter</name>
+            <type>Constant</type>
+            <value>0.001</value>
         </parameter>
     </parameters>
     <process_variables>

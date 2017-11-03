@@ -64,6 +64,10 @@
                 <secondary_variable type="static"
                     internal_name="sigma_xy" output_name="sigma_xy" />
                 <secondary_variable type="static"
+                    internal_name="sigma_yz" output_name="sigma_yz" />
+                <secondary_variable type="static"
+                    internal_name="sigma_xz" output_name="sigma_xz" />
+                <secondary_variable type="static"
                     internal_name="epsilon_xx" output_name="epsilon_xx" />
                 <secondary_variable type="static"
                     internal_name="epsilon_yy" output_name="epsilon_yy" />
@@ -71,6 +75,10 @@
                     internal_name="epsilon_zz" output_name="epsilon_zz" />
                 <secondary_variable type="static"
                     internal_name="epsilon_xy" output_name="epsilon_xy" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_yz" output_name="epsilon_yz" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_xz" output_name="epsilon_xz" />
             </secondary_variables>
         </process>
     </processes>
@@ -94,10 +102,14 @@
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
                         <variable>sigma_xy</variable>
+                        <variable>sigma_yz</variable>
+                        <variable>sigma_xz</variable>
                         <variable>epsilon_xx</variable>
                         <variable>epsilon_yy</variable>
                         <variable>epsilon_zz</variable>
                         <variable>epsilon_xy</variable>
+                        <variable>epsilon_yz</variable>
+                        <variable>epsilon_xz</variable>
                     </variables>
                 </output>
                         <time_stepping>

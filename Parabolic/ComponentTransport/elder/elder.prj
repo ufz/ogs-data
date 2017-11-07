@@ -32,7 +32,6 @@
                     <permeability>
                         <permeability_tensor_entries>kappa1</permeability_tensor_entries>
                         <type>Constant</type>
-                        <number_of_entries>9</number_of_entries>
                     </permeability>
                     <porosity>
                         <type>Constant</type>

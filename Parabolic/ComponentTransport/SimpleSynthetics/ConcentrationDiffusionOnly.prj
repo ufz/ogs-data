@@ -27,7 +27,6 @@
                 <porous_medium id="0">
                     <permeability>
                         <type>Constant</type>
-                        <number_of_entries>4</number_of_entries>
                         <permeability_tensor_entries>kappa1</permeability_tensor_entries>
                     </permeability>
                     <porosity>
@@ -42,7 +41,6 @@
                 <porous_medium id="1">
                     <permeability>
                         <type>Constant</type>
-                        <number_of_entries>4</number_of_entries>
                         <permeability_tensor_entries>kappa2</permeability_tensor_entries>
                     </permeability>
                     <porosity>

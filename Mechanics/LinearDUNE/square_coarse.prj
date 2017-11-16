@@ -5,7 +5,7 @@
     <processes>
         <process>
             <name>SD</name>
-            <type>SMALL_DEFORMATION</type>
+            <type>SMALL_DEFORMATION_DUNE</type>
             <integration_order>2</integration_order>
             <constitutive_relation>
                 <type>LinearElasticIsotropic</type>

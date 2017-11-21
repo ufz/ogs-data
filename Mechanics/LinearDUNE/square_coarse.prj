@@ -110,23 +110,29 @@
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>Dirichlet</type>
+
+                    <type>NonuniformDirichlet</type>
                     <component>0</component>
-                    <parameter>dirichlet0</parameter>
+                    <mesh>square_1x1_gmsh_tri_coarse_boundary_left.vtu</mesh>
+                    <field_name>dirichlet0</field_name>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
-                    <type>Dirichlet</type>
+
+                    <type>NonuniformDirichlet</type>
                     <component>1</component>
-                    <parameter>dirichlet0</parameter>
+                    <mesh>square_1x1_gmsh_tri_coarse_boundary_bottom.vtu</mesh>
+                    <field_name>dirichlet0</field_name>
                 </boundary_condition>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
-                    <type>Dirichlet</type>
+
+                    <type>NonuniformDirichlet</type>
                     <component>1</component>
-                    <parameter>dirichlet1</parameter>
+                    <mesh>square_1x1_gmsh_tri_coarse_boundary_top.vtu</mesh>
+                    <field_name>dirichlet1</field_name>
                 </boundary_condition>
             </boundary_conditions>
         </process_variable>

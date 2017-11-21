@@ -6701,6 +6701,11 @@
         <Proxy value="7068"/>
       </Property>
     </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="7228" servers="16">
+      <Property name="Source" id="7228.Source" number_of_elements="1">
+        <Proxy value="7217"/>
+      </Property>
+    </Proxy>
     <Proxy group="representations" type="SpreadSheetRepresentation" id="5337" servers="21">
       <Property name="CompositeDataSetIndex" id="5337.CompositeDataSetIndex" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -6725,6 +6730,32 @@
       <Property name="Visibility" id="5337.Visibility" number_of_elements="1">
         <Element index="0" value="0"/>
         <Domain name="bool" id="5337.Visibility.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="representations" type="SpreadSheetRepresentation" id="7229" servers="21">
+      <Property name="CompositeDataSetIndex" id="7229.CompositeDataSetIndex" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="tree" id="7229.CompositeDataSetIndex.tree"/>
+      </Property>
+      <Property name="FieldAssociation" id="7229.FieldAssociation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="7229.FieldAssociation.enum">
+          <Entry value="0" text="Point Data"/>
+          <Entry value="1" text="Cell Data"/>
+          <Entry value="2" text="Field Data"/>
+        </Domain>
+      </Property>
+      <Property name="GenerateCellConnectivity" id="7229.GenerateCellConnectivity" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="7229.GenerateCellConnectivity.bool"/>
+      </Property>
+      <Property name="Input" id="7229.Input" number_of_elements="1">
+        <Proxy value="7217" output_port="0"/>
+        <Domain name="input_type" id="7229.Input.input_type"/>
+      </Property>
+      <Property name="Visibility" id="7229.Visibility" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="7229.Visibility.bool"/>
       </Property>
     </Proxy>
     <Proxy group="representations" type="SpreadSheetRepresentation" id="7011" servers="21">
@@ -6827,7 +6858,7 @@
         <Domain name="input_type" id="7080.Input.input_type"/>
       </Property>
       <Property name="Visibility" id="7080.Visibility" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="7080.Visibility.bool"/>
       </Property>
     </Proxy>
@@ -6907,6 +6938,32 @@
       <Property name="Visibility" id="7113.Visibility" number_of_elements="1">
         <Element index="0" value="0"/>
         <Domain name="bool" id="7113.Visibility.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="representations" type="SpreadSheetRepresentation" id="7195" servers="21">
+      <Property name="CompositeDataSetIndex" id="7195.CompositeDataSetIndex" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="tree" id="7195.CompositeDataSetIndex.tree"/>
+      </Property>
+      <Property name="FieldAssociation" id="7195.FieldAssociation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="7195.FieldAssociation.enum">
+          <Entry value="0" text="Point Data"/>
+          <Entry value="1" text="Cell Data"/>
+          <Entry value="2" text="Field Data"/>
+        </Domain>
+      </Property>
+      <Property name="GenerateCellConnectivity" id="7195.GenerateCellConnectivity" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="7195.GenerateCellConnectivity.bool"/>
+      </Property>
+      <Property name="Input" id="7195.Input" number_of_elements="1">
+        <Proxy value="5399" output_port="0"/>
+        <Domain name="input_type" id="7195.Input.input_type"/>
+      </Property>
+      <Property name="Visibility" id="7195.Visibility" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="7195.Visibility.bool"/>
       </Property>
     </Proxy>
     <Proxy group="representations" type="UnstructuredGridRepresentation" id="5294" servers="21">
@@ -10617,6 +10674,45 @@
         <Domain name="bool" id="6679.InsideOut.bool"/>
       </Property>
     </Proxy>
+    <Proxy group="filters" type="ProgrammableFilter" id="7217" servers="1">
+      <Property name="CopyArrays" id="7217.CopyArrays" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="7217.CopyArrays.bool"/>
+      </Property>
+      <Property name="InformationScript" id="7217.InformationScript" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="Input" id="7217.Input" number_of_elements="1">
+        <Proxy value="5063" output_port="0"/>
+        <Domain name="groups" id="7217.Input.groups"/>
+        <Domain name="input_type" id="7217.Input.input_type"/>
+      </Property>
+      <Property name="OutputDataSetType" id="7217.OutputDataSetType" number_of_elements="1">
+        <Element index="0" value="8"/>
+        <Domain name="enum" id="7217.OutputDataSetType.enum">
+          <Entry value="8" text="Same as Input"/>
+          <Entry value="0" text="vtkPolyData"/>
+          <Entry value="2" text="vtkStructuredGrid"/>
+          <Entry value="3" text="vtkRectilinearGrid"/>
+          <Entry value="4" text="vtkUnstructuredGrid"/>
+          <Entry value="6" text="vtkImageData"/>
+          <Entry value="10" text="vtkUniformGrid"/>
+          <Entry value="13" text="vtkMultiblockDataSet"/>
+          <Entry value="15" text="vtkHierarchicalBoxDataSet"/>
+          <Entry value="19" text="vtkTable"/>
+        </Domain>
+      </Property>
+      <Property name="PythonPath" id="7217.PythonPath" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="Script" id="7217.Script" number_of_elements="1">
+        <Element index="0" value="def f():&#xa;    grid = self.GetInputDataObject(0, 0)&#xa;&#xa;    points = grid.GetPoints()&#xa;&#xa;    N = points.GetNumberOfPoints()&#xa;&#xa;    # point_ids = vtk.vtkIdTypeArray()  ## TODO why does that not work?&#xa;    # point_ids = vtk.vtkLongArray()&#xa;    point_ids = vtk.vtkUnsignedLongArray()&#xa;    point_ids.SetName(&#x22;OriginalSubsurfaceNodeIDs&#x22;)&#xa;    point_ids.SetNumberOfComponents(1)&#xa;    point_ids.SetNumberOfTuples(N)&#xa;&#xa;    for i in range(N):&#xa;        point_ids.SetComponent(i, 0, i)&#xa;&#xa;    self.GetOutputDataObject(0).GetPointData().AddArray(point_ids)&#xa;&#xa;f()"/>
+      </Property>
+      <Property name="TimestepValues" id="7217.TimestepValues"/>
+      <Property name="UpdateExtentScript" id="7217.UpdateExtentScript" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+    </Proxy>
     <Proxy group="filters" type="ExtractSelection" id="6667" servers="1">
       <Property name="Input" id="6667.Input" number_of_elements="1">
         <Proxy value="7068" output_port="0"/>
@@ -10639,7 +10735,7 @@
     </Proxy>
     <Proxy group="filters" type="ExtractSelection" id="5399" servers="1">
       <Property name="Input" id="5399.Input" number_of_elements="1">
-        <Proxy value="6999" output_port="0"/>
+        <Proxy value="7217" output_port="0"/>
         <Domain name="groups" id="5399.Input.groups"/>
         <Domain name="input_type" id="5399.Input.input_type"/>
       </Property>
@@ -10834,7 +10930,9 @@
       </Property>
     </Proxy>
     <Proxy group="misc" type="TimeKeeper" id="259" servers="16">
-      <Property name="SuppressedTimeSources" id="259.SuppressedTimeSources"/>
+      <Property name="SuppressedTimeSources" id="259.SuppressedTimeSources" number_of_elements="1">
+        <Proxy value="5063"/>
+      </Property>
       <Property name="Time" id="259.Time" number_of_elements="1">
         <Element index="0" value="0"/>
         <Domain name="range" id="259.Time.range"/>
@@ -10846,7 +10944,7 @@
         <Element index="0" value="0"/>
         <Element index="1" value="1"/>
       </Property>
-      <Property name="TimeSources" id="259.TimeSources" number_of_elements="9">
+      <Property name="TimeSources" id="259.TimeSources" number_of_elements="10">
         <Proxy value="5063"/>
         <Proxy value="5399"/>
         <Proxy value="5911"/>
@@ -10856,6 +10954,7 @@
         <Proxy value="6999"/>
         <Proxy value="7045"/>
         <Proxy value="7068"/>
+        <Proxy value="7217"/>
       </Property>
       <Property name="TimestepValues" id="259.TimestepValues"/>
       <Property name="Views" id="259.Views" number_of_elements="2">
@@ -11396,7 +11495,7 @@
       <Property name="PPI" id="5325.PPI" number_of_elements="1">
         <Element index="0" value="96"/>
       </Property>
-      <Property name="Representations" id="5325.Representations" number_of_elements="8">
+      <Property name="Representations" id="5325.Representations" number_of_elements="10">
         <Proxy value="5337"/>
         <Proxy value="7011"/>
         <Proxy value="7022"/>
@@ -11405,6 +11504,8 @@
         <Proxy value="7091"/>
         <Proxy value="7102"/>
         <Proxy value="7113"/>
+        <Proxy value="7195"/>
+        <Proxy value="7229"/>
       </Property>
       <Property name="SelectedComponent" id="5325.SelectedComponent" number_of_elements="1">
         <Element index="0" value="-1"/>
@@ -11555,8 +11656,12 @@
     <ProxyCollection name="pq_helper_proxies.7068">
       <Item id="7079" name="RepresentationAnimationHelper"/>
     </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.7217">
+      <Item id="7228" name="RepresentationAnimationHelper"/>
+    </ProxyCollection>
     <ProxyCollection name="representations">
       <Item id="5337" name="SpreadSheetRepresentation1"/>
+      <Item id="7229" name="SpreadSheetRepresentation10"/>
       <Item id="7011" name="SpreadSheetRepresentation2"/>
       <Item id="7022" name="SpreadSheetRepresentation3"/>
       <Item id="7057" name="SpreadSheetRepresentation4"/>
@@ -11564,6 +11669,7 @@
       <Item id="7091" name="SpreadSheetRepresentation6"/>
       <Item id="7102" name="SpreadSheetRepresentation7"/>
       <Item id="7113" name="SpreadSheetRepresentation8"/>
+      <Item id="7195" name="SpreadSheetRepresentation9"/>
       <Item id="5294" name="UnstructuredGridRepresentation1"/>
       <Item id="5629" name="UnstructuredGridRepresentation2"/>
       <Item id="6141" name="UnstructuredGridRepresentation3"/>
@@ -11579,6 +11685,7 @@
       <Item id="6679" name="selection_source.6679"/>
     </ProxyCollection>
     <ProxyCollection name="sources">
+      <Item id="7217" name="ProgrammableFilter1"/>
       <Item id="6667" name="bottom"/>
       <Item id="5399" name="boundary"/>
       <Item id="7045" name="displacement_0"/>

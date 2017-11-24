@@ -59,7 +59,7 @@
         </processes>
         <output>
             <type>VTK</type>
-            <prefix>square_1e0</prefix>
+            <prefix>square_coarse</prefix>
             <timesteps>
                 <pair>
                     <repeat>1</repeat>

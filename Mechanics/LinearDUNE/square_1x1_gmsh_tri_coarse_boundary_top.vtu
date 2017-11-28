@@ -2,7 +2,7 @@
 <VTKFile type="UnstructuredGrid" version="1.0" byte_order="LittleEndian" header_type="UInt64" compressor="vtkZLibDataCompressor">
   <UnstructuredGrid>
     <Piece NumberOfPoints="3" NumberOfCells="2">
-      <PointData Scalars="dirichlet1">
+      <PointData Scalars="dirichlet_gradient">
         <DataArray type="UInt64" Name="OriginalSubsurfaceNodeIDs" format="binary" RangeMin="2" RangeMax="6">
           AQAAAAAAAAAAgAAAAAAAABgAAAAAAAAAEAAAAAAAAAA=eJxjYoAAZijNBqUBAKgADA==
         </DataArray>
@@ -14,6 +14,9 @@
         </DataArray>
         <DataArray type="Float64" Name="dirichlet1" format="binary" RangeMin="0.05" RangeMax="0.05">
           AQAAAAAAAAAAgAAAAAAAABgAAAAAAAAAEAAAAAAAAAA=eJybNRMEVtrPQqMBq/YNfg==
+        </DataArray>
+        <DataArray type="Float64" Name="dirichlet_gradient" format="binary" RangeMin="0.025" RangeMax="0.075">
+          AQAAAAAAAAAAgAAAAAAAABgAAAAAAAAAFQAAAAAAAAA=eJwzMQaBzfazZoIBlF5pDwB4pAsU
         </DataArray>
       </PointData>
       <CellData>

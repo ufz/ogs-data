@@ -115,9 +115,9 @@
                         <time_stepping>
                         <type>FixedTimeStepping</type>
                         <t_initial>0</t_initial>
-                        <t_end>1.0</t_end>
+                        <t_end>0.4</t_end>
                         <timesteps>
-                            <pair><repeat>10000</repeat><delta_t>0.01</delta_t></pair>
+                            <pair><repeat>40</repeat><delta_t>0.01</delta_t></pair>
                         </timesteps>
                         </time_stepping>
 

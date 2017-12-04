@@ -41,6 +41,7 @@
                         <variable>sigma</variable>
                         <variable>epsilon</variable>
                     </variables>
+                    <output_extrapolation_residuals>true</output_extrapolation_residuals>
                 </output>
                 <time_stepping>
                     <type>FixedTimeStepping</type>

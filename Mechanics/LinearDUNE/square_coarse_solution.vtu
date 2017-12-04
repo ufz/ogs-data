@@ -34,6 +34,32 @@
           NAAAAA==ZKR6IkMYpyEuqbkh1wPFIAAAAABU3lCi4j4LIuI+C6JU3lCixPUCouI+C6He6xGgDK7zIa==
         </DataArray>
       </PointData>
+      <CellData Scalars="epsilon_residual[0]">
+        <DataArray type="Float32" Name="epsilon_residual[0]" NumberOfComponents="1" format="binary">
+          QAAAAA==AACAIvMEtSLzBDUj8Rn1Iv1TKSMEOgUjfEEKI/MENSPxGfUi8Rn1IjrNkyLxGfUifEEKI04/pSLXs90i/VMpI1==
+        </DataArray>
+        <DataArray type="Float32" Name="epsilon_residual[1]" NumberOfComponents="1" format="binary">
+          QAAAAA==7AXRItezXSP9U6kj17NdI3xBiiNOP6UjOs2TItezXSNxxJwj7AXRIjrNkyLXs10j6bFpI+mxaSPxGXUjTj+lIz==
+        </DataArray>
+        <DataArray type="Float32" Name="epsilon_residual[2]" NumberOfComponents="1" format="binary">
+          QAAAAA==AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+        </DataArray>
+        <DataArray type="Float32" Name="epsilon_residual[3]" NumberOfComponents="1" format="binary">
+          QAAAAA==3qI/IgIMPCOYRsEhPc4eIsEZHCLP6XEiDGikIkqVCyOcdBYimEJHIms0iyH2fs0hNtRgIicjkCJLNaIh00xyIk==
+        </DataArray>
+        <DataArray type="Float32" Name="sigma_residual[0]" NumberOfComponents="1" format="binary">
+          QAAAAA==ms7RISwDWiKV+zMhmtZFIm6BoyKkpqwio5xwIgq17SFyOQAjcd6vIlPxByJmszQjBTBAIYU5lCIz+kghyPDvIv==
+        </DataArray>
+        <DataArray type="Float32" Name="sigma_residual[1]" NumberOfComponents="1" format="binary">
+          QAAAAA==Os0TIzrNEyPt+8Yj8Rl1I3xBiiO5WZgjAAAAI+37xiPzBDUjAAAAI/MEtSMEOoUj/VOpI5VD1CN8QYoj8wS1Iw==
+        </DataArray>
+        <DataArray type="Float32" Name="sigma_residual[2]" NumberOfComponents="1" format="binary">
+          QAAAAA==Tj+lIgAAgCLzBDUj8Rn1IhVQLSN8QQojAAAAAOwFUSLzBLUiOs0TItez3SK5WRgj17PdInxBCiNOP6UiHplsI5==
+        </DataArray>
+        <DataArray type="Float32" Name="sigma_residual[3]" NumberOfComponents="1" format="binary">
+          QAAAAA==l2kTIsemECN1rJQh+1D0IZ4n8CFQFjoi2O58Iku+1iJTeOch60YZIkIpViHkEp4hAvIsIu2/XSIQjXkhe2I6Im==
+        </DataArray>
+      </CellData>
       <Points>
         <DataArray type="Float32" Name="Coordinates" NumberOfComponents="3" format="binary">
           nAAAAA==AACAPgAAgD4AAAAAAACAPgAAQD8AAAAAAAAAAAAAAD8AAAAAAAAAPwAAAD8AAAAAAAAAAAAAgD8AAAAAAAAAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAABAPwAAQD8AAAAAAACAPwAAAD8AAAAAAACAPwAAAAAAAAAAAABAPwAAgD4AAAAAAAAAPwAAAAAAAAAA

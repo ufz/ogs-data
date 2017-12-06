@@ -3,17 +3,14 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="4" NumberOfCells="1">
       <PointData>
+        <DataArray type="Float64" Name="NodalForces" NumberOfComponents="2" format="binary" RangeMin="0.027472527473" RangeMax="0.027472527473">
+          AQAAAACAAABAAAAALAAAAA==eJyTOvi/KXIpg43MIUUgmrNfCsLfA+Mvnvoo9SS/PEzeHsqHydsDAKCfG/U=
+        </DataArray>
         <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="binary" RangeMin="0" RangeMax="0.054398379328">
           AQAAAACAAABAAAAAIAAAAA==eJxjYEAFYvEfReM/Tt2PJswwayYIrLSHycP4AFfTET0=
         </DataArray>
-        <DataArray type="Float64" Name="sigma_xx" format="binary" RangeMin="-1.4582623611e-18" RangeMax="3.90740222e-19">
-          AQAAAACAAAAgAAAAHQAAAA==eJxjWnn06P0rMjY8UDp6qRJr8TOrPTAaAAnPD3c=
-        </DataArray>
-        <DataArray type="Float64" Name="sigma_xy" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAAgAAAACwAAAA==eJxjYMAPAAAgAAE=
-        </DataArray>
-        <DataArray type="Float64" Name="sigma_yy" format="binary" RangeMin="0.054945054945" RangeMax="0.054945054945">
-          AQAAAACAAAAgAAAAGAAAAA==eJyTPaQoc0hxjb0ElJaD0jJQGgC9uAuk
+        <DataArray type="Float64" Name="sigma" NumberOfComponents="4" format="binary" RangeMin="0.057364321478" RangeMax="0.057364321478">
+          AQAAAACAAACAAAAAQQAAAA==eJzjXHn06P0rMjZihxRlDimusefleyjA93CCPQMUCEDlRaDyPGjy0UuVWIufWe0RwiEfBZWXgcoLoskDAIPGJjc=
         </DataArray>
       </PointData>
       <CellData>
@@ -35,12 +32,6 @@
         </DataArray>
         <DataArray type="UInt8" Name="types" format="binary" RangeMin="9" RangeMax="9">
           AQAAAACAAAABAAAACQAAAA==eJzjBAAACgAK
-        </DataArray>
-        <DataArray type="Int64" Name="faces" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAAIAAAACwAAAA==eJxjYIAAAAAIAAE=
-        </DataArray>
-        <DataArray type="Int64" Name="faceoffsets" format="binary" RangeMin="1" RangeMax="1">
-          AQAAAACAAAAIAAAACwAAAA==eJxjZIAAAAAQAAI=
         </DataArray>
       </Cells>
     </Piece>

@@ -65,6 +65,7 @@
                     <each_steps>10000000</each_steps>
                 </pair>
             </timesteps>
+            <output_iteration_results>true</output_iteration_results>
         </output>
     </time_loop>
     <parameters>

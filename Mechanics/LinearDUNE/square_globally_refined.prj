@@ -20,6 +20,8 @@
             <secondary_variables>
                 <secondary_variable type="static" internal_name="sigma" output_name="sigma"/>
                 <secondary_variable type="static" internal_name="epsilon" output_name="epsilon"/>
+                <secondary_variable type="static" internal_name="error_estimate_sigma" output_name="error_estimate_sigma"/>
+                <secondary_variable type="static" internal_name="error_estimate_epsilon" output_name="error_estimate_epsilon"/>
             </secondary_variables>
         </process>
     </processes>
@@ -40,6 +42,8 @@
                         <variable>displacement</variable>
                         <variable>sigma</variable>
                         <variable>epsilon</variable>
+                        <variable>error_estimate_sigma</variable>
+                        <variable>error_estimate_epsilon</variable>
                     </variables>
                     <output_extrapolation_residuals>true</output_extrapolation_residuals>
                 </output>

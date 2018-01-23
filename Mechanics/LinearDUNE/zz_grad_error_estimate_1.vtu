@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+  <UnstructuredGrid>
+    <Piece NumberOfCells="16" NumberOfPoints="13">
+      <CellData Scalars="error_estimate">
+        <DataArray type="Float32" Name="error_estimate" NumberOfComponents="1" format="binary">
+          QAAAAA==jyILPWDjHj2QBWo9lQ+kPKniLT0OcJ08mNoZPZCL4Ty1wOc8nKrMPHzI4DxMbZ88mjGVPNI7BT2oYoY9AN3aPN==
+        </DataArray>
+        <DataArray type="Float32" Name="error_estimate_times_sqrt_num_cells" NumberOfComponents="1" format="binary">
+          QAAAAA==jyILPmDjHj6QBWo+lQ+kPaniLT4OcJ09mNoZPpCL4T21wOc9nKrMPXzI4D1MbZ89mjGVPdI7BT6oYoY+AN3aPd==
+        </DataArray>
+      </CellData>
+      <Points>
+        <DataArray type="Float32" Name="Coordinates" NumberOfComponents="3" format="binary">
+          nAAAAA==AACAPgAAgD4AAAAAAACAPgAAQD8AAAAAAAAAAAAAAD8AAAAAAAAAPwAAAD8AAAAAAAAAAAAAgD8AAAAAAAAAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAABAPwAAQD8AAAAAAACAPwAAAD8AAAAAAACAPwAAAAAAAAAAAABAPwAAgD4AAAAAAAAAPwAAAAAAAAAA
+        </DataArray>
+      </Points>
+      <Cells>
+        <DataArray type="Int32" Name="connectivity" NumberOfComponents="1" format="binary">
+          wAAAAA==AAAAAAEAAAACAAAAAwAAAAEAAAAAAAAABAAAAAEAAAAFAAAABgAAAAAAAAACAAAABwAAAAgAAAAJAAAACgAAAAsAAAAMAAAABQAAAAEAAAADAAAABQAAAAMAAAAIAAAACQAAAAgAAAADAAAADAAAAAMAAAAAAAAADAAAAAsAAAADAAAACQAAAAMAAAALAAAABgAAAAwAAAAAAAAACgAAAAkAAAALAAAABAAAAAIAAAABAAAABwAAAAUAAAAIAAAA
+        </DataArray>
+        <DataArray type="Int32" Name="offsets" NumberOfComponents="1" format="binary">
+          QAAAAA==AwAAAAYAAAAJAAAADAAAAA8AAAASAAAAFQAAABgAAAAbAAAAHgAAACEAAAAkAAAAJwAAACoAAAAtAAAAMAAAAA==
+        </DataArray>
+        <DataArray type="UInt8" Name="types" NumberOfComponents="1" format="binary">
+          EAAAAA==BQUFBQUFBQUFBQUFBQUFBQ==
+        </DataArray>
+      </Cells>
+    </Piece>
+  </UnstructuredGrid>
+</VTKFile>

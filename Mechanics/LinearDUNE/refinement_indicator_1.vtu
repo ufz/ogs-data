@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+  <UnstructuredGrid>
+    <Piece NumberOfCells="16" NumberOfPoints="13">
+      <CellData Scalars="refinement_indicator">
+        <DataArray type="Float32" Name="refinement_indicator" NumberOfComponents="1" format="binary">
+          QAAAAA==AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAA==
+        </DataArray>
+      </CellData>
+      <Points>
+        <DataArray type="Float32" Name="Coordinates" NumberOfComponents="3" format="binary">
+          nAAAAA==AACAPgAAgD4AAAAAAACAPgAAQD8AAAAAAAAAAAAAAD8AAAAAAAAAPwAAAD8AAAAAAAAAAAAAgD8AAAAAAAAAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAABAPwAAQD8AAAAAAACAPwAAAD8AAAAAAACAPwAAAAAAAAAAAABAPwAAgD4AAAAAAAAAPwAAAAAAAAAA
+        </DataArray>
+      </Points>
+      <Cells>
+        <DataArray type="Int32" Name="connectivity" NumberOfComponents="1" format="binary">
+          wAAAAA==AAAAAAEAAAACAAAAAwAAAAEAAAAAAAAABAAAAAEAAAAFAAAABgAAAAAAAAACAAAABwAAAAgAAAAJAAAACgAAAAsAAAAMAAAABQAAAAEAAAADAAAABQAAAAMAAAAIAAAACQAAAAgAAAADAAAADAAAAAMAAAAAAAAADAAAAAsAAAADAAAACQAAAAMAAAALAAAABgAAAAwAAAAAAAAACgAAAAkAAAALAAAABAAAAAIAAAABAAAABwAAAAUAAAAIAAAA
+        </DataArray>
+        <DataArray type="Int32" Name="offsets" NumberOfComponents="1" format="binary">
+          QAAAAA==AwAAAAYAAAAJAAAADAAAAA8AAAASAAAAFQAAABgAAAAbAAAAHgAAACEAAAAkAAAAJwAAACoAAAAtAAAAMAAAAA==
+        </DataArray>
+        <DataArray type="UInt8" Name="types" NumberOfComponents="1" format="binary">
+          EAAAAA==BQUFBQUFBQUFBQUFBQUFBQ==
+        </DataArray>
+      </Cells>
+    </Piece>
+  </UnstructuredGrid>
+</VTKFile>

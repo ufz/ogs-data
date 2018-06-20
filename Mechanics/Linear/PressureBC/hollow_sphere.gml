@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE OGS-GML-DOM>
-<OpenGeoSysGLI xsi:noNamespaceSchemaLocation="http://www.opengeosys.org/images/xsd/OpenGeoSysGLI.xsd" xmlns:ogs="http://www.opengeosys.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OpenGeoSysGLI xsi:noNamespaceSchemaLocation="https://www.opengeosys.org/images/xsd/OpenGeoSysGLI.xsd" xmlns:ogs="http://www.opengeosys.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <name>hollow_sphere</name>
  <points>
   <point x="1" z="0" y="0" id="0"/>

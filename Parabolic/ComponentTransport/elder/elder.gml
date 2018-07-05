@@ -3,16 +3,16 @@
 <OpenGeoSysGLI xsi:noNamespaceSchemaLocation="https://www.opengeosys.org/images/xsd/OpenGeoSysGLI.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogs="http://www.opengeosys.org">
  <name>elder</name>
  <points>
-  <point z="75" id="0" x="-150" name="POINT0" y="-3"/>
-  <point z="75" id="1" x="-150" name="POINT1" y="3"/>
-  <point z="-75" id="2" x="-150" name="POINT2" y="-3"/>
-  <point z="-75" id="3" x="-150" name="POINT3" y="3"/>
-  <point z="-75" id="4" x="150" name="POINT4" y="-3"/>
-  <point z="-75" id="5" x="150" name="POINT5" y="3"/>
-  <point z="75" id="6" x="150" name="POINT6" y="-3"/>
-  <point z="75" id="7" x="150" name="POINT7" y="3"/>
-  <point z="75" id="8" x="0" name="POINT8" y="-3"/>
-  <point z="75" id="9" x="0" name="POINT9" y="3"/>
+  <point z="75" id="0" x="-150" name="POINT0" y="-1.17"/>
+  <point z="75" id="1" x="-150" name="POINT1" y="1.17"/>
+  <point z="-75" id="2" x="-150" name="POINT2" y="-1.17"/>
+  <point z="-75" id="3" x="-150" name="POINT1.17" y="1.17"/>
+  <point z="-75" id="4" x="150" name="POINT4" y="-1.17"/>
+  <point z="-75" id="5" x="150" name="POINT5" y="1.17"/>
+  <point z="75" id="6" x="150" name="POINT6" y="-1.17"/>
+  <point z="75" id="7" x="150" name="POINT7" y="1.17"/>
+  <point z="75" id="8" x="0" name="POINT8" y="-1.17"/>
+  <point z="75" id="9" x="0" name="POINT9" y="1.17"/>
  </points>
  <polylines>
   <polyline id="0" name="LEFT_TOP_CORNER">

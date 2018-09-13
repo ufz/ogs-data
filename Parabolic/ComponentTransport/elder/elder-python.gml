@@ -2,7 +2,7 @@
 <!-- vim: ft=xml sw=2
 -->
 <!DOCTYPE OGS-GML-DOM>
-<OpenGeoSysGLI xsi:noNamespaceSchemaLocation="https://www.opengeosys.org/images/xsd/OpenGeoSysGLI.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogs="http://www.opengeosys.org">
+<OpenGeoSysGLI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogs="http://www.opengeosys.org">
   <name>elder</name>
   <points>
     <point id="0" x="-150" y="-1.17" z="-75" />

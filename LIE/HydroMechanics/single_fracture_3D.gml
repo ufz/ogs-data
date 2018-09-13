@@ -25,6 +25,14 @@
             <pnt>5</pnt>
             <pnt>11</pnt>
         </polyline>
+        <polyline id="0" name="fracture_back">
+            <pnt>4</pnt>
+            <pnt>5</pnt>
+        </polyline>
+        <polyline id="0" name="fracture_front">
+            <pnt>10</pnt>
+            <pnt>11</pnt>
+        </polyline>
     </polylines>
     <surfaces>
         <surface id="0" name="left">

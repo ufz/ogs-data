@@ -19,6 +19,12 @@
         <point id="13" x="0.050000000745058059692383" y="0.05" z="0.0099999997764825820922852"/>
         <point id="14" x="0.025" y="0" z="0.0099999997764825820922852"/>
         <point id="15" x="0.025" y="0.10000000149011611938477" z="0.0099999997764825820922852"/>
+
+        <point id="16" x="0" y="0.02020999975502491" z="0.0099999997764825820922852"/>
+        <point id="17" x="0.050000000745058059692383" y="0.07979000359773636" z="0.0099999997764825820922852"/>
+
+        <point id="18" x="0" y="0.02020999975502491" z="0"/>
+        <point id="19" x="0.050000000745058059692383" y="0.07979000359773636" z="0"/>
     </points>
     <polylines>
         <polyline id="0" name="bottom_rear">
@@ -28,6 +34,14 @@
         <polyline id="1" name="bottom_left">
             <pnt>0</pnt>
             <pnt>8</pnt>
+        </polyline>
+        <polyline id="1" name="fracture_front">
+            <pnt>16</pnt>
+            <pnt>17</pnt>
+        </polyline>
+        <polyline id="1" name="fracture_back">
+            <pnt>18</pnt>
+            <pnt>19</pnt>
         </polyline>
     </polylines>
     <surfaces>

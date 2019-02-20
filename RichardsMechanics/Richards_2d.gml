@@ -9,6 +9,7 @@
   <point x="0.000000" y="0.000000" z="0.000000" id="3"/>
   <point x="0.020000" y="0.000000" z="0.000000" id="4"/>
   <point x="0.040000" y="0.000000" z="0.000000" id="5"/>
+  <point x="0.02" y="0.08" z="0" id="6" name="OBSERVATION_POINT"/>
  </points>
  <polylines>
   <polyline id="0" name="TOP">

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>cube_1x1x1_hex_1e3.vtu</mesh>
-    <geometry>cube_1x1x1.gml</geometry>
+    <meshes>
+        <mesh>cube_1x1x1_hex_1e3.vtu</mesh>
+        <mesh>cube_1x1x1_hex_1e3_complete_surface.vtu</mesh>
+        <mesh>cube_1x1x1_hex_1e3_left.vtu</mesh>
+        <mesh>cube_1x1x1_hex_1e3_front.vtu</mesh>
+        <mesh>cube_1x1x1_hex_1e3_right.vtu</mesh>
+    </meshes>
     <processes>
         <process>
-            <name>GW23</name>
+            <name>SteadyStateDiffusion</name>
             <type>STEADY_STATE_DIFFUSION</type>
             <integration_order>2</integration_order>
             <process_variables>
@@ -13,8 +18,39 @@
             <secondary_variables>
                 <secondary_variable internal_name="darcy_velocity" output_name="v"/>
             </secondary_variables>
+            <calculatesurfaceflux>
+                <mesh>cube_1x1x1_hex_1e3_complete_surface</mesh>
+                <property_name>specific_flux</property_name>
+                <output_mesh>cube_1x1x1_hex_1e3_complete_surface_neumann_specific_flux.vtu</output_mesh>
+            </calculatesurfaceflux>
         </process>
     </processes>
+    <time_loop>
+        <processes>
+            <process ref="SteadyStateDiffusion">
+                <nonlinear_solver>basic_picard</nonlinear_solver>
+                <convergence_criterion>
+                    <type>DeltaX</type>
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-6</abstol>
+                </convergence_criterion>
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
+                <time_stepping>
+                    <type>SingleStep</type>
+                </time_stepping>
+            </process>
+        </processes>
+        <output>
+            <type>VTK</type>
+            <prefix>cube_1e3_neumann_balance</prefix>
+            <variables>
+                <variable> pressure </variable>
+                <variable> v      </variable>
+            </variables>
+        </output>
+    </time_loop>
     <media>
         <medium id="0">
             <phases/>
@@ -32,32 +68,6 @@
             </properties>
         </medium>
     </media>
-    <time_loop>
-        <processes>
-            <process ref="GW23">
-                <nonlinear_solver>basic_picard</nonlinear_solver>
-                <convergence_criterion>
-                    <type>DeltaX</type>
-                    <norm_type>NORM2</norm_type>
-                    <abstol>1.e-6</abstol>
-                </convergence_criterion>
-                <time_discretization>
-                    <type>BackwardEuler</type>
-                </time_discretization>
-                <time_stepping>
-                    <type>SingleStep</type>
-                </time_stepping>
-            </process>
-        </processes>
-        <output>
-            <type>VTK</type>
-            <prefix>cube_1e3</prefix>
-            <variables>
-                <variable> pressure </variable>
-                <variable> v      </variable>
-            </variables>
-        </output>
-    </time_loop>
     <parameters>
         <parameter>
             <name>p0</name>
@@ -65,14 +75,14 @@
             <value>0</value>
         </parameter>
         <parameter>
-            <name>p_Dirichlet_left</name>
+            <name>p_neumann</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
         <parameter>
-            <name>p_Dirichlet_right</name>
+            <name>p_Dirichlet</name>
             <type>Constant</type>
-            <value>-1</value>
+            <value>1</value>
         </parameter>
     </parameters>
     <process_variables>
@@ -83,16 +93,19 @@
             <initial_condition>p0</initial_condition>
             <boundary_conditions>
                 <boundary_condition>
-                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>left</geometry>
+                    <mesh>cube_1x1x1_hex_1e3_left</mesh>
                     <type>Dirichlet</type>
-                    <parameter>p_Dirichlet_left</parameter>
+                    <parameter>p_Dirichlet</parameter>
                 </boundary_condition>
                 <boundary_condition>
-                    <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>right</geometry>
+                    <mesh>cube_1x1x1_hex_1e3_front</mesh>
                     <type>Dirichlet</type>
-                    <parameter>p_Dirichlet_right</parameter>
+                    <parameter>p_Dirichlet</parameter>
+                </boundary_condition>
+                <boundary_condition>
+                    <mesh>cube_1x1x1_hex_1e3_right</mesh>
+                    <type>Neumann</type>
+                    <parameter>p_neumann</parameter>
                 </boundary_condition>
             </boundary_conditions>
         </process_variable>
@@ -117,7 +130,7 @@
             </eigen>
             <petsc>
                 <prefix>gw</prefix>
-                <parameters>-gw_ksp_type bcgs -gw_pc_type mg -gw_ksp_rtol 1.e-16 -gw_ksp_max_it 10000</parameters>
+                <parameters>-gw_ksp_type cg -gw_pc_type bjacobi -gw_ksp_rtol 1e-16 -gw_ksp_max_it 10000</parameters>
             </petsc>
         </linear_solver>
     </linear_solvers>

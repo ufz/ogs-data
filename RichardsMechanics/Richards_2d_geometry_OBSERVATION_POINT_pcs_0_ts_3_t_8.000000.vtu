@@ -7,8 +7,8 @@
     <Piece NumberOfPoints="1"                    NumberOfCells="1"                   >
       <PointData>
         <DataArray type="UInt64" Name="bulk_node_ids" format="appended" RangeMin="5"                    RangeMax="5"                    offset="64"                  />
-        <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="appended" RangeMin="1.1177655048e-10"     RangeMax="1.1177655048e-10"     offset="104"                 />
-        <DataArray type="Float64" Name="pressure" format="appended" RangeMin="-5011.8713226"        RangeMax="-5011.8713226"        offset="164"                 />
+        <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="appended" RangeMin="1.1214837011e-10"     RangeMax="1.1214837011e-10"     offset="104"                 />
+        <DataArray type="Float64" Name="pressure" format="appended" RangeMin="-4538.9475644"        RangeMax="-4538.9475644"        offset="164"                 />
       </PointData>
       <CellData>
         <DataArray type="UInt64" Name="bulk_element_ids" format="appended" RangeMin="5"                    RangeMax="5"                    offset="212"                 />
@@ -24,6 +24,6 @@
     </Piece>
   </UnstructuredGrid>
   <AppendedData encoding="base64">
-   _AQAAAACAAAAUAAAAHAAAAA==eF4z0zPSM9A1NTfQTTcwNDI1NDVISwIAKywEeA==AQAAAACAAAAIAAAACwAAAA==eF5jZYAAAAAwAAY=AQAAAACAAAAQAAAAGQAAAA==eF5bdGSW9uoHTbuYF3MFT955by8ASuEI3Q==AQAAAACAAAAIAAAAEAAAAA==eF6r2fSP7/7kzQcAFlsFIA==AQAAAACAAAAIAAAACwAAAA==eF5jZYAAAAAwAAY=AQAAAACAAAAYAAAAFwAAAA==eF6rFlnn/rBqin01mN5izwAFAHpwB4U=AQAAAACAAAAIAAAACwAAAA==eF5jYIAAAAAIAAE=AQAAAACAAAAIAAAACwAAAA==eF5jZIAAAAAQAAI=AQAAAACAAAABAAAACQAAAA==eF5jBAAAAgAC
+   _AQAAAACAAAAUAAAAHAAAAA==eF4z0zPWM9A1NrTQTTcwMDBMsTQ0TAUAK7EEeA==AQAAAACAAAAIAAAACwAAAA==eF5jZYAAAAAwAAY=AQAAAACAAAAQAAAAGQAAAA==eF5jv9G/V2Flxq4rZ4vy9l6+txcASuMJww==AQAAAACAAAAIAAAAEAAAAA==eF6T9pky+dOujQcAEWMErA==AQAAAACAAAAIAAAACwAAAA==eF5jZYAAAAAwAAY=AQAAAACAAAAYAAAAFwAAAA==eF6rFlnn/rBqin01mN5izwAFAHpwB4U=AQAAAACAAAAIAAAACwAAAA==eF5jYIAAAAAIAAE=AQAAAACAAAAIAAAACwAAAA==eF5jZIAAAAAQAAI=AQAAAACAAAABAAAACQAAAA==eF5jBAAAAgAC
   </AppendedData>
 </VTKFile>
